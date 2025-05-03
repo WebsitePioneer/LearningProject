@@ -11,14 +11,14 @@ export default function Home() {
           style={{ backgroundImage: "url('/images/homebanner.jpg')" }}
         >
           <h1 className="text-4xl font-bold text-[#FFB31A]">
-            Every Knight Starts Somewhere.
+            Every Knight Starts Somewhere
           </h1>
           <h2 className="text-5xl capitalize leading-[60px] font-[900] mt-8 text-[#FFFFFF]">
             Where young minds
             <br />
             learn to think ahead,
             <br />
-            one game at a time.
+            one game at a time
           </h2>
           <button className="mt-16 text-white bg-[#2B3AA0] px-10 py-3 rounded-lg transition-all duration-[3000ms] ease-in-out hover:bg-gradient-to-r hover:from-[#7a86d8] hover:via-[#4b57a3] hover:to-[#2B3AA0]">
             Join the Game
@@ -57,7 +57,7 @@ export default function Home() {
       <section className="w-full py-24 pb-30 mt-30 bg-gradient-to-r from-[#d4d9f7] via-[#b3baec] to-[#747fb1]">
         <div className="w-11/12 flex mx-auto">
           <div className="w-[50%]">
-            <h2 className="text-5xl font-bold mt-4">Why Choose Thinq Chess:</h2>
+            <h2 className="text-5xl font-bold mt-4">Why Choose Thinq Chess</h2>
             <ul className="mt-8 flex flex-col gap-4">
               {[
                 "Transparent tracking of student progress",
