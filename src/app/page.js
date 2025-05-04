@@ -10,18 +10,15 @@ export default function Home() {
           className="py-30 px-20 bg-cover bg-center w-11/12 mx-auto clip-diagonal"
           style={{ backgroundImage: "url('/images/homebanner.jpg')" }}
         >
-          <h1 className="text-4xl font-bold text-[#FFB31A]">
-            Every Knight Starts Somewhere
-          </h1>
-          <h2 className="text-5xl capitalize leading-[60px] font-[900] mt-8 text-[#FFFFFF]">
+          <h1 className="text-5xl capitalize leading-[60px] font-[900] mt-8 text-[#FFFFFF]">
             Where young minds
             <br />
             learn to think ahead,
             <br />
             one game at a time
-          </h2>
+          </h1>
           <button className="mt-16 text-white bg-[#2B3AA0] px-10 py-3 rounded-lg transition-all duration-[3000ms] ease-in-out hover:bg-gradient-to-r hover:from-[#7a86d8] hover:via-[#4b57a3] hover:to-[#2B3AA0]">
-            Join the Game
+            Book a Demo
           </button>
         </div>
       </section>
@@ -126,15 +123,21 @@ export default function Home() {
             Quick Highlights
           </h2>
           <div className="grid grid-cols-3 grid-rows-2 gap-8 mt-14">
-            <div className="flex flex-col items-center shadow-md px-4 py-4 rounded-[16px] hover:scale-[102%] transition-all duration-300">
-              <img src="images/performance.png" className="w-[100px]" />
+            <div className="flex flex-col group items-center shadow-md px-4 py-4 rounded-[16px] hover:scale-[102%] transition-all duration-300">
+              <img
+                src="images/performance.png"
+                className="w-[100px] group-hover:scale-x-[-1] transition-all duration-300"
+              />
               <h3 className="text-[20px] text-center mt-3">
                 Programs from the foundation to the professional level
               </h3>
             </div>
 
-            <div className="flex flex-col items-center shadow-md px-4 py-4 rounded-[16px] hover:scale-[102%] transition-all duration-300">
-              <img src="images/trophy.png" className="w-[100px]" />
+            <div className="flex flex-col items-center group shadow-md px-4 py-4 rounded-[16px] hover:scale-[102%] transition-all duration-300">
+              <img
+                src="images/trophy.png"
+                className="w-[100px] group-hover:scale-x-[-1] transition-all duration-300"
+              />
               <h3 className="text-[20px] text-center mt-3">
                 Monthly
                 <br />
@@ -142,22 +145,31 @@ export default function Home() {
               </h3>
             </div>
 
-            <div className="flex flex-col items-center shadow-md px-4 py-4 rounded-[16px] hover:scale-[102%] transition-all duration-300">
-              <img src="images/progress.png" className="w-[100px]" />
+            <div className="flex flex-col items-center group shadow-md px-4 py-4 rounded-[16px] hover:scale-[102%] transition-all duration-300">
+              <img
+                src="images/progress.png"
+                className="w-[100px] group-hover:scale-x-[-1] transition-all duration-300"
+              />
               <h3 className="text-[20px] text-center mt-3">
                 Progress is tracked and shared regularly with parents
               </h3>
             </div>
 
-            <div className="flex flex-col items-center shadow-md px-4 py-4 rounded-[16px] hover:scale-[102%] transition-all duration-300">
-              <img src="images/mentoring.png" className="w-[100px]" />
+            <div className="flex flex-col items-center group shadow-md px-4 py-4 rounded-[16px] hover:scale-[102%] transition-all duration-300">
+              <img
+                src="images/mentoring.png"
+                className="w-[100px] group-hover:scale-x-[-1] transition-all duration-300"
+              />
               <h3 className="text-[20px] text-center mt-3">
                 Classes led by trained, child-friendly mentors
               </h3>
             </div>
 
-            <div className="flex flex-col items-center shadow-md px-4 py-4 rounded-[16px] hover:scale-[102%] transition-all duration-300">
-              <img src="images/log-in.png" className="w-[100px]" />
+            <div className="flex flex-col group items-center shadow-md px-4 py-4 rounded-[16px] hover:scale-[102%] transition-all duration-300">
+              <img
+                src="images/log-in.png"
+                className="w-[100px] group-hover:scale-x-[-1] transition-all duration-300"
+              />
               <h3 className="text-[20px] text-center mt-3">
                 Quick student registration is available
               </h3>
