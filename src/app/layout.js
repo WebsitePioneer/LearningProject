@@ -2,6 +2,9 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import React from "react";
 import CustomCursor from "@/components/CustomCursor";
+import ContactUs from "@/components/ContactUs";
+import Testimonials from "@/components/Testimonials";
+import Gallery from "@/components/Gallery";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -75,6 +78,10 @@ export default function RootLayout({ children }) {
 
           {/* Page Content */}
           <main className="">{children}</main>
+
+          <ContactUs />
+          <Testimonials />
+          <Gallery />
 
           {/* Footer */}
           <footer className="bg-gray-800 text-white py-4 mt-10">
