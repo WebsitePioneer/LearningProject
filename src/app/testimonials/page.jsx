@@ -1,8 +1,9 @@
 "use client";
 import { Carousel } from "antd";
-import { usePathname } from "next/navigation";
 import { LeftCircleOutlined, RightCircleOutlined } from "@ant-design/icons";
 import React, { useRef } from "react";
+import Testimonials from "@/components/Testimonials";
+import Banner from "@/components/ui/Banner";
 
 const PrevArrow = (props) => {
   const { onClick } = props;
@@ -28,16 +29,23 @@ const NextArrow = (props) => {
   );
 };
 
-export default function Testimonials() {
+const TestimonialsPage = () => {
   const carouselRef = useRef(null);
-  const pathname = usePathname();
-
   return (
-    pathname !== "/testimonials" && (
-      <section className="w-11/12 mx-auto pb-16 overflow-visible relative">
-        <h2 className="text-5xl text-center font-bold mt-4 text-[#2B3AA0]">
-          Testimonials
-        </h2>
+    <>
+      <Banner
+        heading={"What parents and students say"}
+        image={"/images/about-banner.jpg"}
+        link={"/"}
+      />
+
+      <section className="w-11/12 mx-auto my-24 mb-16">
+        <h4 className="text-2xl text-center font-bold text-[#2B3AA0]">
+          From practice sessions to tournaments, from first wins to lifelong
+          friendships
+          <br />
+          here’s a look into the world of Thinq Chess.
+        </h4>
 
         <div className="relative overflow-visible mt-8 px-5">
           <Carousel
@@ -158,6 +166,8 @@ export default function Testimonials() {
           </Carousel>
         </div>
       </section>
-    )
+    </>
   );
-}
+};
+
+export default TestimonialsPage;
