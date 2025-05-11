@@ -5,6 +5,7 @@ import CustomCursor from "@/components/CustomCursor";
 import ContactUs from "@/components/ContactUs";
 import Testimonials from "@/components/Testimonials";
 import Gallery from "@/components/Gallery";
+import Link from "next/link";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -22,8 +23,23 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+  const GalleryGrid = [
+    "images/contact-one.jpg",
+    "images/contact-two.jpg",
+    "images/homebanner.jpg",
+    "images/home-two.jpg",
+    "images/home-one.jpg",
+    "images/contact-one.jpg",
+  ];
+
   return (
     <html lang="en">
+      <head>
+        <link
+          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+          rel="stylesheet"
+        />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
@@ -34,44 +50,56 @@ export default function RootLayout({ children }) {
             <div className="container mx-auto flex justify-between items-center">
               <img src="images/logo.png" className="w-[150px]" />
               <nav className="space-x-10">
-                <a
+                <Link
                   href="/"
                   className="text-gray-600 font-[500] hover:text-[#FFB31A]"
                 >
                   Home
-                </a>
-                <a
-                  href="/events"
+                </Link>
+                <Link
+                  href="/our-story"
                   className="text-gray-600 font-[500] hover:text-[#FFB31A]"
                 >
-                  About Us
-                </a>
-                <a
-                  href="/events"
+                  Our Story
+                </Link>
+                <Link
+                  href="/curriculam"
                   className="text-gray-600 font-[500] hover:text-[#FFB31A]"
                 >
-                  Registration
-                </a>
-                <a
-                  href="/events"
+                  Curriculam
+                </Link>
+                <Link
+                  href="/tournaments"
                   className="text-gray-600 font-[500] hover:text-[#FFB31A]"
                 >
-                  Events
-                </a>
-                <a
-                  href="/contact"
+                  Tournaments
+                </Link>
+                <Link
+                  href="/gallery"
                   className="text-gray-600 font-[500] hover:text-[#FFB31A]"
                 >
                   Gallery
-                </a>
+                </Link>
+                <Link
+                  href="/testimonials"
+                  className="text-gray-600 font-[500] hover:text-[#FFB31A]"
+                >
+                  Testimonials
+                </Link>
               </nav>
               <div className="flex flex-row gap-5">
-                <button className="text-white bg-[#2B3AA0] px-10 py-3 rounded-lg transition-all duration-300 ease-in-out hover:bg-gradient-to-r hover:from-[#7a86d8] hover:via-[#4b57a3] hover:to-[#2B3AA0]">
+                <Link
+                  href="/contact-us"
+                  className="text-white bg-[#2B3AA0] px-10 py-3 rounded-lg transition-all duration-300 ease-in-out hover:bg-gradient-to-r hover:from-[#7a86d8] hover:via-[#4b57a3] hover:to-[#2B3AA0]"
+                >
                   Contact Us
-                </button>
-                <button className="text-white bg-[#FFB31A] px-10 py-3 rounded-lg transition-all duration-300 ease-in-out hover:bg-gradient-to-r hover:from-[#fed687] hover:via-[#f3c15d] hover:to-[#FFB31A]">
+                </Link>
+                <Link
+                  href="/"
+                  className="text-white bg-[#FFB31A] px-10 py-3 rounded-lg transition-all duration-300 ease-in-out hover:bg-gradient-to-r hover:from-[#fed687] hover:via-[#f3c15d] hover:to-[#FFB31A]"
+                >
                   Book a Demo
-                </button>
+                </Link>
               </div>
             </div>
           </header>
@@ -81,7 +109,7 @@ export default function RootLayout({ children }) {
 
           <ContactUs />
           <Testimonials />
-          <Gallery />
+          <Gallery title={"Gallery"} GridItems={GalleryGrid} />
 
           {/* Footer */}
           <footer className="bg-gray-800 text-white py-4 mt-10">
