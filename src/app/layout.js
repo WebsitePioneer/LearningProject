@@ -45,23 +45,43 @@ export default function RootLayout({ children }) {
       >
         <CustomCursor />
         <div className="flex flex-col min-h-screen">
+          {/* Top Nav */}
+          <header className="bg-[#2B3AA0] px-4 overflow-hidden sticky top-0 z-50">
+            <div className="flex items-center w-11/12 mx-auto gap-4 justify-end px-4 py-[1px]">
+              <p className="text-[14px] text-white">
+                <a href="mailto: admin@thinqchess.com">
+                  <span className="font-bold">Mail:</span> admin@thinqchess.com
+                </a>
+              </p>
+              <p className="text-[14px] text-white">
+                <a href="tel:+91 9876543210">
+                  <span className="font-bold">Ph:</span> +91 9876543210
+                </a>
+              </p>
+              <div className="flex gap-3">
+                <a href="#">
+                  <img src="images/facebook.png" className="w-[16px]" />
+                </a>
+                <a href="#">
+                  <img src="images/instagram.png" className="w-[16px]" />
+                </a>
+                <a href="#">
+                  <img src="images/twitter.png" className="w-[16px]" />
+                </a>
+                <a href="#">
+                  <img src="images/youtube.png" className="w-[16px]" />
+                </a>
+              </div>
+            </div>
+          </header>
+
           {/* Navbar */}
-          <header className="bg-white shadow-md px-4 max-h-[180px] flex items-center overflow-hidden sticky top-0 z-50">
+          <header className="bg-white shadow-md px-4 max-h-[180px] flex items-center overflow-hidden sticky top-[23px] z-50">
             <div className="container mx-auto flex justify-between items-center">
-              <img src="images/logo.png" className="w-[150px]" />
+              <Link href="/">
+                <img src="images/logo.png" className="w-[150px]" />
+              </Link>
               <nav className="space-x-10">
-                <Link
-                  href="/"
-                  className="text-gray-600 font-[500] hover:text-[#FFB31A]"
-                >
-                  Home
-                </Link>
-                <Link
-                  href="/our-story"
-                  className="text-gray-600 font-[500] hover:text-[#FFB31A]"
-                >
-                  Our Story
-                </Link>
                 <Link
                   href="/curriculam"
                   className="text-gray-600 font-[500] hover:text-[#FFB31A]"
@@ -85,6 +105,12 @@ export default function RootLayout({ children }) {
                   className="text-gray-600 font-[500] hover:text-[#FFB31A]"
                 >
                   Testimonials
+                </Link>
+                <Link
+                  href="/our-story"
+                  className="text-gray-600 font-[500] hover:text-[#FFB31A]"
+                >
+                  Our Story
                 </Link>
               </nav>
               <div className="flex flex-row gap-5">
