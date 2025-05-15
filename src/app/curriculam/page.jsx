@@ -25,7 +25,7 @@ const Curriculam = () => {
         link={"/"}
       />
 
-      <section className="w-11/12 mx-auto flex gap-10 my-24">
+      <section className="w-11/12 mx-auto flex gap-10 my-24 relative">
         <div className="w-[50%]">
           <p className="text-[#FFB31A]">CURRICULAM</p>
           <h2 className="text-5xl mt-5 font-bold text-[#2B3AA0]">
@@ -44,86 +44,86 @@ const Curriculam = () => {
         <div className="w-[50%]">
           <img
             src="/images/contact-img.png"
-            className="w-full rounded-tl-[120px] rounded-br-[120px]"
+            className="w-full h-[650px] object-cover object-center rounded-tl-[120px] rounded-br-[120px]"
           />
         </div>
-      </section>
 
-      {/* Offline courses container */}
-      <section className="w-11/12 mx-auto relative">
-        <div className=" absolute flex gap-8 top-[-460px] w-10/12 mt-8">
-          <div className="flex group items-center w-fit gap-3 bg-[#2B3AA0] px-6 py-3 rounded-[100px]">
-            <div className="px-3 py-3 pb-2 rounded-[50%] bg-white w-fit transform transition-transform duration-300 group-hover:translate-x-2">
-              <span
-                className="material-symbols-outlined text-[#2B3AA0]"
-                style={{ fontSize: "38px" }}
-              >
-                live_tv
-              </span>
+        {/* Offline courses container */}
+        <div className="w-11/12 mx-auto absolute bottom-[4%]">
+          <div className="flex flex-col gap-3 top-[20%] w-10/12">
+            <div className="flex group items-center w-fit gap-3 bg-[#2B3AA0] h-[60px] px-3 rounded-[100px]">
+              <div className="px-2 py-2 pb-1 rounded-[50%] bg-white w-fit transform transition-transform duration-300 group-hover:translate-x-2">
+                <span
+                  className="material-symbols-outlined text-[#2B3AA0]"
+                  style={{ fontSize: "18px" }}
+                >
+                  live_tv
+                </span>
+              </div>
+              <p className="text-[16px] text-white font-bold">
+                2 hours of live class per week
+              </p>
             </div>
-            <p className="text-[18px] text-white font-bold">
-              2 hours of live class per week
-            </p>
+
+            <div className="flex group items-center w-fit gap-3 bg-[#2B3AA0] px-3 h-[60px] rounded-[100px]">
+              <div className="px-2 py-2 pb-1 rounded-[50%] bg-white w-fit transform transition-transform duration-300 group-hover:translate-x-2">
+                <span
+                  className="material-symbols-outlined text-[#2B3AA0]"
+                  style={{ fontSize: "18px" }}
+                >
+                  guardian
+                </span>
+              </div>
+              <p className="text-[18px] text-white font-bold">
+                1 hour weekend practice under teacher supervision
+              </p>
+            </div>
           </div>
 
-          <div className="flex group items-center w-fit gap-3 bg-[#2B3AA0] px-6 py-3 rounded-[100px]">
-            <div className="px-3 py-3 pb-2 rounded-[50%] bg-white w-fit transform transition-transform duration-300 group-hover:translate-x-2">
-              <span
-                className="material-symbols-outlined text-[#2B3AA0]"
-                style={{ fontSize: "38px" }}
-              >
-                guardian
-              </span>
+          <div className="flex flex-col gap-3 top-[30%] w-10/12 mt-3 ">
+            <div className="flex group items-center w-fit gap-3 bg-[#2B3AA0] px-3 h-[60px] rounded-[100px]">
+              <div className="px-2 py-2 pb-1 rounded-[50%] bg-white w-fit transform transition-transform duration-300 group-hover:translate-x-2">
+                <span
+                  className="material-symbols-outlined text-[#2B3AA0]"
+                  style={{ fontSize: "18px" }}
+                >
+                  stadia_controller
+                </span>
+              </div>
+              <p className="text-[18px] text-white font-bold">
+                Game-oriented learning with feedback
+              </p>
             </div>
-            <p className="text-[18px] text-white font-bold">
-              1 hour weekend practice under teacher supervision
-            </p>
-          </div>
-        </div>
 
-        <div className="absolute flex gap-8 top-[-350px] w-10/12 mt-8">
-          <div className="flex group items-center w-fit gap-3 bg-[#2B3AA0] px-6 py-3 rounded-[100px]">
-            <div className="px-3 py-3 pb-2 rounded-[50%] bg-white w-fit transform transition-transform duration-300 group-hover:translate-x-2">
-              <span
-                className="material-symbols-outlined text-[#2B3AA0]"
-                style={{ fontSize: "38px" }}
-              >
-                stadia_controller
-              </span>
+            <div className="flex group items-center w-fit gap-3 bg-[#2B3AA0] px-3 h-[60px] rounded-[100px]">
+              <div className="px-2 py-2 pb-1 rounded-[50%] bg-white w-fit transform transition-transform duration-300 group-hover:translate-x-2">
+                <span
+                  className="material-symbols-outlined text-[#2B3AA0]"
+                  style={{ fontSize: "18px" }}
+                >
+                  rate_review
+                </span>
+              </div>
+              <p className="text-[18px] text-white font-bold">
+                Online evaluations and certificates
+              </p>
             </div>
-            <p className="text-[18px] text-white font-bold">
-              Game-oriented learning with feedback
-            </p>
           </div>
 
-          <div className="flex group items-center w-fit gap-3 bg-[#2B3AA0] px-6 py-3 rounded-[100px]">
-            <div className="px-3 py-3 pb-2 rounded-[50%] bg-white w-fit transform transition-transform duration-300 group-hover:translate-x-2">
-              <span
-                className="material-symbols-outlined text-[#2B3AA0]"
-                style={{ fontSize: "38px" }}
-              >
-                rate_review
-              </span>
+          <div className="flex gap-3 top-[40%] w-10/12 mt-3">
+            <div className="flex group items-center w-fit gap-3 bg-[#2B3AA0] px-3 h-[60px] rounded-[100px]">
+              <div className="px-2 py-2 pb-1 rounded-[50%] bg-white w-fit transform transition-transform duration-300 group-hover:translate-x-2">
+                <span
+                  className="material-symbols-outlined text-[#2B3AA0]"
+                  style={{ fontSize: "18px" }}
+                >
+                  multicooker
+                </span>
+              </div>
+              <p className="text-[18px] text-white font-bold">
+                Welcome kit upon joining
+              </p>
             </div>
-            <p className="text-[18px] text-white font-bold">
-              Online evaluations and certificates
-            </p>
-          </div>
-        </div>
-
-        <div className="absolute flex gap-8 top-[-240px] w-10/12 mt-8">
-          <div className="flex group items-center w-fit gap-3 bg-[#2B3AA0] px-6 py-3 rounded-[100px]">
-            <div className="px-3 py-3 pb-2 rounded-[50%] bg-white w-fit transform transition-transform duration-300 group-hover:translate-x-2">
-              <span
-                className="material-symbols-outlined text-[#2B3AA0]"
-                style={{ fontSize: "38px" }}
-              >
-                multicooker
-              </span>
-            </div>
-            <p className="text-[18px] text-white font-bold">
-              Welcome kit upon joining
-            </p>
           </div>
         </div>
       </section>

@@ -81,10 +81,10 @@ const ContactUs = () => {
           </div>
           <div className="mt-8 flex flex-col gap-2">
             <h4 className="text-3xl font-bold">
-              <a href="mailto:abcd@gmail.com">admin@thinqchess.com</a>
+              <a href="mailto:admin@thinqchess.com">admin@thinqchess.com</a>
             </h4>
             <h4 className="text-3xl font-bold">
-              <a href="abcd@gmail.com">admin2@thinqchess.com</a>
+              <a href="mailto:admin2@thinqchess.com">admin2@thinqchess.com</a>
             </h4>
           </div>
         </div>
