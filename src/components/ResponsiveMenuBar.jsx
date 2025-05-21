@@ -16,18 +16,20 @@ import {
 import MenuIcon from "@mui/icons-material/Menu";
 import Link from "next/link";
 import NextLink from "next/link";
+import { usePathname } from "next/navigation";
 
 const menuItems = [
   { label: "Courses", href: "/curriculam" },
-  { label: "Registration", href: "/" },
+  { label: "Registration", href: "/#" },
   { label: "Tournaments", href: "/tournaments" },
   { label: "Gallery", href: "/gallery" },
-  { label: "Blogs", href: "/" },
-  { label: "Career", href: "/" },
+  { label: "Blogs", href: "/#" },
+  { label: "Career", href: "/#" },
   { label: "About us", href: "/our-story" },
 ];
 
 function MenuContent({ mobile = false, onMenuClick }) {
+  const pathname = usePathname();
   return (
     <>
       {/* Top Nav */}
@@ -89,8 +91,8 @@ function MenuContent({ mobile = false, onMenuClick }) {
                 component={Link}
                 href={item.href}
                 sx={{
-                  color: "black",
-                  fontWeight: 500,
+                  color: pathname === item.href ? "#FFB31A" : "black",
+                  fontWeight: pathname === item.href ? 700 : 500,
                   "&:hover": { color: "#FFB31A" },
                 }}
               >
@@ -106,7 +108,6 @@ function MenuContent({ mobile = false, onMenuClick }) {
             <>
               <Button
                 variant="contained"
-                href="/contact-us"
                 sx={{
                   backgroundColor: "#FFB31A",
                   "&:hover": {
@@ -114,7 +115,7 @@ function MenuContent({ mobile = false, onMenuClick }) {
                   },
                 }}
               >
-                Book a Demo
+                <Link href="/contact-us">Book a Demo</Link>
               </Button>
               <Button
                 variant="contained"
@@ -171,6 +172,8 @@ export default function ResponsiveMenuBar() {
 
   const toggleDrawer = (open) => () => setDrawerOpen(open);
 
+  const pathname = usePathname();
+
   return (
     <>
       {/* Default sticky navbar */}
@@ -203,6 +206,8 @@ export default function ResponsiveMenuBar() {
                 href={item.href}
                 onClick={toggleDrawer(false)}
                 sx={{
+                  color: pathname === item.href ? "#FFB31A" : "black",
+                  fontWeight: pathname === item.href ? 700 : 500,
                   cursor: "pointer",
                   "&:hover": {
                     backgroundColor: "#f0f0f0",

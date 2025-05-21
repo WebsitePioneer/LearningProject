@@ -114,7 +114,7 @@ export default function Home() {
               className="p-[4px] border-4 border-[#FFB31A] inline-block absolute rounded-tr-[100px] rounded-bl-[100px] top-[-160px] left-[0px]"
             >
               <img
-                src="images/indian-img-three.jpg"
+                src="images/head-coach.jpeg"
                 alt="Framed"
                 className="h-[450px] w-[280px] rounded-tr-[95px] object-cover rounded-bl-[95px]"
               />
@@ -132,7 +132,7 @@ export default function Home() {
               className="p-[4px] border-4 border-[#FFB31A] inline-block absolute rounded-tr-[100px] rounded-bl-[100px] top-[50px] right-[20px]"
             >
               <img
-                src="images/home-two.jpg"
+                src="images/Chiranth .jpeg"
                 alt="Framed"
                 className="h-[450px] w-[280px] rounded-tr-[95px] object-cover object-center rounded-bl-[95px]"
               />
