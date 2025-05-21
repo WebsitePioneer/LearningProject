@@ -10,9 +10,10 @@ const ContactUs = () => {
   const formRef = useRef();
   const [succesMessage, setSuccesMessage] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
-  const [isError, setIsError] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const sendEmail = (values) => {
+    setIsSubmitting(true);
     const templateParams = {
       parent_name: values.parentName,
       child_name: values.childName,
@@ -36,10 +37,12 @@ const ContactUs = () => {
           message.success("Message sent successfully!");
           formRef.current.resetFields();
           setSuccesMessage("Form has been submitted Succesfully");
+          setIsSubmitting(false);
         },
         (error) => {
           message.error("Failed to send message. Try again later.");
           setErrorMessage("There is an error submitting the form", error);
+          setIsSubmitting(false);
         }
       );
   };
@@ -219,8 +222,11 @@ const ContactUs = () => {
 
               <Form.Item>
                 <button
-                  className="bg-[#FFB31A] text-white text-[18px] rounded-lg px-8 py-2"
+                  className={`bg-[#FFB31A] text-white text-[18px] rounded-lg px-8 py-2 ${
+                    isSubmitting ? "cursor-not-allowed" : "cursor-pointer"
+                  }`}
                   type="submit"
+                  disabled={isSubmitting}
                 >
                   Send Message
                 </button>

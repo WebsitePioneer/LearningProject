@@ -123,7 +123,7 @@ const Curriculam = () => {
         <div className="md:w-[50%] w-full">
           <img
             src="/images/indian-img-three.jpg"
-            className="w-full object-cover object-center rounded-tl-[60px] rounded-br-[60px] md:rounded-tl-[120px] md:rounded-br-[120px]"
+            className="w-full md:h-[650px] object-cover object-center rounded-tl-[60px] rounded-br-[60px] md:rounded-tl-[120px] md:rounded-br-[120px]"
           />
         </div>
 
@@ -390,7 +390,7 @@ const Curriculam = () => {
                 />
               </div>
               <div className="mt-4">
-                <h4 className="text-2xl text-center font-bold text-white mb-3">
+                <h4 className="text-2xl max-md:text-center font-bold text-white mb-3">
                   Advanced
                 </h4>
                 <div className="flex items-center gap-2">
