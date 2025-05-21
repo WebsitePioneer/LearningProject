@@ -9,7 +9,7 @@ const PrevArrow = (props) => {
   return (
     <div
       onClick={onClick}
-      className="cursor-pointer absolute top-1/2 left-[-10px] transform -translate-y-1/2 z-10 bg-black/30 text-white rounded-full w-10 h-10 flex items-center justify-center"
+      className="cursor-pointer absolute top-1/2 md:left-[-10px] left-[-20px] transform -translate-y-1/2 z-10 bg-black/30 text-white rounded-full w-10 h-10 flex items-center justify-center"
     >
       <LeftCircleOutlined />
     </div>
@@ -21,7 +21,7 @@ const NextArrow = (props) => {
   return (
     <div
       onClick={onClick}
-      className="cursor-pointer absolute top-1/2 right-[-10px] transform -translate-y-1/2 z-10 bg-black/30 text-white rounded-full w-10 h-10 flex items-center justify-center"
+      className="cursor-pointer absolute top-1/2 md:right-[-10px] right-[-20px] transform -translate-y-1/2 z-10 bg-black/30 text-white rounded-full w-10 h-10 flex items-center justify-center"
     >
       <RightCircleOutlined />
     </div>
@@ -35,7 +35,7 @@ export default function Testimonials() {
   return (
     pathname !== "/testimonials" && (
       <section className="w-11/12 mx-auto pb-16 overflow-visible relative">
-        <h2 className="text-5xl text-center font-bold mt-4 text-[#2B3AA0]">
+        <h2 className="md:text-5xl text-4xl text-center font-bold md:mt-4 text-[#2B3AA0]">
           Testimonials
         </h2>
 
@@ -50,7 +50,7 @@ export default function Testimonials() {
             arrows
           >
             <div className="w-full flex justify-center">
-              <div className="flex flex-col items-center gap-10 my-4 py-4 px-24">
+              <div className="flex flex-col items-center md:gap-10 gap-4 md:my-4 py-4 md:px-24 px-6">
                 {/* Ratings */}
                 <div className=" w-fit flex items-center justify-center gap-2">
                   <img src="images/star.png" className=" w-[20px]" />
@@ -61,7 +61,7 @@ export default function Testimonials() {
                 </div>
 
                 {/* Review Content */}
-                <p className="text-center text-[24px] font-[500]">
+                <p className="text-center md:text-[24px] text-[16px] font-[500]">
                   "Client one ----- Lorem Ipsum is simply dummy text of the
                   printing and typesetting industry. Lorem Ipsum has been the
                   industry's standard dummy text ever since the 1500s, when an
@@ -73,10 +73,10 @@ export default function Testimonials() {
                 <div className="flex items-center gap-3">
                   <img
                     src="images/contact-one.jpg"
-                    className="w-[80px] h-[80px] object-cover rounded-[50%] border-[#FFB31A] border-[3px] border-solid p-1"
+                    className="md:w-[80px] md:h-[80px] w-[60px] h-[60px] object-cover rounded-[50%] border-[#FFB31A] border-[3px] border-solid p-1"
                   />
                   <div>
-                    <p className="text-[20px] font-[700] text-[#2B3AA0]">
+                    <p className="md:text-[20px] text-[18px] font-[700] text-[#2B3AA0]">
                       Mr/Mrs. Client One
                     </p>
                     <p className="text-[16px]">CEO @Google</p>
@@ -86,7 +86,7 @@ export default function Testimonials() {
             </div>
 
             <div className="w-full flex justify-center">
-              <div className="flex flex-col items-center gap-10 my-4 py-4 px-24">
+              <div className="flex flex-col items-center md:gap-10 gap-4 md:my-4 py-4 md:px-24 px-6">
                 {/* Ratings */}
                 <div className=" w-fit flex items-center justify-center gap-2">
                   <img src="images/star.png" className=" w-[20px]" />
@@ -96,8 +96,8 @@ export default function Testimonials() {
                 </div>
 
                 {/* Review Content */}
-                <p className="text-center text-[24px] font-[500]">
-                  "Client two ----- Lorem Ipsum is simply dummy text of the
+                <p className="text-center md:text-[24px] text-[16px] font-[500]">
+                  "Client Two ----- Lorem Ipsum is simply dummy text of the
                   printing and typesetting industry. Lorem Ipsum has been the
                   industry's standard dummy text ever since the 1500s, when an
                   unknown printer took a galley of type and scrambled it to make
@@ -108,11 +108,11 @@ export default function Testimonials() {
                 <div className="flex items-center gap-3">
                   <img
                     src="images/contact-one.jpg"
-                    className="w-[80px] h-[80px] object-cover rounded-[50%] border-[#FFB31A] border-[3px] border-solid p-1"
+                    className="md:w-[80px] md:h-[80px] w-[60px] h-[60px] object-cover rounded-[50%] border-[#FFB31A] border-[3px] border-solid p-1"
                   />
                   <div>
-                    <p className="text-[20px] font-[700] text-[#2B3AA0]">
-                      Mr/Mrs. Client two
+                    <p className="md:text-[20px] text-[18px] font-[700] text-[#2B3AA0]">
+                      Mr/Mrs. Client Two
                     </p>
                     <p className="text-[16px]">CEO @Google</p>
                   </div>
@@ -121,7 +121,7 @@ export default function Testimonials() {
             </div>
 
             <div className="w-full flex justify-center">
-              <div className="flex flex-col items-center gap-10 my-4 py-4 px-24">
+              <div className="flex flex-col items-center md:gap-10 gap-4 md:my-4 py-4 md:px-24 px-6">
                 {/* Ratings */}
                 <div className=" w-fit flex items-center justify-center gap-2">
                   <img src="images/star.png" className=" w-[20px]" />
@@ -132,8 +132,8 @@ export default function Testimonials() {
                 </div>
 
                 {/* Review Content */}
-                <p className="text-center text-[24px] font-[500]">
-                  "Client three ----- Lorem Ipsum is simply dummy text of the
+                <p className="text-center md:text-[24px] text-[16px] font-[500]">
+                  "Client Three ----- Lorem Ipsum is simply dummy text of the
                   printing and typesetting industry. Lorem Ipsum has been the
                   industry's standard dummy text ever since the 1500s, when an
                   unknown printer took a galley of type and scrambled it to make
@@ -144,11 +144,11 @@ export default function Testimonials() {
                 <div className="flex items-center gap-3">
                   <img
                     src="images/contact-one.jpg"
-                    className="w-[80px] h-[80px] object-cover rounded-[50%] border-[#FFB31A] border-[3px] border-solid p-1"
+                    className="md:w-[80px] md:h-[80px] w-[60px] h-[60px] object-cover rounded-[50%] border-[#FFB31A] border-[3px] border-solid p-1"
                   />
                   <div>
-                    <p className="text-[20px] font-[700] text-[#2B3AA0]">
-                      Mr/Mrs. Client three
+                    <p className="md:text-[20px] text-[18px] font-[700] text-[#2B3AA0]">
+                      Mr/Mrs. Client Three
                     </p>
                     <p className="text-[16px]">CEO @Google</p>
                   </div>

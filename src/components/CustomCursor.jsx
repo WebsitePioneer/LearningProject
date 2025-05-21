@@ -3,6 +3,7 @@ import { useEffect } from "react";
 
 export default function CustomCursor() {
   useEffect(() => {
+    if (window.innerWidth < 768) return;
     const cursor = document.createElement("div");
     const dot = document.createElement("div");
 

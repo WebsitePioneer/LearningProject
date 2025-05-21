@@ -6,10 +6,10 @@ export default function Gallery(props) {
 
   return (
     pathname !== "/gallery" && (
-      <section className="w-11/12 mx-auto mb-10">
+      <section className="w-11/12 mx-auto md:mb-10 mb-2">
         {/* Title */}
         {props.title && (
-          <h2 className="text-5xl text-center font-bold text-[#2B3AA0]">
+          <h2 className="md:text-5xl text-4xl text-center font-bold text-[#2B3AA0]">
             {props.title}
           </h2>
         )}
@@ -22,7 +22,7 @@ export default function Gallery(props) {
         )}
 
         {/* Image Grid */}
-        <div className="mt-16 grid grid-cols-3 grid-rows-2 gap-4">
+        <div className="md:mt-16 mt-8 max-md:flex max-md:flex-col md:grid grid-cols-3 grid-rows-2 gap-4">
           {props.GridItems.map((imgItem, index) => {
             return (
               <div key={index} className="group overflow-hidden rounded-md">
