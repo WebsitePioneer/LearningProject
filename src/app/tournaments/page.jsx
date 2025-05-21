@@ -16,13 +16,19 @@ const Tournaments = () => {
         link={"/"}
       />
 
-      <section className="w-11/12 mx-auto flex flex-row gap-12 mt-28 mb-20">
-        <div className="w-[50%] flex flex-col gap-4">
-          <h2 className="text-5xl font-bold text-[#2B3AA0] leading-[60px]">
+      <section className="w-11/12 mx-auto flex md:flex-row flex-col gap-12 md:mt-28 mt-14 mb-12 md:mb-20">
+        <div className="md:w-[50%] w-full flex flex-col gap-4">
+          <h2 className="md:text-5xl text-4xl leading-[52px] font-bold text-[#2B3AA0] md:leading-[60px]">
             Tournaments of ThinqChess
           </h2>
+
+          <img
+            src="/images/indian-img-two.jpg"
+            alt="Chessboard"
+            className="md:hidden w-full object-cover object-center rounded-br-[60px] "
+          />
           <p className="text-[18px] mt-2">
-            We host friendly, competitive monthly tournaments at our center,
+            We host friendly, competitive Regular Tournaments at our center,
             designed to help children experience the joy of competition and
             learn how to handle both wins and losses with grace
           </p>
@@ -50,12 +56,12 @@ const Tournaments = () => {
             })}
           </div>
         </div>
-        <div className="w-[50%]">
-          <div className="p-1 border-solid">
+        <div className="md:w-[50%] max-md:hidden w-full">
+          <div className="p-1">
             <img
-              src="/images/about-one.jpg"
+              src="/images/indian-img-two.jpg"
               alt="Chessboard"
-              className="w-full max-h-[480px] object-cover object-center rounded-tl-[0px] rounded-br-[120px] "
+              className="w-full max-h-[500px] object-cover object-center rounded-tl-[0px] rounded-br-[120px] "
             />
           </div>
         </div>

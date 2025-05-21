@@ -1,5 +1,5 @@
 "use client";
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import Banner from "@/components/ui/Banner";
 import { Form, Input, Select, Button, Row, Col, message } from "antd";
@@ -8,6 +8,9 @@ const { TextArea } = Input;
 
 const ContactUs = () => {
   const formRef = useRef();
+  const [succesMessage, setSuccesMessage] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
+  const [isError, setIsError] = useState(false);
 
   const sendEmail = (values) => {
     const templateParams = {
@@ -23,19 +26,20 @@ const ContactUs = () => {
 
     emailjs
       .send(
-        "your_service_id", // replace with your service ID
-        "your_template_id", // replace with your template ID
+        "service_7y7vvlf", // replace with your service ID
+        "template_lfitz1q", // replace with your template ID
         templateParams,
-        "your_public_key" // replace with your public key
+        "74cW5H5JugUoTfj2P" // replace with your public key
       )
       .then(
         () => {
           message.success("Message sent successfully!");
           formRef.current.resetFields();
+          setSuccesMessage("Form has been submitted Succesfully");
         },
         (error) => {
           message.error("Failed to send message. Try again later.");
-          console.error(error);
+          setErrorMessage("There is an error submitting the form", error);
         }
       );
   };
@@ -48,22 +52,19 @@ const ContactUs = () => {
         link={"/"}
       />
 
-      <section className="w-11/12 grid grid-cols-3 grid-rows-1 gap-8 mx-auto my-28 mt-20">
+      <section className="w-11/12 max-md:flex max-md:flex-col md:grid grid-cols-3 grid-rows-1 gap-8 mx-auto my-28 mt-20">
         {/* Contact number */}
         <div className="px-10 py-10 bg-[#f7f7f7] rounded-lg">
-          <div className="px-8 py-8 pb-6 bg-[#FFB31A] w-fit rounded-lg">
-            <span
-              className="material-symbols-outlined text-white"
-              style={{ fontSize: "48px" }}
-            >
+          <div className="px-8 py-8 pb-6 bg-[#FFB31A] w-fit rounded-lg ">
+            <i className="material-symbols-outlined text-white md:!text-[48px] !text-[32px]">
               call
-            </span>
+            </i>
           </div>
           <div className="mt-8 flex flex-col gap-2">
-            <h4 className="text-3xl font-bold">
+            <h4 className="md:text-3xl text-2xl font-bold">
               <a href="tel:+919876543210">+91 98765 43210</a>
             </h4>
-            <h4 className="text-3xl font-bold">
+            <h4 className="md:text-3xl text-2xl font-bold">
               <a href="tel:+919876543210">+91 98765 43210</a>
             </h4>
           </div>
@@ -72,18 +73,15 @@ const ContactUs = () => {
         {/* Email Address */}
         <div className="px-10 py-10 bg-[#f7f7f7] rounded-lg">
           <div className="px-8 py-8 pb-6 bg-[#FFB31A] w-fit rounded-lg">
-            <span
-              className="material-symbols-outlined text-white"
-              style={{ fontSize: "48px" }}
-            >
+            <i className="material-symbols-outlined text-white md:!text-[48px] !text-[32px]">
               mail
-            </span>
+            </i>
           </div>
           <div className="mt-8 flex flex-col gap-2">
-            <h4 className="text-3xl font-bold">
+            <h4 className="md:text-3xl text-2xl font-bold">
               <a href="mailto:admin@thinqchess.com">admin@thinqchess.com</a>
             </h4>
-            <h4 className="text-3xl font-bold">
+            <h4 className="md:text-3xl text-2xl font-bold">
               <a href="mailto:admin2@thinqchess.com">admin2@thinqchess.com</a>
             </h4>
           </div>
@@ -101,16 +99,16 @@ const ContactUs = () => {
         </div>
       </section>
 
-      <section className="w-11/12 flex flex-row gap-16 mx-auto my-28">
-        <div className="w-[50%]">
+      <section className="w-11/12 flex md:flex-row flex-col md:gap-16 gap-10 mx-auto my-10 md:my-28">
+        <div className="md:w-[50%] w-full">
           <img src="/images/contact-img.png" className="w-full rounded-lg" />
         </div>
-        <div className="w-[50%]">
+        <div className="md:w-[50%] w-full">
           <p className="text-[#2B3AA0]">CONTACT US</p>
-          <h2 className="mt-5 text-5xl font-bold text-[#2B3AA0] leading-[60px]">
+          <h2 className="md:mt-5 mt-2 md:text-5xl text-4xl leading-[52px] font-bold text-[#2B3AA0] md:leading-[60px]">
             Have questions? Contact with us today
           </h2>
-          <div className="mt-10">
+          <div className="md:mt-10 mt-6">
             <Form
               ref={formRef}
               layout="vertical"
@@ -228,6 +226,16 @@ const ContactUs = () => {
                 </button>
               </Form.Item>
             </Form>
+            {succesMessage && (
+              <p className="text-green-600 text-[20px] font-[500]">
+                {succesMessage}
+              </p>
+            )}
+            {errorMessage && (
+              <p className="text-red-800 text-[20px] font-[500]">
+                {errorMessage}
+              </p>
+            )}
           </div>
         </div>
       </section>

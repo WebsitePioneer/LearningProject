@@ -9,10 +9,15 @@ const OurStory = () => {
         link={"/"}
       />
 
-      <section className="w-11/12 mx-auto flex flex-row-reverse gap-12 mt-28 mb-20">
-        <div className="w-[50%] flex flex-col gap-4">
+      <section className="w-11/12 mx-auto flex md:flex-row-reverse flex-col-reverse gap-12 mt-14 md:mt-28 mb-10 md:mb-20">
+        <div className="md:w-[50%] w-full flex flex-col gap-4">
           <p className="text-[#2B3AA0]">WELCOME TO THINQCHESS</p>
           <h2 className="text-5xl font-bold text-[#FFB31A]">Founders' Note</h2>
+          <img
+            src="/images/Founders.jpg"
+            alt="Chessboard"
+            className="md:hidden w-full max-h-[300px] mt-5 mb-3 object-cover object-center rounded-br-[60px] "
+          />
           <p className="text-[18px]">
             Thinq Chess began with its founder, who saw more than
             black-and-white squares. They saw a way to help children build
@@ -32,10 +37,10 @@ const OurStory = () => {
             why we started.
           </p>
         </div>
-        <div className="w-[50%]">
+        <div className="md:w-[50%] max-md:hidden w-full">
           <div className="p-1 border-solid">
             <img
-              src="/images/about-one.jpg"
+              src="/images/Founders.jpg"
               alt="Chessboard"
               className="w-full max-h-[420px] object-cover object-center rounded-tl-[0px] rounded-br-[120px] "
             />

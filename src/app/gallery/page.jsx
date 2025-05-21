@@ -2,11 +2,11 @@ import Banner from "@/components/ui/Banner";
 
 const GalleryPage = () => {
   const GalleryGrid = [
-    "images/contact-one.jpg",
-    "images/contact-two.jpg",
-    "images/homebanner.jpg",
-    "images/home-two.jpg",
-    "images/home-one.jpg",
+    "images/indian-img-one.jpg",
+    "images/indian-img-two.jpg",
+    "images/indian-img-three.jpg",
+    "images/indian-img-four.jpg",
+    "images/indian-img-five.jpg",
     "images/contact-one.jpg",
   ];
   return (
@@ -17,13 +17,13 @@ const GalleryPage = () => {
         link={"/"}
       />
 
-      <section className="w-11/12 mx-auto my-28">
-        <h4 className="text-2xl text-center font-bold text-[#2B3AA0]">
+      <section className="w-11/12 mx-auto md:my-28 my-14">
+        <h4 className="md:text-2xl text-xl text-center font-bold text-[#2B3AA0]">
           From practice sessions to tournaments, from first wins to lifelong
-          friendships—here’s a look into the world of Thinq Chess.
+          friendships-here’s a look into the world of Thinq Chess.
         </h4>
 
-        <div className="mt-16 grid grid-cols-3 grid-rows-2 gap-4">
+        <div className="md:mt-16 mt-8 max-md:flex max-md:flex-col md:grid grid-cols-3 grid-rows-2 gap-4">
           {GalleryGrid.map((imgItem, index) => {
             return (
               <div key={index} className="group overflow-hidden rounded-md">

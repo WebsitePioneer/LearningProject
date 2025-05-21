@@ -5,7 +5,9 @@ import CustomCursor from "@/components/CustomCursor";
 import ContactUs from "@/components/ContactUs";
 import Testimonials from "@/components/Testimonials";
 import Gallery from "@/components/Gallery";
-import Link from "next/link";
+import ResponsiveMenuBar from "@/components/ResponsiveMenuBar";
+import ClientOnly from "@/components/ClientOnly";
+import ThemeRegistry from "@/components/ThemeRegistry";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -24,11 +26,11 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   const GalleryGrid = [
-    "images/contact-one.jpg",
-    "images/contact-two.jpg",
-    "images/homebanner.jpg",
-    "images/home-two.jpg",
-    "images/home-one.jpg",
+    "images/indian-img-one.jpg",
+    "images/indian-img-two.jpg",
+    "images/indian-img-three.jpg",
+    "images/indian-img-four.jpg",
+    "images/indian-img-five.jpg",
     "images/contact-one.jpg",
   ];
 
@@ -43,110 +45,42 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <CustomCursor />
-        <div className="flex flex-col min-h-screen">
-          {/* Top Nav */}
-          <header className="bg-[#2B3AA0] px-4 overflow-hidden sticky top-0 z-50">
-            <div className="flex items-center w-11/12 mx-auto gap-4 justify-end px-4 py-[1px]">
-              <p className="text-[14px] text-white">
-                <a href="mailto: admin@thinqchess.com">
-                  <span className="font-bold">Mail:</span> admin@thinqchess.com
-                </a>
-              </p>
-              <p className="text-[14px] text-white">
-                <a href="tel:+91 9876543210">
-                  <span className="font-bold">Ph:</span> +91 9876543210
-                </a>
-              </p>
-              <div className="flex gap-3">
-                <a href="#">
-                  <img src="images/facebook.png" className="w-[16px]" />
-                </a>
-                <a href="#">
-                  <img src="images/instagram.png" className="w-[16px]" />
-                </a>
-                <a href="#">
-                  <img src="images/twitter.png" className="w-[16px]" />
-                </a>
-                <a href="#">
-                  <img src="images/youtube.png" className="w-[16px]" />
-                </a>
+        <ThemeRegistry>
+          {/* Custom Cursor */}
+          <span className="max-md:hidden">
+            <ClientOnly>
+              <CustomCursor />
+            </ClientOnly>
+          </span>
+
+          <div className="flex flex-col min-h-screen">
+            {/* Navbar */}
+            <header className="md:top-[23px] top-[24px] z-50">
+              <ClientOnly>
+                <ResponsiveMenuBar />
+              </ClientOnly>
+            </header>
+
+            {/* Page Content */}
+            <main className="">{children}</main>
+
+            <ContactUs />
+            <Testimonials />
+            <Gallery title={"Gallery"} GridItems={GalleryGrid} />
+
+            {/* Footer */}
+            <footer className="bg-gray-800 text-white py-4 mt-10">
+              <div className="container mx-auto text-center">
+                <ClientOnly>
+                  <p>
+                    &copy; {new Date().getFullYear()} Chess Academy. All rights
+                    reserved.
+                  </p>
+                </ClientOnly>
               </div>
-            </div>
-          </header>
-
-          {/* Navbar */}
-          <header className="bg-white shadow-md px-4 max-h-[180px] flex items-center overflow-hidden sticky top-[23px] z-50">
-            <div className="container mx-auto flex justify-between items-center">
-              <Link href="/">
-                <img src="images/logo.png" className="w-[150px]" />
-              </Link>
-              <nav className="space-x-10">
-                <Link
-                  href="/curriculam"
-                  className="text-gray-600 font-[500] hover:text-[#FFB31A]"
-                >
-                  Curriculam
-                </Link>
-                <Link
-                  href="/tournaments"
-                  className="text-gray-600 font-[500] hover:text-[#FFB31A]"
-                >
-                  Tournaments
-                </Link>
-                <Link
-                  href="/gallery"
-                  className="text-gray-600 font-[500] hover:text-[#FFB31A]"
-                >
-                  Gallery
-                </Link>
-                <Link
-                  href="/testimonials"
-                  className="text-gray-600 font-[500] hover:text-[#FFB31A]"
-                >
-                  Testimonials
-                </Link>
-                <Link
-                  href="/our-story"
-                  className="text-gray-600 font-[500] hover:text-[#FFB31A]"
-                >
-                  Our Story
-                </Link>
-              </nav>
-              <div className="flex flex-row gap-5">
-                <Link
-                  href="/contact-us"
-                  className="text-white bg-[#2B3AA0] px-10 py-3 rounded-lg transition-all duration-300 ease-in-out hover:bg-gradient-to-r hover:from-[#7a86d8] hover:via-[#4b57a3] hover:to-[#2B3AA0]"
-                >
-                  Contact Us
-                </Link>
-                <Link
-                  href="/"
-                  className="text-white bg-[#FFB31A] px-10 py-3 rounded-lg transition-all duration-300 ease-in-out hover:bg-gradient-to-r hover:from-[#fed687] hover:via-[#f3c15d] hover:to-[#FFB31A]"
-                >
-                  Book a Demo
-                </Link>
-              </div>
-            </div>
-          </header>
-
-          {/* Page Content */}
-          <main className="">{children}</main>
-
-          <ContactUs />
-          <Testimonials />
-          <Gallery title={"Gallery"} GridItems={GalleryGrid} />
-
-          {/* Footer */}
-          <footer className="bg-gray-800 text-white py-4 mt-10">
-            <div className="container mx-auto text-center">
-              <p>
-                &copy; {new Date().getFullYear()} Chess Academy. All rights
-                reserved.
-              </p>
-            </div>
-          </footer>
-        </div>
+            </footer>
+          </div>
+        </ThemeRegistry>
       </body>
     </html>
   );

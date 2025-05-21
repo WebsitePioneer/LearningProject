@@ -8,7 +8,7 @@ const Banner = (props) => {
       >
         <div className="absolute inset-0 z-10 bg-black opacity-[0.5]"></div>
         <div className="relative z-20 w-11/12 mx-auto py-14 pb-14">
-          <h1 className="text-5xl md:w-6/12 capitalize leading-[60px] font-[900] mt-8 text-[#FFFFFF] mb-12">
+          <h1 className="md:text-5xl text-4xl leading-[52px] md:w-6/12 capitalize md:leading-[60px] font-[900] md:mt-8 text-[#FFFFFF] mb-12">
             {props.heading}
           </h1>
           <Link
