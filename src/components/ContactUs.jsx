@@ -1,6 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import { usePathname } from "next/navigation";
+import Link from "next/link";
 
 export default function ContactUs() {
   const pathname = usePathname();
@@ -12,9 +13,12 @@ export default function ContactUs() {
             <h2 className="md:text-5xl text-4xl leading-[52px] font-bold md:leading-[60px] text-white">
               Would you like to know more about how it works?
             </h2>
-            <button className="md:mt-6 mt-2 w-fit text-white bg-[#FFB31A] px-8 py-3 rounded-lg transition-all duration-[3000ms] ease-in-out hover:bg-gradient-to-r hover:from-[#fed687] hover:via-[#f3c15d] hover:to-[#FFB31A]">
+            <Link
+              href="/contact-us"
+              className="md:mt-6 mt-2 w-fit text-white bg-[#FFB31A] px-8 py-3 rounded-lg transition-all duration-[3000ms] ease-in-out hover:bg-gradient-to-r hover:from-[#fed687] hover:via-[#f3c15d] hover:to-[#FFB31A]"
+            >
               Get in touch with us
-            </button>
+            </Link>
           </div>
 
           <div className="relative md:w-[50%] w-full">

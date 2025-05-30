@@ -12,7 +12,7 @@ const Banner = (props) => {
             {props.heading}
           </h1>
           <Link
-            href={props.link}
+            href="/contact-us"
             className="text-white bg-[#2B3AA0] px-10 py-3 rounded-lg transition-all duration-[3000ms] ease-in-out hover:bg-gradient-to-r hover:from-[#7a86d8] hover:via-[#4b57a3] hover:to-[#2B3AA0]"
           >
             {props.buttonText ? props.buttonText : "Book a Demo"}
