@@ -2,7 +2,7 @@
 import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import Banner from "@/components/ui/Banner";
-import { Form, Input, Select, Button, Row, Col, message } from "antd";
+import { Form, Input, Select, Row, Col, message } from "antd";
 
 const { TextArea } = Input;
 

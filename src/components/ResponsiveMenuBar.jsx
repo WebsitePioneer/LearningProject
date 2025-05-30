@@ -20,7 +20,7 @@ import { usePathname } from "next/navigation";
 
 const menuItems = [
   { label: "Courses", href: "/curriculam" },
-  { label: "Registration", href: "/#" },
+  { label: "Registration", href: "/registration" },
   { label: "Tournaments", href: "/tournaments" },
   { label: "Gallery", href: "/gallery" },
   { label: "Blogs", href: "/#" },
@@ -222,6 +222,7 @@ export default function ResponsiveMenuBar() {
           <Button
             fullWidth
             variant="contained"
+            onClick={toggleDrawer(false)}
             sx={{
               my: 1,
               backgroundColor: "#FFB31A",
@@ -235,7 +236,7 @@ export default function ResponsiveMenuBar() {
           <Button
             fullWidth
             variant="contained"
-            href="/"
+            onClick={toggleDrawer(false)}
             sx={{
               backgroundColor: "#2B3AA0",
               "&:hover": {
@@ -243,7 +244,7 @@ export default function ResponsiveMenuBar() {
               },
             }}
           >
-            Log in
+            <Link href="/"> Log in</Link>
           </Button>
         </Box>
       </Drawer>
