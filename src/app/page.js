@@ -111,13 +111,19 @@ export default function Home() {
                 repeat: Infinity, // repeat forever
                 repeatDelay: 1, // delay between repeats
               }}
-              className="p-[4px] border-4 border-[#FFB31A] inline-block absolute rounded-tr-[100px] rounded-bl-[100px] top-[-160px] left-[0px]"
             >
-              <img
-                src="images/head-coach.jpeg"
-                alt="Framed"
-                className="h-[450px] w-[280px] rounded-tr-[95px] object-cover rounded-bl-[95px]"
-              />
+              <div className="p-[4px] border-4 border-[#FFB31A] inline-block absolute rounded-tr-[100px] rounded-bl-[100px] top-[-160px] left-[0px]">
+                <img
+                  src="images/head-coach.jpeg"
+                  alt="Framed"
+                  className="h-[450px] w-[280px] rounded-tr-[95px] object-cover rounded-bl-[95px]"
+                />
+              </div>
+              <div className="absolute bottom-[-395px] left-[11%] flex flex-col items-center">
+                <p className="text-[24px] font-bold ">Krishna Thapa</p>
+                <p className="text-[16px]">Head Coach</p>
+                <p className="text-[16px]">(FIDE Rating 1900)</p>
+              </div>
             </motion.div>
             <motion.div
               animate={{
@@ -129,13 +135,19 @@ export default function Home() {
                 repeat: Infinity, // repeat forever
                 repeatDelay: 1, // delay between repeats
               }}
-              className="p-[4px] border-4 border-[#FFB31A] inline-block absolute rounded-tr-[100px] rounded-bl-[100px] top-[50px] right-[20px]"
             >
-              <img
-                src="images/Chiranth .jpeg"
-                alt="Framed"
-                className="h-[450px] w-[280px] rounded-tr-[95px] object-cover object-center rounded-bl-[95px]"
-              />
+              <div className="absolute top-[-45px] right-[17%] flex flex-col items-center">
+                <p className="text-[24px] font-bold ">Chiranth</p>
+                <p className="text-[16px]">Senior coach</p>
+                <p className="text-[16px]">(FIDE Rating 1800)</p>
+              </div>
+              <div className="p-[4px] border-4 border-[#FFB31A] inline-block absolute rounded-tr-[100px] rounded-bl-[100px] top-[50px] right-[20px]">
+                <img
+                  src="images/Chiranth .jpeg"
+                  alt="Framed"
+                  className="h-[450px] w-[280px] rounded-tr-[95px] object-cover object-center rounded-bl-[95px]"
+                />
+              </div>
             </motion.div>
           </div>
         </div>
