@@ -1,5 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
+
 import {
   AppBar,
   Toolbar,
@@ -30,6 +32,11 @@ const menuItems = [
 
 function MenuContent({ mobile = false, onMenuClick }) {
   const pathname = usePathname();
+  const router = useRouter();
+
+  const handleLogin = () => {
+    router.push("/training");
+  };
   return (
     <>
       {/* Top Nav */}
@@ -119,7 +126,7 @@ function MenuContent({ mobile = false, onMenuClick }) {
               </Button>
               <Button
                 variant="contained"
-                href="/"
+                onClick={handleLogin}
                 sx={{
                   backgroundColor: "#2B3AA0",
                   "&:hover": {
@@ -161,6 +168,13 @@ export default function ResponsiveMenuBar() {
   const [drawerOpen, setDrawerOpen] = useState(false);
   const isMobile = useMediaQuery("(max-width:768px)");
   const [showFixedNavbar, setShowFixedNavbar] = useState(false);
+
+  const router = useRouter();
+
+  const handleLogin = () => {
+    toggleDrawer(false);
+    router.push("/training");
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -236,7 +250,7 @@ export default function ResponsiveMenuBar() {
           <Button
             fullWidth
             variant="contained"
-            onClick={toggleDrawer(false)}
+            onClick={handleLogin}
             sx={{
               backgroundColor: "#2B3AA0",
               "&:hover": {
@@ -244,7 +258,7 @@ export default function ResponsiveMenuBar() {
               },
             }}
           >
-            <Link href="/"> Log in</Link>
+            Log in
           </Button>
         </Box>
       </Drawer>
