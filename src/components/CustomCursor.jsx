@@ -4,6 +4,8 @@ import { useEffect } from "react";
 export default function CustomCursor() {
   useEffect(() => {
     if (window.innerWidth < 768) return;
+
+    // Create cursor elements
     const cursor = document.createElement("div");
     const dot = document.createElement("div");
 
@@ -22,10 +24,38 @@ export default function CustomCursor() {
 
     document.addEventListener("mousemove", move);
 
+    const checkIframeEvents = () => {
+      const iframe = document.querySelector("iframe");
+
+      if (!iframe) return;
+
+      // Remove cursor when mouse enters iframe
+      iframe.addEventListener("mouseover", () => {
+        if (cursor.parentNode) cursor.remove();
+        if (dot.parentNode) dot.remove();
+      });
+
+      // Re-add cursor when mouse exits iframe
+      iframe.addEventListener("mouseout", () => {
+        if (!document.body.contains(cursor)) document.body.appendChild(cursor);
+        if (!document.body.contains(dot)) document.body.appendChild(dot);
+      });
+    };
+
+    // Wait for iframe to be mounted
+    setTimeout(checkIframeEvents, 500); // Delay to ensure iframe loads
+
     return () => {
       document.removeEventListener("mousemove", move);
-      document.body.removeChild(cursor);
-      document.body.removeChild(dot);
+      if (cursor.parentNode) cursor.remove();
+      if (dot.parentNode) dot.remove();
+
+      const iframe = document.querySelector("iframe");
+      if (iframe) {
+        checkIframeEvents();
+        iframe.removeEventListener("mouseover", () => {});
+        iframe.removeEventListener("mouseout", () => {});
+      }
     };
   }, []);
 

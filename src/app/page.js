@@ -9,7 +9,7 @@ export default function Home() {
       <section className="section">
         <div
           className="relative md:py-30 py-14 max-md:pb-20 md:px-20 px-4 bg-cover bg-center md:w-11/12 w-full mx-auto clip-diagonal"
-          style={{ backgroundImage: "url('/images/indian-img-four.jpg')" }}
+          style={{ backgroundImage: "url('/images/home-banner-two.jpg')" }}
         >
           {/* Overlay */}
           <div className="absolute inset-0 bg-black opacity-30 z-0 md:rounded-xl" />
@@ -23,12 +23,12 @@ export default function Home() {
               <br className="max-md:hidden" />
               one game at a time
             </h1>
-            <Link
+            {/* <Link
               href="/contact-us"
               className=" text-white bg-[#2B3AA0] px-10 py-3 rounded-lg transition-all duration-[3000ms] ease-in-out hover:bg-gradient-to-r hover:from-[#7a86d8] hover:via-[#4b57a3] hover:to-[#2B3AA0]"
             >
               Book a Demo
-            </Link>
+            </Link> */}
           </div>
         </div>
       </section>
@@ -37,14 +37,14 @@ export default function Home() {
       <section className="w-11/12 mx-auto flex md:flex-row-reverse flex-col-reverse  gap-12 mt-20">
         <div className="md:w-[50%] w-full flex flex-col gap-4 max-md:-mt-2">
           <h2 className="text-5xl font-bold text-[#FFB31A] max-md:hidden">
-            At Thinq Chess
+            At ThinQ Chess
           </h2>
           <p className="text-[18px]">
             We believe chess is more than a game—it's a way to shape minds. Our
-            courses are designed for children aged 5 to 15, helping build focus,
-            strategy, and confidence from the board to real life. Every class,
-            every move, and every tournament is designed to sharpen their
-            thinking while keeping the experience fun and engaging.
+            courses are designed for children aged 5+ years onwards, helping
+            build focus, strategy, and confidence from the board to real life.
+            Every class, every move, and every tournament is designed to sharpen
+            their thinking while keeping the experience fun and engaging.
           </p>
           <p className="text-[18px]">
             We’re transparent with parents, focused on progress, and always
@@ -53,7 +53,7 @@ export default function Home() {
         </div>
         <div className="md:w-[50%] w-full">
           <h2 className="text-4xl font-bold text-[#FFB31A] md:hidden mb-8">
-            At Thinq Chess
+            At ThinQ Chess
           </h2>
           <div className="p-1 rounded-tl-[40px] rounded-br-[40px] border-[4px] group border-solid border-black">
             <img
@@ -70,7 +70,7 @@ export default function Home() {
         <div className="w-11/12 flex max-md:flex-col mx-auto">
           <div className="w-[50%] max-md:w-full">
             <h2 className="md:text-5xl text-4xl font-bold mt-4">
-              Why Choose Thinq Chess
+              Why Choose ThinQ Chess
             </h2>
             <div className="md:hidden mt-10 p-[4px] border-4 border-[#FFB31A] inline-block rounded-tr-[100px] rounded-bl-[100px]">
               <img
@@ -119,10 +119,9 @@ export default function Home() {
                   className="h-[450px] w-[280px] rounded-tr-[95px] object-cover rounded-bl-[95px]"
                 />
               </div>
-              <div className="absolute bottom-[-395px] left-[11%] flex flex-col items-center">
+              <div className="absolute bottom-[-375px] left-[8%] flex flex-col items-center">
                 <p className="text-[24px] font-bold ">Krishna Thapa</p>
-                <p className="text-[16px]">Head Coach</p>
-                <p className="text-[16px]">(FIDE Rating 1900)</p>
+                <p className="text-[16px]">Candidate Master, Head Coach</p>
               </div>
             </motion.div>
             <motion.div
@@ -137,9 +136,9 @@ export default function Home() {
               }}
             >
               <div className="absolute top-[-45px] right-[17%] flex flex-col items-center">
-                <p className="text-[24px] font-bold ">Chiranth</p>
+                <p className="text-[24px] font-bold ">Chiranth M</p>
                 <p className="text-[16px]">Senior coach</p>
-                <p className="text-[16px]">(FIDE Rating 1800)</p>
+                <p className="text-[16px]">(FIDE rated player)</p>
               </div>
               <div className="p-[4px] border-4 border-[#FFB31A] inline-block absolute rounded-tr-[100px] rounded-bl-[100px] top-[50px] right-[20px]">
                 <img
@@ -198,7 +197,7 @@ export default function Home() {
                 className="w-[100px] group-hover:scale-x-[-1] transition-all duration-300"
               />
               <h3 className="md:text-[20px] text-[18px] text-center mt-3">
-                Classes led by trained, child-friendly mentors
+                Classes led by trained, child-friendly trainers
               </h3>
             </div>
 
@@ -208,7 +207,17 @@ export default function Home() {
                 className="w-[100px] group-hover:scale-x-[-1] transition-all duration-300"
               />
               <h3 className="md:text-[20px] text-[18px] text-center mt-3">
-                Quick student registration is available
+                Flexible schedules
+              </h3>
+            </div>
+
+            <div className="flex flex-col group items-center shadow-md px-4 py-4 rounded-[16px] hover:scale-[102%] transition-all duration-300">
+              <img
+                src="images/online-offline-coach.png"
+                className="w-[100px] group-hover:scale-x-[-1] transition-all duration-300"
+              />
+              <h3 className="md:text-[20px] text-[18px] text-center mt-3">
+                Online and Offline Coaching Available
               </h3>
             </div>
           </div>

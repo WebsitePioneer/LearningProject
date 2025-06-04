@@ -6,7 +6,9 @@ import Link from "next/link";
 export default function ContactUs() {
   const pathname = usePathname();
   return (
-    pathname !== "/contact-us" && (
+    pathname !== "/contact-us" ||
+    pathname !== "/privacy-policy" ||
+    (pathname !== "/terms-and-conditions" && (
       <section className="w-full my-20">
         <div className="bg-[#2B3AA0] md:py-16 py-12 px-8 rounded-tl-[60px] rounded-br-[60px] w-11/12 mx-auto flex max-md:flex-col-reverse gap-12">
           <div className="md:w-[50%] w-full flex flex-col gap-4 max-md:mt-24">
@@ -36,13 +38,13 @@ export default function ContactUs() {
               className="md:w-[90%] w-full p-[4px] group border-4 border-[#FFB31A] inline-block absolute rounded-tl-[40px] rounded-br-[40px] top-[-120px] left-[2%]"
             >
               <img
-                src="images/indian-img-three.jpg"
+                src="images/contact-section.jpeg"
                 className="rounded-tl-[35px] group-hover:scale-[105%] transition-all duration-300 rounded-br-[35px]"
               />
             </motion.div>
           </div>
         </div>
       </section>
-    )
+    ))
   );
 }

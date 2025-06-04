@@ -2,11 +2,10 @@ import Banner from "@/components/ui/Banner";
 
 const Tournaments = () => {
   const Online_Sessions = [
-    "Specialized attention",
-    "Customizable scheduling",
-    "Personalized study plan",
-    "Intensive training",
-    "Teaching pace tailored to the child’s understanding",
+    "State/National",
+    "International Tournaments",
+    "Rated Tournaments",
+    "Non-Rated Tournaments",
   ];
   return (
     <>
@@ -33,8 +32,8 @@ const Tournaments = () => {
             learn how to handle both wins and losses with grace
           </p>
           <p className="text-[18px]">
-            These events are open to students from other academies too, helping
-            build a broader community of young players.
+            We periodically organize tournaments to give our students the
+            required practice and exposure to participate in:
           </p>
 
           {/* List */}
@@ -59,9 +58,9 @@ const Tournaments = () => {
         <div className="md:w-[50%] max-md:hidden w-full">
           <div className="p-1">
             <img
-              src="/images/indian-img-two.jpg"
+              src="/images/chess-tournament.webp"
               alt="Chessboard"
-              className="w-full max-h-[500px] object-cover object-center rounded-tl-[0px] rounded-br-[120px] "
+              className="w-full min-h-[450px] object-cover object-center rounded-tl-[0px] rounded-br-[120px] "
             />
           </div>
         </div>

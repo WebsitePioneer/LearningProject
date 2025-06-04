@@ -11,12 +11,12 @@ const Banner = (props) => {
           <h1 className="md:text-5xl text-4xl leading-[52px] md:w-6/12 capitalize md:leading-[60px] font-[900] md:mt-8 text-[#FFFFFF] mb-12">
             {props.heading}
           </h1>
-          <Link
+          {/* <Link
             href="/contact-us"
             className="text-white bg-[#2B3AA0] px-10 py-3 rounded-lg transition-all duration-[3000ms] ease-in-out hover:bg-gradient-to-r hover:from-[#7a86d8] hover:via-[#4b57a3] hover:to-[#2B3AA0]"
           >
             {props.buttonText ? props.buttonText : "Book a Demo"}
-          </Link>
+          </Link> */}
         </div>
       </section>
     </>
