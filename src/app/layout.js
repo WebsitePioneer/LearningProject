@@ -8,6 +8,7 @@ import Gallery from "@/components/Gallery";
 import ResponsiveMenuBar from "@/components/ResponsiveMenuBar";
 import ClientOnly from "@/components/ClientOnly";
 import ThemeRegistry from "@/components/ThemeRegistry";
+import Link from "next/link";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -65,18 +66,17 @@ export default function RootLayout({ children }) {
             <main className="">{children}</main>
 
             <ContactUs />
-            <Testimonials />
-            <Gallery title={"Gallery"} GridItems={GalleryGrid} />
+            {/* <Testimonials /> */}
+            {/* <Gallery title={"Gallery"} GridItems={GalleryGrid} /> */}
 
             {/* Footer */}
             <footer className="bg-gray-800 text-white py-4 mt-10">
-              <div className="container mx-auto text-center">
+              <div className="container mx-auto flex items-center justify-between">
+                <Link href="/privacy-policy">Privacy Policy</Link>
                 <ClientOnly>
-                  <p>
-                    &copy; {new Date().getFullYear()} Chess Academy. All rights
-                    reserved.
-                  </p>
+                  <p>&copy; Copyright ThinQ Chess {new Date().getFullYear()}</p>
                 </ClientOnly>
+                <Link href="/terms-and-conditions">Terms & Conditions</Link>
               </div>
             </footer>
           </div>

@@ -24,7 +24,7 @@ const menuItems = [
   { label: "Courses", href: "/curriculam" },
   { label: "Registration", href: "/registration" },
   { label: "Tournaments", href: "/tournaments" },
-  { label: "Gallery", href: "/gallery" },
+  // { label: "Gallery", href: "/gallery" },
   { label: "Blogs", href: "/#" },
   { label: "Career", href: "/#" },
   { label: "About us", href: "/our-story" },
@@ -49,7 +49,7 @@ function MenuContent({ mobile = false, onMenuClick }) {
           </p>
           <p className="md:text-[14px] text-[10px] text-white">
             <a href="tel:+91 9876543210">
-              <span className="font-bold">Ph:</span> +91 9876543210
+              <span className="font-bold">Ph:</span> +91 7975820187
             </a>
           </p>
           <div className="flex gap-3">
@@ -59,12 +59,12 @@ function MenuContent({ mobile = false, onMenuClick }) {
             <a href="#">
               <img src="images/instagram.png" className="w-[16px]" />
             </a>
-            <a href="#">
+            {/* <a href="#">
               <img src="images/twitter.png" className="w-[16px]" />
             </a>
             <a href="#">
               <img src="images/youtube.png" className="w-[16px]" />
-            </a>
+            </a> */}
           </div>
         </div>
       </header>
@@ -164,10 +164,10 @@ function FixedNavbar({ isMobile, onMenuClick }) {
   );
 }
 
+// FIXED NAVBAR
 export default function ResponsiveMenuBar() {
   const [drawerOpen, setDrawerOpen] = useState(false);
   const isMobile = useMediaQuery("(max-width:768px)");
-  const [showFixedNavbar, setShowFixedNavbar] = useState(false);
 
   const router = useRouter();
 
@@ -176,38 +176,16 @@ export default function ResponsiveMenuBar() {
     router.push("/training");
   };
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setShowFixedNavbar(window.scrollY > 300);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
   const toggleDrawer = (open) => () => setDrawerOpen(open);
 
   const pathname = usePathname();
 
   return (
     <>
-      {/* Default sticky navbar */}
-      <Box
-        sx={{
-          position: "relative",
-          zIndex: showFixedNavbar ? 0 : 1000,
-          opacity: showFixedNavbar ? 0 : 1,
-          transition: "opacity 0.3s ease",
-        }}
-      >
-        <MenuContent mobile={isMobile} onMenuClick={toggleDrawer(true)} />
-      </Box>
+      <MenuContent mobile={isMobile} onMenuClick={toggleDrawer(true)} />
 
       {/* Fixed Navbar on scroll */}
-      <Slide appear={false} direction="down" in={showFixedNavbar}>
-        <div>
-          <FixedNavbar isMobile={isMobile} onMenuClick={toggleDrawer(true)} />
-        </div>
-      </Slide>
+      <FixedNavbar isMobile={isMobile} onMenuClick={toggleDrawer(true)} />
 
       {/* Mobile Drawer */}
       <Drawer anchor="right" open={drawerOpen} onClose={toggleDrawer(false)}>
@@ -265,3 +243,106 @@ export default function ResponsiveMenuBar() {
     </>
   );
 }
+
+// NAVBAR WITH ONSCROLL STICKY TO FIXED ANIMATION
+// export default function ResponsiveMenuBar() {
+//   const [drawerOpen, setDrawerOpen] = useState(false);
+//   const isMobile = useMediaQuery("(max-width:768px)");
+//   const [showFixedNavbar, setShowFixedNavbar] = useState(false);
+
+//   const router = useRouter();
+
+//   const handleLogin = () => {
+//     toggleDrawer(false);
+//     router.push("/training");
+//   };
+
+//   useEffect(() => {
+//     const handleScroll = () => {
+//       setShowFixedNavbar(window.scrollY > 300);
+//     };
+//     window.addEventListener("scroll", handleScroll);
+//     return () => window.removeEventListener("scroll", handleScroll);
+//   }, []);
+
+//   const toggleDrawer = (open) => () => setDrawerOpen(open);
+
+//   const pathname = usePathname();
+
+//   return (
+//     <>
+//       {/* Default sticky navbar */}
+//       <Box
+//         sx={{
+//           position: "relative",
+//           zIndex: showFixedNavbar ? 0 : 1000,
+//           opacity: showFixedNavbar ? 0 : 1,
+//           transition: "opacity 0.3s ease",
+//         }}
+//       >
+//       <MenuContent mobile={isMobile} onMenuClick={toggleDrawer(true)} />
+//       </Box>
+
+//       {/* Fixed Navbar on scroll */}
+//       <Slide appear={false} direction="down" in={showFixedNavbar}>
+//         <div>
+//       <FixedNavbar isMobile={isMobile} onMenuClick={toggleDrawer(true)} />
+//       </div>
+//       </Slide>
+
+//       {/* Mobile Drawer */}
+//       <Drawer anchor="right" open={drawerOpen} onClose={toggleDrawer(false)}>
+//         <Box sx={{ width: 250, p: 2 }}>
+//           <List>
+//             {menuItems.map((item, index) => (
+//               <ListItem
+//                 key={index}
+//                 component={NextLink}
+//                 href={item.href}
+//                 onClick={toggleDrawer(false)}
+//                 sx={{
+//                   color: pathname === item.href ? "#FFB31A" : "black",
+//                   fontWeight: pathname === item.href ? 700 : 500,
+//                   cursor: "pointer",
+//                   "&:hover": {
+//                     backgroundColor: "#f0f0f0",
+//                   },
+//                 }}
+//               >
+//                 <ListItemText primary={item.label} />
+//               </ListItem>
+//             ))}
+//           </List>
+
+//           <Button
+//             fullWidth
+//             variant="contained"
+//             onClick={toggleDrawer(false)}
+//             sx={{
+//               my: 1,
+//               backgroundColor: "#FFB31A",
+//               "&:hover": {
+//                 background: "linear-gradient(to right, #fed687, #FFB31A)",
+//               },
+//             }}
+//           >
+//             <Link href="/contact-us">Book a Demo</Link>
+//           </Button>
+//           <Button
+//             fullWidth
+//             variant="contained"
+//             onClick={handleLogin}
+//             sx={{
+//               backgroundColor: "#2B3AA0",
+//               "&:hover": {
+//                 background: "linear-gradient(to right, #7a86d8, #2B3AA0)",
+//               },
+//             }}
+//           >
+//             Log in
+//           </Button>
+//         </Box>
+//       </Drawer>
+//     </>
+//   );
+// }

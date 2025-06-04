@@ -44,7 +44,7 @@ const TestimonialsPage = () => {
           From practice sessions to tournaments, from first wins to lifelong
           friendships
           <br />
-          here’s a look into the world of Thinq Chess.
+          here’s a look into the world of Thin@ Chess.
         </h4>
 
         <div className="relative overflow-visible mt-8 px-5">

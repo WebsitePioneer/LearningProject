@@ -19,7 +19,7 @@ const OurStory = () => {
             className="md:hidden w-full max-h-[300px] mt-5 mb-3 object-cover object-center rounded-br-[60px] "
           />
           <p className="text-[18px]">
-            Thinq Chess began with its founder, who saw more than
+            ThinQ Chess began with its founder, who saw more than
             black-and-white squares. They saw a way to help children build
             confidence, resilience, and the ability to think through every
             challenge, on the board and beyond.
