@@ -4,6 +4,7 @@ import emailjs from "@emailjs/browser";
 import Banner from "@/components/ui/Banner";
 import { Form, Input, Select, Button, Row, Col, message } from "antd";
 import MultiStepForm from "@/components/MultiStepForm";
+import MultiStepFormTwo from "@/components/MultiStepFormTwo";
 
 const { TextArea } = Input;
 
@@ -70,6 +71,13 @@ const RegistrationPage = () => {
           </div>
         </div>
       </section>
+
+      {/* <section className="w-11/12 mx-auto">
+        <div className="w-[50%]">
+          <MultiStepFormTwo />
+        </div>
+      </section> */}
+      <div></div>
     </>
   );
 };

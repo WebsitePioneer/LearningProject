@@ -18,7 +18,7 @@ const Tournaments = () => {
       <section className="w-11/12 mx-auto flex md:flex-row flex-col gap-12 md:mt-28 mt-14 mb-12 md:mb-20">
         <div className="md:w-[50%] w-full flex flex-col gap-4">
           <h2 className="md:text-5xl text-4xl leading-[52px] font-bold text-[#2B3AA0] md:leading-[60px]">
-            Tournaments of ThinqChess
+            Tournaments of ThinQ Chess
           </h2>
 
           <img
