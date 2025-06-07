@@ -3,6 +3,9 @@ import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import Banner from "@/components/ui/Banner";
 import { Form, Input, Select, Row, Col, message } from "antd";
+import PhoneInput from "react-phone-input-2";
+import "react-phone-input-2/lib/style.css";
+import RegistrationForm from "@/components/TestingFom";
 
 const { TextArea } = Input;
 
@@ -18,12 +21,14 @@ const ContactUs = () => {
       parent_name: values.parentName,
       child_name: values.childName,
       age: values.Age,
-      location: values.location,
-      contact_number: values.contactNumber,
+      contact_number: `+${values.phone}`,
       email: values.email,
-      program_level: values.programLevel,
-      message: values.message || "",
+      state: values.state,
+      country: values.country,
     };
+
+    console.log("values", values);
+    console.log("templateParams", templateParams);
 
     emailjs
       .send(
@@ -102,7 +107,7 @@ const ContactUs = () => {
         </div>
       </section>
 
-      <section className="w-11/12 flex md:flex-row flex-col md:gap-16 gap-10 mx-auto my-10 md:my-28">
+      <section className="w-11/12 flex md:flex-row flex-col md:gap-16 gap-10 mx-auto my-10 md:my-28 md:mb-10">
         <div className="md:w-[50%] w-full">
           <img src="/images/contact-img.png" className="w-full rounded-lg" />
         </div>
@@ -145,80 +150,75 @@ const ContactUs = () => {
                 </Col>
               </Row>
 
-              {/* Age and location */}
-              <Row gutter={16}>
-                <Col span={12}>
-                  <Form.Item
-                    name="Age"
-                    rules={[
-                      {
-                        required: true,
-                        message: "Please enter contact number",
-                      },
-                    ]}
-                  >
-                    <Input placeholder="Age" />
-                  </Form.Item>
-                </Col>
-                <Col span={12}>
-                  <Form.Item
-                    name="location"
-                    rules={[
-                      { required: true, message: "Please enter your location" },
-                    ]}
-                  >
-                    <Input placeholder="Location" />
-                  </Form.Item>
-                </Col>
-              </Row>
+              {/* Age and Contact number */}
+              <div>
+                <Form.Item
+                  name="Age"
+                  rules={[
+                    {
+                      required: true,
+                      message: "Please enter contact number",
+                    },
+                  ]}
+                >
+                  <Input placeholder="Age in Years" />
+                </Form.Item>
+                <Form.Item
+                  name="phone"
+                  label="Phone Number"
+                  rules={[
+                    {
+                      required: true,
+                      message: "Please enter your phone number",
+                    },
+                  ]}
+                >
+                  <PhoneInput
+                    country={"in"} // default country
+                    inputStyle={{ width: "100%" }}
+                    enableSearch={true}
+                    inputProps={{
+                      name: "phone",
+                      required: true,
+                    }}
+                    onChange={(value, country, e, formattedValue) =>
+                      console.log(value, formattedValue)
+                    }
+                  />
+                </Form.Item>
+              </div>
 
-              {/* Contact number and email id */}
-              <Row gutter={16}>
-                <Col span={12}>
-                  <Form.Item
-                    name="contactNumber"
-                    rules={[
-                      {
-                        required: true,
-                        message: "Please enter contact number",
-                      },
-                    ]}
-                  >
-                    <Input placeholder="Contact Number" />
-                  </Form.Item>
-                </Col>
-                <Col span={12}>
-                  <Form.Item
-                    name="email"
-                    rules={[
-                      {
-                        required: true,
-                        type: "email",
-                        message: "Enter a valid email",
-                      },
-                    ]}
-                  >
-                    <Input placeholder="Email Address" />
-                  </Form.Item>
-                </Col>
-              </Row>
-
-              <Form.Item
-                name="programLevel"
-                rules={[{ required: true, message: "Select a program level" }]}
-              >
-                <Select placeholder="Preferred program level">
-                  <Select.Option value="beginner">Beginner</Select.Option>
-                  <Select.Option value="intermediate">
-                    Intermediate
-                  </Select.Option>
-                  <Select.Option value="advanced">Advanced</Select.Option>
-                </Select>
-              </Form.Item>
-
-              <Form.Item name="message">
-                <TextArea placeholder="Message (optional)" rows={4} />
-              </Form.Item>
+              {/* email and location */}
+              <div>
+                <Form.Item
+                  name="email"
+                  rules={[
+                    {
+                      required: true,
+                      type: "email",
+                      message: "Enter a valid email",
+                    },
+                  ]}
+                >
+                  <Input placeholder="Email Address" />
+                </Form.Item>
+                <Form.Item
+                  name="state"
+                  rules={[
+                    { required: true, message: "Please enter your State" },
+                  ]}
+                >
+                  <Input placeholder="State" />
+                </Form.Item>
+                <Form.Item
+                  name="country"
+                  rules={[
+                    { required: true, message: "Please enter your country" },
+                  ]}
+                >
+                  <Input placeholder="Country" />
+                </Form.Item>
+              </div>
 
               <Form.Item>
                 <button
@@ -228,7 +228,7 @@ const ContactUs = () => {
                   type="submit"
                   disabled={isSubmitting}
                 >
-                  Send Message
+                  Get in touch with us
                 </button>
               </Form.Item>
             </Form>

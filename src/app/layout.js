@@ -1,5 +1,6 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import "react-phone-input-2/lib/style.css";
 import React from "react";
 import CustomCursor from "@/components/CustomCursor";
 import ContactUs from "@/components/ContactUs";

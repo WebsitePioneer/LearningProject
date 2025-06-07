@@ -1,14 +1,22 @@
 "use client";
 import { motion } from "framer-motion";
 import { usePathname } from "next/navigation";
+import React, { useMemo } from "react";
 import Link from "next/link";
 
 export default function ContactUs() {
   const pathname = usePathname();
+  const Validation = useMemo(() => {
+    const hiddenRoutes = [
+      "/contact-us",
+      "/privacy-policy",
+      "/terms-and-conditions",
+    ];
+    return !hiddenRoutes.includes(pathname);
+  }, []);
+
   return (
-    pathname !== "/contact-us" ||
-    pathname !== "/privacy-policy" ||
-    (pathname !== "/terms-and-conditions" && (
+    Validation && (
       <section className="w-full my-20">
         <div className="bg-[#2B3AA0] md:py-16 py-12 px-8 rounded-tl-[60px] rounded-br-[60px] w-11/12 mx-auto flex max-md:flex-col-reverse gap-12">
           <div className="md:w-[50%] w-full flex flex-col gap-4 max-md:mt-24">
@@ -45,6 +53,6 @@ export default function ContactUs() {
           </div>
         </div>
       </section>
-    ))
+    )
   );
 }

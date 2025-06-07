@@ -122,7 +122,7 @@ function MenuContent({ mobile = false, onMenuClick }) {
                   },
                 }}
               >
-                <Link href="/contact-us">Book a Demo</Link>
+                <Link href="/book-a-demo">Book a Demo</Link>
               </Button>
               <Button
                 variant="contained"
@@ -223,7 +223,7 @@ export default function ResponsiveMenuBar() {
               },
             }}
           >
-            <Link href="/contact-us">Book a Demo</Link>
+            <Link href="/book-a-demo">Book a Demo</Link>
           </Button>
           <Button
             fullWidth
