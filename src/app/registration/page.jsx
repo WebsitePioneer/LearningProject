@@ -77,7 +77,6 @@ const RegistrationPage = () => {
           <MultiStepFormTwo />
         </div>
       </section> */}
-      <div></div>
     </>
   );
 };

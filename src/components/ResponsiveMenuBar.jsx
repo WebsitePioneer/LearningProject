@@ -25,8 +25,8 @@ const menuItems = [
   { label: "Registration", href: "/registration" },
   { label: "Tournaments", href: "/tournaments" },
   // { label: "Gallery", href: "/gallery" },
-  { label: "Blogs", href: "/#" },
-  { label: "Career", href: "/#" },
+  // { label: "Blogs", href: "/#" },
+  // { label: "Career", href: "/#" },
   { label: "About us", href: "/our-story" },
 ];
 
