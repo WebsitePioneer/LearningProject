@@ -13,7 +13,7 @@ export default function ContactUs() {
       "/terms-and-conditions",
     ];
     return !hiddenRoutes.includes(pathname);
-  }, []);
+  }, [pathname]);
 
   return (
     Validation && (

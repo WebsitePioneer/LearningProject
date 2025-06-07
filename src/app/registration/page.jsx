@@ -72,11 +72,11 @@ const RegistrationPage = () => {
         </div>
       </section>
 
-      {/* <section className="w-11/12 mx-auto">
+      <section className="w-11/12 mx-auto">
         <div className="w-[50%]">
           <MultiStepFormTwo />
         </div>
-      </section> */}
+      </section>
     </>
   );
 };

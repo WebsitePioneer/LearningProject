@@ -103,13 +103,13 @@ const MultiStepFormTwo = () => {
     if (
       (step === 2 &&
         formData.fatherFirstName !== "" &&
-        fatherLastName &&
-        fatherEmail &&
-        fatherPhone) ||
+        formData.fatherLastName &&
+        formData.fatherEmail &&
+        formData.fatherPhone) ||
       (formData.motherFirstName !== "" &&
-        motherLastName &&
-        motherEmail &&
-        motherPhone)
+        formData.motherLastName &&
+        formData.motherEmail &&
+        formData.motherPhone)
     ) {
       return true;
     }
@@ -136,7 +136,9 @@ const MultiStepFormTwo = () => {
   };
 
   const nextStep = () => {
+    debugger;
     setErrorMessage("");
+    console.log("next step called");
     const result = validationCheck();
     console.log("result", result);
 
@@ -207,7 +209,7 @@ const MultiStepFormTwo = () => {
   return (
     <div>
       <form onSubmit={handleSubmit(onSubmit)}>
-        {/* Student details */}
+        {/* STUDENT DETAILS */}
         {step === 1 && (
           <>
             <h2 className="text-xl font-bold mb-4">Student Details</h2>
@@ -330,7 +332,7 @@ const MultiStepFormTwo = () => {
           </>
         )}
 
-        {/* FATHER DETAILS */}
+        {/* PARENTS DETAILS */}
         {step === 2 && classesfor === "Child" && (
           <>
             <h2 className="text-xl font-bold">
@@ -465,42 +467,44 @@ const MultiStepFormTwo = () => {
           </>
         )}
 
+        {/* ADDRESS DETAILS */}
         {step === 3 && (
           <>
             <h2 className="text-xl font-bold">Address Details</h2>
 
-            {/* Country */}
-            <Controller
-              name="country"
-              control={control}
-              render={({ field }) => (
-                <Select
-                  {...field}
-                  options={Country.getAllCountries().map((c) => ({
-                    label: c.name,
-                    value: c.isoCode,
-                    phonecode: c.phonecode,
-                  }))}
-                  placeholder="Select a country"
-                />
-              )}
-            />
-
-            {/* Country Code autoFilled */}
-            <div className="mb-4">
-              <label className="block font-medium mb-1">Country Code</label>
+            <div className="grid grid-cols-1 grid-rows-2 md:grid-cols-2 md:grid-rows-1">
+              {/* Country */}
               <Controller
-                name="phoneCode"
+                name="country"
                 control={control}
                 render={({ field }) => (
-                  <input
+                  <Select
                     {...field}
-                    type="text"
-                    readOnly
-                    className="w-full border px-3 py-2 rounded"
+                    options={Country.getAllCountries().map((c) => ({
+                      label: c.name,
+                      value: c.isoCode,
+                      phonecode: c.phonecode,
+                    }))}
+                    placeholder="Select a country"
                   />
                 )}
               />
+
+              {/* Country Code autoFilled */}
+              <div className=" mt-4">
+                <Controller
+                  name="phoneCode"
+                  control={control}
+                  render={({ field }) => (
+                    <input
+                      {...field}
+                      type="text"
+                      readOnly
+                      className="w-full border px-3 py-2 rounded"
+                    />
+                  )}
+                />
+              </div>
             </div>
 
             {/* Address Lines */}
