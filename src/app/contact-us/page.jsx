@@ -70,10 +70,7 @@ const ContactUs = () => {
           </div>
           <div className="mt-8 flex flex-col gap-2">
             <h4 className="md:text-3xl text-2xl font-bold">
-              <a href="tel:+919876543210">+91 98765 43210</a>
-            </h4>
-            <h4 className="md:text-3xl text-2xl font-bold">
-              <a href="tel:+919876543210">+91 98765 43210</a>
+              <a href="tel:+919876543210">+91 7975820187</a>
             </h4>
           </div>
         </div>
@@ -88,9 +85,6 @@ const ContactUs = () => {
           <div className="mt-8 flex flex-col gap-2">
             <h4 className="md:text-3xl text-2xl font-bold">
               <a href="mailto:admin@thinqchess.com">admin@thinqchess.com</a>
-            </h4>
-            <h4 className="md:text-3xl text-2xl font-bold">
-              <a href="mailto:admin2@thinqchess.com">admin2@thinqchess.com</a>
             </h4>
           </div>
         </div>
