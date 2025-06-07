@@ -114,7 +114,7 @@ const ContactUs = () => {
         <div className="md:w-[50%] w-full">
           <p className="text-[#2B3AA0]">CONTACT US</p>
           <h2 className="md:mt-5 mt-2 md:text-5xl text-4xl leading-[52px] font-bold text-[#2B3AA0] md:leading-[60px]">
-            Have questions? Contact with us today
+            Contact with us today
           </h2>
           <div className="md:mt-10 mt-6">
             <Form
