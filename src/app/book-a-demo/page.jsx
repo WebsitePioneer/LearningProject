@@ -4,7 +4,7 @@ import emailjs from "@emailjs/browser";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 import Banner from "@/components/ui/Banner";
-import { Form, Input, Select, Row, Col, message } from "antd";
+import { Form, Input, Radio, Row, Col, message } from "antd";
 
 const { TextArea } = Input;
 
@@ -63,10 +63,10 @@ const BookADemo = () => {
           <img src="/images/contact-img.png" className="w-full rounded-lg" />
         </div>
         <div className="md:w-[50%] w-full">
-          <h2 className="md:mt-5 mt-2 md:text-5xl text-4xl leading-[52px] font-bold text-[#2B3AA0] md:leading-[60px]">
+          <h2 className="md:mt-0 mt-2 md:text-5xl text-4xl leading-[52px] font-bold text-[#2B3AA0] md:leading-[60px]">
             Book a Demo
           </h2>
-          <div className="md:mt-10 mt-6">
+          <div className="md:mt-6 mt-6">
             <Form
               ref={formRef}
               layout="vertical"
@@ -139,37 +139,31 @@ const BookADemo = () => {
               </Form.Item>
 
               {/* Age and Program level */}
-              <Row gutter={16}>
-                <Col span={12}>
-                  <Form.Item
-                    name="Age"
-                    rules={[
-                      {
-                        required: true,
-                        message: "Please enter contact number",
-                      },
-                    ]}
-                  >
-                    <Input placeholder="Age" />
-                  </Form.Item>
-                </Col>
-                <Col span={12}>
-                  <Form.Item
-                    name="programLevel"
-                    rules={[
-                      { required: true, message: "Select a program level" },
-                    ]}
-                  >
-                    <Select placeholder="Preferred program level">
-                      <Select.Option value="beginner">Beginner</Select.Option>
-                      <Select.Option value="intermediate">
-                        Intermediate
-                      </Select.Option>
-                      <Select.Option value="advanced">Advanced</Select.Option>
-                    </Select>
-                  </Form.Item>
-                </Col>
-              </Row>
+              <div>
+                <Form.Item
+                  name="Age"
+                  rules={[
+                    {
+                      required: true,
+                      message: "Please enter contact number",
+                    },
+                  ]}
+                >
+                  <Input placeholder="Age" />
+                </Form.Item>
+                <Form.Item
+                  name="programLevel"
+                  label="Have you taken formal chess training in the past?"
+                  rules={[
+                    { required: true, message: "Select a program level" },
+                  ]}
+                >
+                  <Radio.Group>
+                    <Radio value="male">Yes</Radio>
+                    <Radio value="female">No</Radio>
+                  </Radio.Group>
+                </Form.Item>
+              </div>
 
               {/* State and Country */}
               <Row gutter={16}>

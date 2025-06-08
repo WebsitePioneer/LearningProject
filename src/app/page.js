@@ -121,7 +121,7 @@ export default function Home() {
               </div>
               <div className="absolute bottom-[-375px] left-[8%] flex flex-col items-center">
                 <p className="text-[24px] font-bold ">Krishna Thapa</p>
-                <p className="text-[16px]">Candidate Master, Head Coach</p>
+                <p className="text-[16px]">Candidate Master</p>
               </div>
             </motion.div>
             <motion.div
@@ -137,8 +137,7 @@ export default function Home() {
             >
               <div className="absolute top-[-45px] right-[17%] flex flex-col items-center">
                 <p className="text-[24px] font-bold ">Chiranth M</p>
-                <p className="text-[16px]">Senior coach</p>
-                <p className="text-[16px]">(FIDE rated player)</p>
+                <p className="text-[16px]">FIDE rated player</p>
               </div>
               <div className="p-[4px] border-4 border-[#FFB31A] inline-block absolute rounded-tr-[100px] rounded-bl-[100px] top-[50px] right-[20px]">
                 <img
