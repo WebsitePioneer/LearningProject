@@ -53,11 +53,11 @@ export default function Testimonials() {
               <div className="flex flex-col items-center md:gap-10 gap-4 md:my-4 py-4 md:px-24 px-6">
                 {/* Ratings */}
                 <div className=" w-fit flex items-center justify-center gap-2">
-                  <img src="images/star.png" className=" w-[20px]" />
-                  <img src="images/star.png" className=" w-[20px]" />
-                  <img src="images/star.png" className=" w-[20px]" />
-                  <img src="images/star.png" className=" w-[20px]" />
-                  <img src="images/star.png" className=" w-[20px]" />
+                  <img src="/images/star.png" className=" w-[20px]" />
+                  <img src="/images/star.png" className=" w-[20px]" />
+                  <img src="/images/star.png" className=" w-[20px]" />
+                  <img src="/images/star.png" className=" w-[20px]" />
+                  <img src="/images/star.png" className=" w-[20px]" />
                 </div>
 
                 {/* Review Content */}
@@ -72,7 +72,7 @@ export default function Testimonials() {
                 {/* User or client info */}
                 <div className="flex items-center gap-3">
                   <img
-                    src="images/contact-one.jpg"
+                    src="/images/contact-one.jpg"
                     className="md:w-[80px] md:h-[80px] w-[60px] h-[60px] object-cover rounded-[50%] border-[#FFB31A] border-[3px] border-solid p-1"
                   />
                   <div>
@@ -89,10 +89,10 @@ export default function Testimonials() {
               <div className="flex flex-col items-center md:gap-10 gap-4 md:my-4 py-4 md:px-24 px-6">
                 {/* Ratings */}
                 <div className=" w-fit flex items-center justify-center gap-2">
-                  <img src="images/star.png" className=" w-[20px]" />
-                  <img src="images/star.png" className=" w-[20px]" />
-                  <img src="images/star.png" className=" w-[20px]" />
-                  <img src="images/star.png" className=" w-[20px]" />
+                  <img src="/images/star.png" className=" w-[20px]" />
+                  <img src="/images/star.png" className=" w-[20px]" />
+                  <img src="/images/star.png" className=" w-[20px]" />
+                  <img src="/images/star.png" className=" w-[20px]" />
                 </div>
 
                 {/* Review Content */}
@@ -107,7 +107,7 @@ export default function Testimonials() {
                 {/* User or client info */}
                 <div className="flex items-center gap-3">
                   <img
-                    src="images/contact-one.jpg"
+                    src="/images/contact-one.jpg"
                     className="md:w-[80px] md:h-[80px] w-[60px] h-[60px] object-cover rounded-[50%] border-[#FFB31A] border-[3px] border-solid p-1"
                   />
                   <div>
@@ -124,11 +124,11 @@ export default function Testimonials() {
               <div className="flex flex-col items-center md:gap-10 gap-4 md:my-4 py-4 md:px-24 px-6">
                 {/* Ratings */}
                 <div className=" w-fit flex items-center justify-center gap-2">
-                  <img src="images/star.png" className=" w-[20px]" />
-                  <img src="images/star.png" className=" w-[20px]" />
-                  <img src="images/star.png" className=" w-[20px]" />
-                  <img src="images/star.png" className=" w-[20px]" />
-                  <img src="images/star.png" className=" w-[20px]" />
+                  <img src="/images/star.png" className=" w-[20px]" />
+                  <img src="/images/star.png" className=" w-[20px]" />
+                  <img src="/images/star.png" className=" w-[20px]" />
+                  <img src="/images/star.png" className=" w-[20px]" />
+                  <img src="/images/star.png" className=" w-[20px]" />
                 </div>
 
                 {/* Review Content */}
@@ -143,7 +143,7 @@ export default function Testimonials() {
                 {/* User or client info */}
                 <div className="flex items-center gap-3">
                   <img
-                    src="images/contact-one.jpg"
+                    src="/images/contact-one.jpg"
                     className="md:w-[80px] md:h-[80px] w-[60px] h-[60px] object-cover rounded-[50%] border-[#FFB31A] border-[3px] border-solid p-1"
                   />
                   <div>

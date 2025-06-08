@@ -74,7 +74,7 @@ export default function Home() {
             </h2>
             <div className="md:hidden mt-10 p-[4px] border-4 border-[#FFB31A] inline-block rounded-tr-[100px] rounded-bl-[100px]">
               <img
-                src="images/indian-img-three.jpg"
+                src="/images/indian-img-three.jpg"
                 alt="Framed"
                 className="w-full rounded-tr-[95px] object-cover rounded-bl-[95px] "
               />
@@ -90,7 +90,7 @@ export default function Home() {
               ].map((item, index) => (
                 <li key={index} className="flex items-start gap-2">
                   <span className="text-green-500 mt-1">
-                    <img src="images/check-mark.png" className="w-[20px]" />
+                    <img src="/images/check-mark.png" className="w-[20px]" />
                   </span>
                   <span className="text-[20px] text-black font-[400]">
                     {item}
@@ -114,7 +114,7 @@ export default function Home() {
             >
               <div className="p-[4px] border-4 border-[#FFB31A] inline-block absolute rounded-tr-[100px] rounded-bl-[100px] top-[-160px] left-[0px]">
                 <img
-                  src="images/head-coach.jpeg"
+                  src="/images/head-coach.jpeg"
                   alt="Framed"
                   className="h-[450px] w-[280px] rounded-tr-[95px] object-cover rounded-bl-[95px]"
                 />
@@ -142,7 +142,7 @@ export default function Home() {
               </div>
               <div className="p-[4px] border-4 border-[#FFB31A] inline-block absolute rounded-tr-[100px] rounded-bl-[100px] top-[50px] right-[20px]">
                 <img
-                  src="images/Chiranth .jpeg"
+                  src="/images/Chiranth .jpeg"
                   alt="Framed"
                   className="h-[450px] w-[280px] rounded-tr-[95px] object-cover object-center rounded-bl-[95px]"
                 />
@@ -161,7 +161,7 @@ export default function Home() {
           <div className="max-md:flex max-md:flex-col md:grid grid-cols-3 grid-rows-2 gap-8 md:mt-14 mt-8">
             <div className="flex flex-col group items-center shadow-md px-4 py-4 rounded-[16px] hover:scale-[102%] transition-all duration-300">
               <img
-                src="images/performance.png"
+                src="/images/performance.png"
                 className="w-[100px] group-hover:scale-x-[-1] transition-all duration-300"
               />
               <h3 className="md:text-[20px] text-[18px] text-center mt-3">
@@ -171,7 +171,7 @@ export default function Home() {
 
             <div className="flex flex-col items-center group shadow-md px-4 py-4 rounded-[16px] hover:scale-[102%] transition-all duration-300">
               <img
-                src="images/trophy.png"
+                src="/images/trophy.png"
                 className="w-[100px] group-hover:scale-x-[-1] transition-all duration-300"
               />
               <h3 className="md:text-[20px] text-[18px] text-center mt-3">
@@ -183,7 +183,7 @@ export default function Home() {
 
             <div className="flex flex-col items-center group shadow-md px-4 py-4 rounded-[16px] hover:scale-[102%] transition-all duration-300">
               <img
-                src="images/progress.png"
+                src="/images/progress.png"
                 className="w-[100px] group-hover:scale-x-[-1] transition-all duration-300"
               />
               <h3 className="md:text-[20px] text-[18px] text-center mt-3">
@@ -193,7 +193,7 @@ export default function Home() {
 
             <div className="flex flex-col items-center group shadow-md px-4 py-4 rounded-[16px] hover:scale-[102%] transition-all duration-300">
               <img
-                src="images/mentoring.png"
+                src="/images/mentoring.png"
                 className="w-[100px] group-hover:scale-x-[-1] transition-all duration-300"
               />
               <h3 className="md:text-[20px] text-[18px] text-center mt-3">
@@ -203,7 +203,7 @@ export default function Home() {
 
             <div className="flex flex-col group items-center shadow-md px-4 py-4 rounded-[16px] hover:scale-[102%] transition-all duration-300">
               <img
-                src="images/log-in.png"
+                src="/images/log-in.png"
                 className="w-[100px] group-hover:scale-x-[-1] transition-all duration-300"
               />
               <h3 className="md:text-[20px] text-[18px] text-center mt-3">
@@ -213,7 +213,7 @@ export default function Home() {
 
             <div className="flex flex-col group items-center shadow-md px-4 py-4 rounded-[16px] hover:scale-[102%] transition-all duration-300">
               <img
-                src="images/online-offline-coach.png"
+                src="/images/online-offline-coach.png"
                 className="w-[100px] group-hover:scale-x-[-1] transition-all duration-300"
               />
               <h3 className="md:text-[20px] text-[18px] text-center mt-3">

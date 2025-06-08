@@ -5,7 +5,6 @@ import Banner from "@/components/ui/Banner";
 import { Form, Input, Select, Row, Col, message } from "antd";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
-import RegistrationForm from "@/components/TestingFom";
 
 const { TextArea } = Input;
 

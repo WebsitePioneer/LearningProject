@@ -2,7 +2,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import "react-phone-input-2/lib/style.css";
 import React from "react";
-import CustomCursor from "@/components/CustomCursor";
+import CustomCursor from "@/components/ui/CustomCursor";
 import ContactUs from "@/components/ContactUs";
 import Testimonials from "@/components/Testimonials";
 import Gallery from "@/components/Gallery";
@@ -28,12 +28,12 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   const GalleryGrid = [
-    "images/indian-img-one.jpg",
-    "images/indian-img-two.jpg",
-    "images/indian-img-three.jpg",
-    "images/indian-img-four.jpg",
-    "images/indian-img-five.jpg",
-    "images/contact-one.jpg",
+    "/images/indian-img-one.jpg",
+    "/images/indian-img-two.jpg",
+    "/images/indian-img-three.jpg",
+    "/images/indian-img-four.jpg",
+    "/images/indian-img-five.jpg",
+    "/images/contact-one.jpg",
   ];
 
   return (

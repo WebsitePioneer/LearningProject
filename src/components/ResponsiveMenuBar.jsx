@@ -25,7 +25,7 @@ const menuItems = [
   { label: "Registration", href: "/registration" },
   { label: "Tournaments", href: "/tournaments" },
   // { label: "Gallery", href: "/gallery" },
-  // { label: "Blogs", href: "/#" },
+  { label: "Blogs", href: "/blogs" },
   // { label: "Career", href: "/#" },
   { label: "About us", href: "/our-story" },
 ];
@@ -54,16 +54,16 @@ function MenuContent({ mobile = false, onMenuClick }) {
           </p>
           <div className="flex gap-3">
             <a href="#">
-              <img src="images/facebook.png" className="w-[16px]" />
+              <img src="/images/facebook.png" className="w-[16px]" />
             </a>
             <a href="#">
-              <img src="images/instagram.png" className="w-[16px]" />
+              <img src="/images/instagram.png" className="w-[16px]" />
+            </a>
+            <a href="#">
+              <img src="/images/linkedin.png" className="w-[16px]" />
             </a>
             {/* <a href="#">
-              <img src="images/twitter.png" className="w-[16px]" />
-            </a>
-            <a href="#">
-              <img src="images/youtube.png" className="w-[16px]" />
+              <img src="/images/youtube.png" className="w-[16px]" />
             </a> */}
           </div>
         </div>
