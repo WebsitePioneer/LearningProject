@@ -13,7 +13,7 @@ export default function ContactUs() {
       "/terms-and-conditions",
     ];
     return !hiddenRoutes.includes(pathname);
-  }, []);
+  }, [pathname]);
 
   return (
     Validation && (
@@ -46,7 +46,7 @@ export default function ContactUs() {
               className="md:w-[90%] w-full p-[4px] group border-4 border-[#FFB31A] inline-block absolute rounded-tl-[40px] rounded-br-[40px] top-[-120px] left-[2%]"
             >
               <img
-                src="images/contact-section.jpeg"
+                src="/images/contact-section.jpeg"
                 className="rounded-tl-[35px] group-hover:scale-[105%] transition-all duration-300 rounded-br-[35px]"
               />
             </motion.div>

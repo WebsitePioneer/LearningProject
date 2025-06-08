@@ -5,7 +5,6 @@ import Banner from "@/components/ui/Banner";
 import { Form, Input, Select, Row, Col, message } from "antd";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
-import RegistrationForm from "@/components/TestingFom";
 
 const { TextArea } = Input;
 
@@ -92,7 +91,7 @@ const ContactUs = () => {
         {/* Address */}
         <div className="bg-[#f7f7f7] rounded-lg">
           <iframe
-            src="https://www.google.com/maps/embed?pb=YOUR_EMBED_URL"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3889.573648578676!2d77.57720547358713!3d12.870791217083454!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae6ab40337aa89%3A0xb961c4e87c2873cb!2sAnu%20Provisions%2C%20J%20P%20Nagar!5e0!3m2!1sen!2sin!4v1749371718290!5m2!1sen!2sin"
             className="w-full h-full rounded-lg"
             style={{ border: 0 }}
             allowFullScreen=""
@@ -126,7 +125,7 @@ const ContactUs = () => {
                       { required: true, message: "Please enter parent name" },
                     ]}
                   >
-                    <Input placeholder="Parent Name" />
+                    <Input placeholder="Parent Name*" />
                   </Form.Item>
                 </Col>
                 <Col span={12}>
@@ -139,7 +138,7 @@ const ContactUs = () => {
                       },
                     ]}
                   >
-                    <Input placeholder="Child’s Name" />
+                    <Input placeholder="Child’s Name*" />
                   </Form.Item>
                 </Col>
               </Row>
@@ -155,11 +154,10 @@ const ContactUs = () => {
                     },
                   ]}
                 >
-                  <Input placeholder="Age in Years" />
+                  <Input placeholder="Age in Years*" />
                 </Form.Item>
                 <Form.Item
                   name="phone"
-                  label="Phone Number"
                   rules={[
                     {
                       required: true,
@@ -194,7 +192,7 @@ const ContactUs = () => {
                     },
                   ]}
                 >
-                  <Input placeholder="Email Address" />
+                  <Input placeholder="Email Address*" />
                 </Form.Item>
                 <Form.Item
                   name="state"
@@ -202,7 +200,7 @@ const ContactUs = () => {
                     { required: true, message: "Please enter your State" },
                   ]}
                 >
-                  <Input placeholder="State" />
+                  <Input placeholder="State*" />
                 </Form.Item>
                 <Form.Item
                   name="country"
@@ -210,7 +208,7 @@ const ContactUs = () => {
                     { required: true, message: "Please enter your country" },
                   ]}
                 >
-                  <Input placeholder="Country" />
+                  <Input placeholder="Country*" />
                 </Form.Item>
               </div>
 

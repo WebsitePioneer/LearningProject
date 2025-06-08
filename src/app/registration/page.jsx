@@ -2,11 +2,8 @@
 import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import Banner from "@/components/ui/Banner";
-import { Form, Input, Select, Button, Row, Col, message } from "antd";
-import MultiStepForm from "@/components/MultiStepForm";
-import MultiStepFormTwo from "@/components/MultiStepFormTwo";
-
-const { TextArea } = Input;
+import { message } from "antd";
+import MultiStepFormTwo from "@/components/forms/MultiStepFormTwo";
 
 const RegistrationPage = () => {
   const formRef = useRef();
@@ -67,16 +64,10 @@ const RegistrationPage = () => {
             Book A Demo or Contact Us Today
           </h2>
           <div className="md:mt-10 mt-6">
-            <MultiStepForm />
+            <MultiStepFormTwo />
           </div>
         </div>
       </section>
-
-      {/* <section className="w-11/12 mx-auto">
-        <div className="w-[50%]">
-          <MultiStepFormTwo />
-        </div>
-      </section> */}
     </>
   );
 };

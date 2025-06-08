@@ -61,11 +61,11 @@ const TestimonialsPage = () => {
               <div className="flex flex-col items-center gap-10 my-4 py-4 px-24">
                 {/* Ratings */}
                 <div className=" w-fit flex items-center justify-center gap-2">
-                  <img src="images/star.png" className=" w-[20px]" />
-                  <img src="images/star.png" className=" w-[20px]" />
-                  <img src="images/star.png" className=" w-[20px]" />
-                  <img src="images/star.png" className=" w-[20px]" />
-                  <img src="images/star.png" className=" w-[20px]" />
+                  <img src="/images/star.png" className=" w-[20px]" />
+                  <img src="/images/star.png" className=" w-[20px]" />
+                  <img src="/images/star.png" className=" w-[20px]" />
+                  <img src="/images/star.png" className=" w-[20px]" />
+                  <img src="/images/star.png" className=" w-[20px]" />
                 </div>
 
                 {/* Review Content */}
@@ -80,7 +80,7 @@ const TestimonialsPage = () => {
                 {/* User or client info */}
                 <div className="flex items-center gap-3">
                   <img
-                    src="images/contact-one.jpg"
+                    src="/images/contact-one.jpg"
                     className="w-[80px] h-[80px] object-cover rounded-[50%] border-[#FFB31A] border-[3px] border-solid p-1"
                   />
                   <div>
@@ -97,10 +97,10 @@ const TestimonialsPage = () => {
               <div className="flex flex-col items-center gap-10 my-4 py-4 px-24">
                 {/* Ratings */}
                 <div className=" w-fit flex items-center justify-center gap-2">
-                  <img src="images/star.png" className=" w-[20px]" />
-                  <img src="images/star.png" className=" w-[20px]" />
-                  <img src="images/star.png" className=" w-[20px]" />
-                  <img src="images/star.png" className=" w-[20px]" />
+                  <img src="/images/star.png" className=" w-[20px]" />
+                  <img src="/images/star.png" className=" w-[20px]" />
+                  <img src="/images/star.png" className=" w-[20px]" />
+                  <img src="/images/star.png" className=" w-[20px]" />
                 </div>
 
                 {/* Review Content */}
@@ -115,7 +115,7 @@ const TestimonialsPage = () => {
                 {/* User or client info */}
                 <div className="flex items-center gap-3">
                   <img
-                    src="images/contact-one.jpg"
+                    src="/images/contact-one.jpg"
                     className="w-[80px] h-[80px] object-cover rounded-[50%] border-[#FFB31A] border-[3px] border-solid p-1"
                   />
                   <div>
@@ -132,11 +132,11 @@ const TestimonialsPage = () => {
               <div className="flex flex-col items-center gap-10 my-4 py-4 px-24">
                 {/* Ratings */}
                 <div className=" w-fit flex items-center justify-center gap-2">
-                  <img src="images/star.png" className=" w-[20px]" />
-                  <img src="images/star.png" className=" w-[20px]" />
-                  <img src="images/star.png" className=" w-[20px]" />
-                  <img src="images/star.png" className=" w-[20px]" />
-                  <img src="images/star.png" className=" w-[20px]" />
+                  <img src="/images/star.png" className=" w-[20px]" />
+                  <img src="/images/star.png" className=" w-[20px]" />
+                  <img src="/images/star.png" className=" w-[20px]" />
+                  <img src="/images/star.png" className=" w-[20px]" />
+                  <img src="/images/star.png" className=" w-[20px]" />
                 </div>
 
                 {/* Review Content */}
@@ -151,7 +151,7 @@ const TestimonialsPage = () => {
                 {/* User or client info */}
                 <div className="flex items-center gap-3">
                   <img
-                    src="images/contact-one.jpg"
+                    src="/images/contact-one.jpg"
                     className="w-[80px] h-[80px] object-cover rounded-[50%] border-[#FFB31A] border-[3px] border-solid p-1"
                   />
                   <div>

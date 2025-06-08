@@ -2,12 +2,12 @@ import Banner from "@/components/ui/Banner";
 
 const GalleryPage = () => {
   const GalleryGrid = [
-    "images/indian-img-one.jpg",
-    "images/indian-img-two.jpg",
-    "images/indian-img-three.jpg",
-    "images/indian-img-four.jpg",
-    "images/indian-img-five.jpg",
-    "images/contact-one.jpg",
+    "/images/indian-img-one.jpg",
+    "/images/indian-img-two.jpg",
+    "/images/indian-img-three.jpg",
+    "/images/indian-img-four.jpg",
+    "/images/indian-img-five.jpg",
+    "/images/contact-one.jpg",
   ];
   return (
     <>

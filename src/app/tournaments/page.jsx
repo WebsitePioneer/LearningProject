@@ -2,10 +2,9 @@ import Banner from "@/components/ui/Banner";
 
 const Tournaments = () => {
   const Online_Sessions = [
-    "State/National",
-    "International Tournaments",
+    "District/State Championships",
+    "National/International Tournaments",
     "Rated Tournaments",
-    "Non-Rated Tournaments",
   ];
   return (
     <>
@@ -20,12 +19,6 @@ const Tournaments = () => {
           <h2 className="md:text-5xl text-4xl leading-[52px] font-bold text-[#2B3AA0] md:leading-[60px]">
             Tournaments of ThinQ Chess
           </h2>
-
-          <img
-            src="/images/indian-img-two.jpg"
-            alt="Chessboard"
-            className="md:hidden w-full object-cover object-center rounded-br-[60px] "
-          />
           <p className="text-[18px] mt-2">
             We host friendly, competitive Regular Tournaments at our center,
             designed to help children experience the joy of competition and
@@ -60,7 +53,7 @@ const Tournaments = () => {
             <img
               src="/images/chess-tournament.webp"
               alt="Chessboard"
-              className="w-full min-h-[450px] object-cover object-center rounded-tl-[0px] rounded-br-[120px] "
+              className="w-full min-h-[420px] object-cover object-center rounded-tl-[0px] rounded-br-[120px] "
             />
           </div>
         </div>
