@@ -11,7 +11,7 @@ const MultiStepFormTwo = () => {
   const [classesfor, setClassesFor] = useState("Child");
   const [states, setStates] = useState([]);
   const [cities, setCities] = useState([]);
-  const centers = ["Ambature", "Vadapalani"];
+  const centers = ["JP Nagar, 8th Phase", "Akshayanagar"];
   const [step, setStep] = useState(1);
   const [succesMessage, setSuccesMessage] = useState("");
   const [errorMessage, setErrorMessage] = useState("");

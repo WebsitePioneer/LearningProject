@@ -25,7 +25,6 @@ const Tournaments = () => {
     particpantLastName: "",
     dob: "",
     gender: "",
-    ufcId: "",
     fidaID: "",
     country: "",
     country_code: "",
@@ -176,7 +175,7 @@ const Tournaments = () => {
         </div>
         <div className="md:w-[50%] w-full">
           <h2 className="md:mt-0 mt-2 md:text-5xl text-4xl leading-[52px] font-bold text-[#2B3AA0] md:leading-[60px]">
-            Book a Demo
+            Tournament Registration
           </h2>
           <div className="md:mt-6 mt-6">
             <form onSubmit={sendEmail}>
@@ -241,18 +240,6 @@ const Tournaments = () => {
                     </label>
                   ))}
                 </div>
-              </div>
-
-              {/* USCF ID */}
-              <div className="flex md:flex-row flex-col gap-4 items-center mt-5">
-                <h2 className="text-[18px]">USCF ID (if any):</h2>
-                <input
-                  name="ufcId"
-                  placeholder="UFC ID"
-                  value={formData.ufcId}
-                  onChange={handleChange}
-                  className="p-1 border border-[#d3d1d1] rounded"
-                />
               </div>
 
               {/* FIDE ID */}
@@ -366,7 +353,7 @@ const Tournaments = () => {
               <div className="mt-8">
                 <button
                   type="submit"
-                  className="bg-green-600 text-white p-2 rounded cursor-pointer"
+                  className="bg-[#FFB31A] text-[18px] text-white py-2 px-6 rounded cursor-pointer"
                   disabled={isSubmitting} // Disable during submission
                 >
                   {isSubmitting ? "Submitting..." : "Register Now"}

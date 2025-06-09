@@ -11,6 +11,7 @@ export default function ContactUs() {
       "/contact-us",
       "/privacy-policy",
       "/terms-and-conditions",
+      "/tournaments",
     ];
     return !hiddenRoutes.includes(pathname);
   }, [pathname]);

@@ -57,7 +57,7 @@ function MenuContent({ mobile = false, onMenuClick }) {
             <a href="#">
               <img src="/images/facebook.png" className="w-[16px]" />
             </a>
-            <a href="#">
+            <a href="https://www.instagram.com/thinqchess/" target="_blank">
               <img src="/images/instagram.png" className="w-[16px]" />
             </a>
             <a href="#">
