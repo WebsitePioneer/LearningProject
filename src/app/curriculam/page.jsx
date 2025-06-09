@@ -157,14 +157,14 @@ const Curriculam = () => {
           <div className="w-full mt-6">
             <div className="bg-white w-full h-fit shadow-lg px-10 py-6 pb-10 rounded-[20px]">
               <h4 className="text-[#2B3AA0] text-[20px] w-fit pl-1 font-bold uppercase py-4">
-                1-on-1 Sessions
+                1-on-1 Sessions and Group Sessions
               </h4>
 
               {/* List */}
               <div className="flex flex-col gap-2">
                 {offlineProgram.map((session, index) => {
                   return (
-                    <div key={index} className="flex items-center gap-2">
+                    <div key={session} className="flex items-center gap-2">
                       <div className="flex item-center w-fit">
                         <span
                           className="material-symbols-outlined text-[#FFB31A]"
