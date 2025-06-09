@@ -75,12 +75,11 @@ const Curriculam = () => {
       {/* Intro section */}
       <section className="w-11/12 mx-auto flex max-md:flex-col-reverse gap-10 md:my-24 my-12">
         <div className="md:w-[50%] w-full max-md:-mt-2">
-          <p className="text-[#FFB31A]">CURRICULAM</p>
           <h2 className="md:text-5xl text-4xl md:mt-5 mt-2 font-bold text-[#2B3AA0]">
             Courses Offered
           </h2>
           <p className="text-[18px] md:mt-6 mt-3 text-black">
-            Our curriculum is divided into three clear learning levels. Each
+            Our curriculum is divided into four clear learning levels. Each
             stage introduces key concepts and game strategy in an interactive,
             progressive, and fun way.
           </p>
@@ -117,7 +116,7 @@ const Curriculam = () => {
                     {level.level}
                   </h4>
                 </div>
-                <div className="absolute -bottom-[350px] h-[280px] pt-5 w-full px-2 pl-3 group-hover:bottom-0 bg-black transition-all duration-300">
+                <div className="absolute -bottom-[350px] h-[280px] pt-5 w-full px-2 pl-3 group-hover:bottom-0 bg-[#2B3AA0] transition-all duration-300">
                   {level.points.map((point) => {
                     return (
                       <div className="flex items-start gap-2">
@@ -144,7 +143,7 @@ const Curriculam = () => {
       <section className="w-11/12 flex flex-row-reverse max-md:flex-col gap-16 mx-auto mt-8 md:mb-28 mb-14">
         <div className="md:w-[50%] w-full !z-10">
           <img
-            src="/images/indian-img-two.jpg"
+            src="/images/offline.jpg"
             className="w-full h-full max-md:mt-6 max-md:hidden object-cover rounded-tl-[60px] rounded-br-[60px] md:rounded-tl-[120px] md:rounded-br-[120px]"
           />
         </div>
@@ -157,7 +156,7 @@ const Curriculam = () => {
           <div className="w-full mt-6">
             <div className="bg-white w-full h-fit shadow-lg px-10 py-6 pb-10 rounded-[20px]">
               <h4 className="text-[#2B3AA0] text-[20px] w-fit pl-1 font-bold uppercase py-4">
-                1-on-1 Sessions and Group Sessions
+                Group Sessions
               </h4>
 
               {/* List */}

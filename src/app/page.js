@@ -3,32 +3,20 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 
 export default function Home() {
-  const ourTeam = [
-    {
-      img: "/images/head-coach.jpeg",
-      name: "Krishna Thapa",
-      content:
-        "He started playing chess at the age of 8, learning the basics from his father. Over the years, he’s played in multiple national and international tournaments, becoming a silver medallist in a national championship and winning gold at the Asian Amateur Chess Championship in 2019. With a peak FIDE rating of 2180, he has had the opportunity to face elite players like P. Harikrishna, Wei Yi, Danil Dubov, and Baadur Jobava, and has scored wins against several Grandmasters and International Masters. He been coaching chess since 2008.",
-    },
-    {
-      img: "/images/Chiranth .jpeg",
-      name: "Chiranth M",
-      content:
-        "He has been playing chess for 18 years, earning over 100 trophies and 25 medals across various tournaments. He represented Karnataka at the SGFI Nationals for four years and played for the VTU university team in national inter-university events. A recent highlight was his Category C championship win at the 2nd Bengaluru International Grandmaster Tournament in 2025. As a coach for the past 5 years, he has helped several students achieve their FIDE ratings and succeed in state and national tournaments.",
-    },
-    {
-      img: "/images/head-coach.jpeg",
-      name: "Trainer 3",
-      content:
-        "He started playing chess at the age of 8, learning the basics from his father. Over the years, he’s played in multiple national and international tournaments, becoming a silver medallist in a national championship and winning gold at the Asian Amateur Chess Championship in 2019. With a peak FIDE rating of 2180, he has had the opportunity to face elite players like P. Harikrishna, Wei Yi, Danil Dubov, and Baadur Jobava, and has scored wins against several Grandmasters and International Masters. He been coaching chess since 2008.",
-    },
-    {
-      img: "/images/Chiranth .jpeg",
-      name: "Trainer 4",
-      content:
-        "He has been playing chess for 18 years, earning over 100 trophies and 25 medals across various tournaments. He represented Karnataka at the SGFI Nationals for four years and played for the VTU university team in national inter-university events. A recent highlight was his Category C championship win at the 2nd Bengaluru International Grandmaster Tournament in 2025. As a coach for the past 5 years, he has helped several students achieve their FIDE ratings and succeed in state and national tournaments.",
-    },
-  ];
+  // const ourTeam = [
+  //   {
+  //     img: "/images/head-coach.jpeg",
+  //     name: "Krishna Thapa",
+  //     content:
+  //       "He started playing chess at the age of 8, learning the basics from his father. Over the years, he’s played in multiple national and international tournaments, becoming a silver medallist in a national championship and winning gold at the Asian Amateur Chess Championship in 2019. With a peak FIDE rating of 2180, he has had the opportunity to face elite players like P. Harikrishna, Wei Yi, Danil Dubov, and Baadur Jobava, and has scored wins against several Grandmasters and International Masters. He been coaching chess since 2008.",
+  //   },
+  //   {
+  //     img: "/images/Chiranth .jpeg",
+  //     name: "Chiranth M",
+  //     content:
+  //       "He has been playing chess for 18 years, earning over 100 trophies and 25 medals across various tournaments. He represented Karnataka at the SGFI Nationals for four years and played for the VTU university team in national inter-university events. A recent highlight was his Category C championship win at the 2nd Bengaluru International Grandmaster Tournament in 2025. As a coach for the past 5 years, he has helped several students achieve their FIDE ratings and succeed in state and national tournaments.",
+  //   },
+  // ];
   return (
     <>
       {/* Banner */}
@@ -73,8 +61,9 @@ export default function Home() {
             their thinking while keeping the experience fun and engaging.
           </p>
           <p className="text-[18px]">
-            We’re transparent with parents, focused on progress, and always
-            cheering from the sidelines.
+            We value clear communication with parents, celebrate every
+            milestone, and remain committed to guiding each child’s unique
+            journey—always cheering them on from the sidelines.
           </p>
         </div>
         <div className="md:w-[50%] w-full">
@@ -92,7 +81,7 @@ export default function Home() {
       </section>
 
       {/* Our Team */}
-      <section className="md:w-11/12 w-full mx-auto my-20 mb-40 max-md:px-4">
+      {/* <section className="md:w-11/12 w-full mx-auto my-20 mb-40 max-md:px-4">
         <h2 className="text-5xl font-bold text-[#FFB31A] text-center">
           Our Team
         </h2>
@@ -116,7 +105,7 @@ export default function Home() {
             );
           })}
         </div>
-      </section>
+      </section> */}
 
       {/* Why Choose Thinq Chess: */}
       <section className="w-full md:py-24 py-14 md:pb-30 md:mt-30 mt-10 bg-gradient-to-r from-[#d4d9f7] via-[#b3baec] to-[#747fb1]">
