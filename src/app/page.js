@@ -3,6 +3,32 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 
 export default function Home() {
+  const ourTeam = [
+    {
+      img: "/images/head-coach.jpeg",
+      name: "Krishna Thapa",
+      content:
+        "He started playing chess at the age of 8, learning the basics from his father. Over the years, he’s played in multiple national and international tournaments, becoming a silver medallist in a national championship and winning gold at the Asian Amateur Chess Championship in 2019. With a peak FIDE rating of 2180, he has had the opportunity to face elite players like P. Harikrishna, Wei Yi, Danil Dubov, and Baadur Jobava, and has scored wins against several Grandmasters and International Masters. He been coaching chess since 2008.",
+    },
+    {
+      img: "/images/Chiranth .jpeg",
+      name: "Chiranth M",
+      content:
+        "He has been playing chess for 18 years, earning over 100 trophies and 25 medals across various tournaments. He represented Karnataka at the SGFI Nationals for four years and played for the VTU university team in national inter-university events. A recent highlight was his Category C championship win at the 2nd Bengaluru International Grandmaster Tournament in 2025. As a coach for the past 5 years, he has helped several students achieve their FIDE ratings and succeed in state and national tournaments.",
+    },
+    {
+      img: "/images/head-coach.jpeg",
+      name: "Trainer 3",
+      content:
+        "He started playing chess at the age of 8, learning the basics from his father. Over the years, he’s played in multiple national and international tournaments, becoming a silver medallist in a national championship and winning gold at the Asian Amateur Chess Championship in 2019. With a peak FIDE rating of 2180, he has had the opportunity to face elite players like P. Harikrishna, Wei Yi, Danil Dubov, and Baadur Jobava, and has scored wins against several Grandmasters and International Masters. He been coaching chess since 2008.",
+    },
+    {
+      img: "/images/Chiranth .jpeg",
+      name: "Trainer 4",
+      content:
+        "He has been playing chess for 18 years, earning over 100 trophies and 25 medals across various tournaments. He represented Karnataka at the SGFI Nationals for four years and played for the VTU university team in national inter-university events. A recent highlight was his Category C championship win at the 2nd Bengaluru International Grandmaster Tournament in 2025. As a coach for the past 5 years, he has helped several students achieve their FIDE ratings and succeed in state and national tournaments.",
+    },
+  ];
   return (
     <>
       {/* Banner */}
@@ -62,6 +88,33 @@ export default function Home() {
               className="w-full h-[300px] group-hover:scale-[105%] transition-all duration-300 object-cover rounded-tl-[40px] rounded-br-[40px] "
             />
           </div>
+        </div>
+      </section>
+
+      {/* Our Team */}
+      <section className="md:w-11/12 w-full mx-auto my-20 mb-40 max-md:px-4">
+        <h2 className="text-5xl font-bold text-[#FFB31A] text-center">
+          Our Team
+        </h2>
+        <div className="my-20 mt-10 flex md:flex-row flex-col gap-6">
+          {ourTeam.map((item) => {
+            return (
+              <div
+                key={item.name}
+                className="w-full h-[400px] relative group overflow-hidden rounded-tl-[50px] rounded-br-[50px]"
+              >
+                <img src={item.img} />
+                <div className="bg-[#00000099] group-hover:top-[0px] transition-all duration-300 pb-[100px] absolute top-[330px] w-full">
+                  <h3 className="text-[32px] font-[600] text-white px-5 mt-3">
+                    {item.name}
+                  </h3>
+                  <p className="mt-3 text-[17px] text-white side-scroll px-5 pr-3 mr-4 h-[300px] overflow-y-scroll">
+                    {item.content}
+                  </p>
+                </div>
+              </div>
+            );
+          })}
         </div>
       </section>
 
