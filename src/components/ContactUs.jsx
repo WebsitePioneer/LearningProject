@@ -12,6 +12,7 @@ export default function ContactUs() {
       "/privacy-policy",
       "/terms-and-conditions",
       "/tournaments",
+      "/registration",
     ];
     return !hiddenRoutes.includes(pathname);
   }, [pathname]);
