@@ -85,8 +85,8 @@ const Curriculam = () => {
           </p>
 
           <p className="text-[18px] md:mt-6 mt-3 text-black">
-            The course curriculum provides sufficient puzzles and formats to
-            learn concepts. Leaderboard is available to motivate students to
+            The course curriculum provides sufficient games and puzzles to learn
+            the concepts. Leaderboard is available to motivate students to
             achieve higher and have a healthy competition.
           </p>
         </div>
@@ -137,13 +137,16 @@ const Curriculam = () => {
             );
           })}
         </div>
+        <p className="text-center mt-10 text-[24px] text-[#FFB31A] font-[500] bg-white shadow-md w-fit mx-auto px-5 py-1 rounded-lg">
+          And More
+        </p>
       </section>
 
       {/* Offline Courses Container */}
       <section className="w-11/12 flex flex-row-reverse max-md:flex-col gap-16 mx-auto mt-8 md:mb-28 mb-14">
         <div className="md:w-[50%] w-full !z-10">
           <img
-            src="/images/offline.jpg"
+            src="/images/offline-students-playing.jpg"
             className="w-full h-full max-md:mt-6 max-md:hidden object-cover rounded-tl-[60px] rounded-br-[60px] md:rounded-tl-[120px] md:rounded-br-[120px]"
           />
         </div>

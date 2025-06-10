@@ -14,11 +14,14 @@ const PrivacyPolicy = () => {
         </h1>
 
         <p className="text-lg mb-4">
-          The web application, <strong>thinqchess.com</strong> (“Application“)
-          is owned and operated by BlitzNexGen Private Limited (“Company”), a
-          private limited company incorporated under the laws of India and
-          having its registered office at SNN Raj Serenity, Begur Koppa Road,
-          Bangalore -560068, India
+          The web application,{" "}
+          <a href="thinqchess.com" className="text-blue-600">
+            thinqchess.com
+          </a>{" "}
+          (“Application“) is owned and operated by BlitzNexGen Private Limited
+          (“Company”), a private limited company incorporated under the laws of
+          India and having its registered office at Begur Koppa Road, Bangalore
+          -560068, India
         </p>
 
         <p className="text-lg mb-4">
@@ -251,7 +254,7 @@ const PrivacyPolicy = () => {
         </h2>
         <p className="text-lg mb-4">
           The terms and conditions of this Policy shall be governed by Indian
-          Law and the courts in Karantaka shall only have exclusive jurisdiction
+          Law and the courts in Bangalore shall only have exclusive jurisdiction
           to resolve any disputes.
         </p>
       </div>
