@@ -6,13 +6,13 @@ const OurStory = () => {
       img: "/images/head-coach.jpeg",
       name: "Krishna Thapa",
       content:
-        "He started playing chess at the age of 8, learning the basics from his father. Over the years, he’s played in multiple national and international tournaments, becoming a silver medallist in a national championship and winning gold at the Asian Amateur Chess Championship in 2019. With a peak FIDE rating of 2180, he has had the opportunity to face elite players like P. Harikrishna, Wei Yi, Danil Dubov, and Baadur Jobava, and has scored wins against several Grandmasters and International Masters. He been coaching chess since 2008.",
+        "Krishna Thapa revised content: I began playing chess at 8 and went on to win gold at the 2019 Asian Amateur Championship. With a peak FIDE rating of 2180, I’ve played legends like Harikrishna, Wei Yi, and Dubov. I’ve also scored wins against several Grandmasters and IMs. Since 2008, I’ve coached players across Australia, Thailand, Nepal, and India.",
     },
     {
-      img: "/images/Chiranth-cropped.jpeg",
+      img: "/images/Chiranth.jpg",
       name: "Chiranth M",
       content:
-        "He has been playing chess for 18 years, earning over 100 trophies and 25 medals across various tournaments. He represented Karnataka at the SGFI Nationals for four years and played for the VTU university team in national inter-university events. A recent highlight was his Category C championship win at the 2nd Bengaluru International Grandmaster Tournament in 2025. As a coach for the past 5 years, he has helped several students achieve their FIDE ratings and succeed in state and national tournaments.",
+        "With 18 years in chess, I’ve won 100+ trophies and represented Karnataka at SGFI Nationals. I was Category C Champion at the 2025 Bengaluru International GM Tournament. As a coach for 5 years, I’ve guided students to FIDE ratings and national titles.",
     },
   ];
   return (
@@ -25,15 +25,15 @@ const OurStory = () => {
 
       <section className="w-11/12 mx-auto flex md:flex-row-reverse flex-col-reverse gap-12 mt-14 md:mt-28 mb-10 md:mb-20">
         <div className="md:w-[50%] w-full flex flex-col gap-4">
-          <p className="text-[#2B3AA0]">WELCOME TO THINQCHESS</p>
-          <h2 className="text-5xl font-bold text-[#FFB31A]">Founders' Note</h2>
+          <p className="text-[#FFB31A]">Welcome To ThinQ Chess</p>
+          <h2 className="text-5xl font-bold text-[#2B3AA0]">Founders' Note</h2>
           <img
             src="/images/Founders.jpg"
             alt="Chessboard"
             className="md:hidden w-full max-h-[300px] mt-5 mb-3 object-cover object-center rounded-br-[60px] "
           />
           <p className="text-[18px]">
-            ThinQ Chess began with its founder, who saw more than
+            ThinQ Chess began with its founders, who saw more than
             black-and-white squares. They saw a way to help children build
             confidence, resilience, and the ability to think through every
             challenge, on the board and beyond.
@@ -63,7 +63,7 @@ const OurStory = () => {
       </section>
 
       <section className="md:w-11/12 w-full mx-auto max-md:px-4">
-        <h2 className="text-5xl font-bold text-[#FFB31A] text-center">
+        <h2 className="text-5xl font-bold text-[#2B3AA0] text-center">
           Our Team
         </h2>
         <div className="md:w-7/12 my-20 mt-10 md:mx-auto flex md:flex-row flex-col gap-6">
