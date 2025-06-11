@@ -25,10 +25,13 @@ const PrivacyPolicy = () => {
         </p>
 
         <p className="text-lg mb-4">
-          At thinqchess, accessible from https://thinqchess.com/, one of our
-          main priorities is the privacy of our visitors. This Privacy Policy
-          document contains types of information that is collected and recorded
-          by thinqchess and how we use it.
+          At ThinQ Chess, accessible from{" "}
+          <a href="thinqchess.com" className="text-blue-600">
+            https://thinqchess.com/
+          </a>
+          , one of our main priorities is the privacy of our visitors. This
+          Privacy Policy document contains types of information that is
+          collected and recorded by ThinQ Chess and how we use it.
         </p>
 
         <p className="text-lg mb-4">
@@ -39,9 +42,12 @@ const PrivacyPolicy = () => {
         <p className="text-lg mb-4">
           This Privacy Policy applies only to our online activities and is valid
           for visitors to our website with regards to the information that they
-          shared and/or collect in thinqchess.com. This policy is not applicable
-          to any information collected offline or via channels other than this
-          website.
+          shared and/or collect in{" "}
+          <a href="thinqchess.com" className="text-blue-600">
+            thinqchess.com
+          </a>
+          . This policy is not applicable to any information collected offline
+          or via channels other than this website.
         </p>
 
         <h2 className="text-2xl font-semibold mt-8 mb-4">CONSENT</h2>
@@ -87,13 +93,16 @@ const PrivacyPolicy = () => {
 
         <h2 className="text-2xl font-semibold mt-8 mb-4">LOG FILES</h2>
         <p className="text-lg mb-4">
-          thinqchess.com follows a standard procedure of using log files. These
-          files log visitors when they visit websites. All hosting companies do
-          this and a part of hosting services’ analytics. The information
-          collected by log files include IP addresses, browser type, ISP,
-          date/time stamp, referring/exit pages, and number of clicks. These are
-          not linked to personally identifiable info. It is used to analyze
-          trends and administer the site.
+          <a href="thinqchess.com" className="text-blue-600">
+            thinqchess.com
+          </a>{" "}
+          follows a standard procedure of using log files. These files log
+          visitors when they visit websites. All hosting companies do this and a
+          part of hosting services’ analytics. The information collected by log
+          files include IP addresses, browser type, ISP, date/time stamp,
+          referring/exit pages, and number of clicks. These are not linked to
+          personally identifiable info. It is used to analyze trends and
+          administer the site.
         </p>
 
         <h2 className="text-2xl font-semibold mt-8 mb-4">
@@ -133,27 +142,38 @@ const PrivacyPolicy = () => {
         <p className="text-lg mb-4">
           Third-party ad servers or ad networks uses technologies like cookies,
           JavaScript, or Web Beacons that are used in their respective
-          advertisements and links that appear on thinqchess.com, which are sent
-          directly to users’ browser. They automatically receive your IP address
-          when this occurs. These technologies are used to measure the
-          effectiveness of their advertising campaigns and/or to personalize the
-          advertising content that you see on websites that you visit.
+          advertisements and links that appear on{" "}
+          <a href="thinqchess.com" className="text-blue-600">
+            thinqchess.com
+          </a>
+          , which are sent directly to users’ browser. They automatically
+          receive your IP address when this occurs. These technologies are used
+          to measure the effectiveness of their advertising campaigns and/or to
+          personalize the advertising content that you see on websites that you
+          visit.
         </p>
 
         <p className="text-lg mb-4">
-          Note that thinqchess.com has no access to or control over these
-          cookies that are used by third- party advertisers.
+          Note that{" "}
+          <a href="thinqchess.com" className="text-blue-600">
+            thinqchess.com
+          </a>{" "}
+          has no access to or control over these cookies that are used by third-
+          party advertisers.
         </p>
 
         <h2 className="text-2xl font-semibold mt-8 mb-4">
           THIRD-PARTY PRIVACY POLICIES
         </h2>
         <p className="text-lg mb-4">
-          thinqchess.com’s Privacy Policy does not apply to other advertisers or
-          websites. Thus, we are advising you to consult the respective Privacy
-          Policies of these third-party ad servers for more detailed
-          information. It may include their practices and instructions about how
-          to opt-out of certain options.
+          <a href="thinqchess.com" className="text-blue-600">
+            thinqchess.com’s
+          </a>{" "}
+          Privacy Policy does not apply to other advertisers or websites. Thus,
+          we are advising you to consult the respective Privacy Policies of
+          these third-party ad servers for more detailed information. It may
+          include their practices and instructions about how to opt-out of
+          certain options.
         </p>
 
         <p className="text-lg mb-4">
@@ -242,11 +262,14 @@ const PrivacyPolicy = () => {
         </p>
 
         <p className="text-lg mb-4">
-          thinqchess.com does not knowingly collect any Personal Identifiable
-          Information from children under the age of 18. If you think that your
-          child provided this kind of information on our website, we strongly
-          encourage you to contact us immediately and we will do our best
-          efforts to promptly remove such information from our records.
+          <a href="thinqchess.com" className="text-blue-600">
+            thinqchess.com
+          </a>{" "}
+          does not knowingly collect any Personal Identifiable Information from
+          children under the age of 18. If you think that your child provided
+          this kind of information on our website, we strongly encourage you to
+          contact us immediately and we will do our best efforts to promptly
+          remove such information from our records.
         </p>
 
         <h2 className="text-2xl font-semibold mt-8 mb-4">

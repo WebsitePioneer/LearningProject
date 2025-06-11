@@ -41,19 +41,14 @@ function MenuContent({ mobile = false, onMenuClick }) {
     <>
       {/* Top Nav */}
       <header className="bg-[#2B3AA0] md:px-4 overflow-hidden sticky top-0 z-50">
-        <div className="flex items-center w-11/12 max-md:w-full mx-auto gap-4 md:justify-end justify-center md:px-4 px-2 md:py-[1px] py-1">
-          <p className="md:text-[14px] text-[10px] text-[#FFB31A]">
-            <a href="mailto: admin@thinqchess.com">
-              <span className="font-bold text-white">Mail:</span>{" "}
-              admin@thinqchess.com
-            </a>
-          </p>
-          <p className="md:text-[14px] text-[10px] text-[#FFB31A]">
-            <a href="tel:+91 9876543210">
-              <span className="font-bold text-white">Ph:</span> +91 7975820187
-            </a>
-          </p>
+        <div className="flex items-center w-11/12 max-md:w-full mx-auto gap-4 md:justify-end justify-center md:px-4 px-2 md:py-[2px] py-1">
           <div className="flex gap-3">
+            <a href="mailto:admin@thinqchess.com">
+              <img src="/images/email.png" className="w-[16px]" />
+            </a>
+            <a href="tel:+91 7975820187">
+              <img src="/images/phone.png" className="w-[16px]" />
+            </a>
             <a href="#">
               <img src="/images/facebook.png" className="w-[16px]" />
             </a>

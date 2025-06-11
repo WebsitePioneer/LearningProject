@@ -9,7 +9,7 @@ import Banner from "@/components/ui/Banner";
 const Tournaments = () => {
   const [succesMessage, setSuccesMessage] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
-  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(true);
   const [states, setStates] = useState([]);
   const [cities, setCities] = useState([]);
 
@@ -124,16 +124,16 @@ const Tournaments = () => {
       <section className="w-11/12 mx-auto flex md:flex-row flex-col gap-12 md:mt-28 mt-14 mb-12 md:mb-20">
         <div className="md:w-[50%] w-full flex flex-col gap-4">
           <h2 className="md:text-5xl text-4xl leading-[52px] font-bold text-[#2B3AA0] md:leading-[60px]">
-            Tournaments of ThinQ Chess
+            ThinQ Chess Tournaments
           </h2>
           <p className="text-[18px] mt-2">
-            We host friendly, competitive Regular Tournaments at our center,
+            We host friendly, competitive regular tournaments at our center,
             designed to help children experience the joy of competition and
-            learn how to handle both wins and losses with grace
+            learn how to handle both wins and losses with grace.
           </p>
           <p className="text-[18px]">
-            We periodically organize tournaments to give our students the
-            required practice and exposure to participate in:
+            Our periodical tournaments give our students the required practice
+            and exposure to participate in:
           </p>
 
           {/* List */}
@@ -177,6 +177,10 @@ const Tournaments = () => {
           <h2 className="md:mt-0 mt-2 md:text-5xl text-4xl leading-[52px] font-bold text-[#2B3AA0] md:leading-[60px]">
             Tournament Registration
           </h2>
+          <p className="mt-4 text-[14px]">
+            (A tournament registration fee of INR 300 will be applicable, open
+            for payment from June 15th.)
+          </p>
           <div className="md:mt-6 mt-6">
             <form onSubmit={sendEmail}>
               {/* Participant Name */}
@@ -353,10 +357,13 @@ const Tournaments = () => {
               <div className="mt-8">
                 <button
                   type="submit"
-                  className="bg-[#FFB31A] text-[18px] text-white py-2 px-6 rounded cursor-pointer"
+                  className={`bg-[#FFB31A] text-[18px] text-white py-2 px-6 rounded ${
+                    isSubmitting ? "cursor-default" : "cursor-pointer"
+                  }`}
                   disabled={isSubmitting} // Disable during submission
                 >
-                  {isSubmitting ? "Submitting..." : "Register Now"}
+                  {/* {isSubmitting ? "Paying..." : "Pay Now"} */}
+                  Pay Now
                 </button>
               </div>
             </form>

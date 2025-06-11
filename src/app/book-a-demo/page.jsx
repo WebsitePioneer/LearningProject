@@ -39,7 +39,7 @@ const BookADemo = () => {
         () => {
           message.success("Message sent successfully!");
           formRef.current.resetFields();
-          setSuccesMessage("Form has been submitted Succesfully");
+          setSuccesMessage("Thank you we will get back to you with a slot.");
           setIsSubmitting(false);
         },
         (error) => {

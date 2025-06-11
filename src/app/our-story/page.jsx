@@ -6,7 +6,7 @@ const OurStory = () => {
       img: "/images/head-coach.jpeg",
       name: "Krishna Thapa",
       content:
-        "Krishna Thapa revised content: I began playing chess at 8 and went on to win gold at the 2019 Asian Amateur Championship. With a peak FIDE rating of 2180, I’ve played legends like Harikrishna, Wei Yi, and Dubov. I’ve also scored wins against several Grandmasters and IMs. Since 2008, I’ve coached players across Australia, Thailand, Nepal, and India.",
+        "I began playing chess at 8 and went on to win gold at the 2019 Asian Amateur Championship. With a peak FIDE rating of 2180, I’ve played legends like Harikrishna, Wei Yi, and Dubov. I’ve also scored wins against several Grandmasters and IMs. Since 2008, I’ve coached players across Australia, Thailand, Nepal, and India.",
     },
     {
       img: "/images/Chiranth.jpg",
