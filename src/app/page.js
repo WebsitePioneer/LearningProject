@@ -126,7 +126,7 @@ export default function Home() {
               {[
                 "Transparent tracking of student progress",
                 "Personalised attention through game-based coaching",
-                "Structured curriculum with real outcomes",
+                "Structured curriculum with measurable outcomes.",
                 "Tournaments to build confidence",
                 "Encouraging and inspiring mentors",
               ].map((item, index) => (

@@ -13,6 +13,8 @@ export default function ContactUs() {
       "/terms-and-conditions",
       "/tournaments",
       "/registration",
+      "/book-a-demo",
+      "/training",
     ];
     return !hiddenRoutes.includes(pathname);
   }, [pathname]);
