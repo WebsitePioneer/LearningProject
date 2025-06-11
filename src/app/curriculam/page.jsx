@@ -57,7 +57,7 @@ const Curriculam = () => {
 
   const offlineProgram = [
     "Weekly 3 Hours Training",
-    "Game-oriented learning with feedback",
+    "Game-oriented Learning with Feedback",
     "Online Evaluations",
     "Completion Certificate for Every Level",
     "Mentorship Program for Tournaments",
@@ -66,7 +66,7 @@ const Curriculam = () => {
   return (
     <>
       <Banner
-        heading={"Structured for growth. Designed for young minds."}
+        heading={"Structured for growth Designed for young minds"}
         image={"/images/about-banner.jpg"}
         buttonText={"Get in touch with us"}
         link={"/"}
