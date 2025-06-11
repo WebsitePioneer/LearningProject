@@ -67,7 +67,7 @@ const Tournaments = () => {
   };
 
   const sendEmail = (values) => {
-    // setIsSubmitting(true);
+    setIsSubmitting(true);
     // emailjs
     //   .send(
     //     "service_7y7vvlf", // replace with your service ID
