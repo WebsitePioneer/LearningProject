@@ -66,7 +66,7 @@ const Curriculam = () => {
   return (
     <>
       <Banner
-        heading={"Structured for growth Designed for young minds"}
+        heading={"Designed for young minds Structured for growth "}
         image={"/images/about-banner.jpg"}
         buttonText={"Get in touch with us"}
         link={"/"}
