@@ -33,7 +33,7 @@ export default function Home() {
             <h1 className="md:text-5xl text-[40px] capitalize md:leading-[60px] leading-[52px] font-[900] md:mt-8 md:mb-16 mb-12 text-[#FFFFFF]">
               Where young minds
               <br className="max-md:hidden" />
-              learn to think ahead,
+              <span className="ml-3">learn to think ahead,</span>
               <br className="max-md:hidden" />
               one game at a time
             </h1>
@@ -132,7 +132,10 @@ export default function Home() {
               ].map((item, index) => (
                 <li key={index} className="flex items-start gap-2">
                   <span className="text-green-500 mt-1">
-                    <img src="/images/check-mark.png" className="w-[20px]" />
+                    <img
+                      src="/images/check-mark.png"
+                      className="max-md:max-w-[20px] w-[20px]"
+                    />
                   </span>
                   <span className="text-[20px] text-black font-[400]">
                     {item}
