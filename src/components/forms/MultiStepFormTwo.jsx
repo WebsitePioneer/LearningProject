@@ -232,16 +232,69 @@ const MultiStepFormTwo = () => {
       return;
     }
 
-    console.log("Form data on submit:", formData);
+    const templateParams = {
+      studentFirstName: formData.studentFirstName,
+      studentMiddleName: formData.studentMiddleName,
+      studentLastName: formData.studentLastName,
+      dob: formData.dob,
+      gender: formData.gender,
+      studentEmail: formData.studentEmail,
+      studentPhone: formData.studentPhone,
+
+      fatherFirstName: formData.fatherFirstName,
+      fatherMiddleName: formData.fatherMiddleName,
+      fatherLastName: formData.fatherLastName,
+      fatherEmail: formData.fatherEmail,
+      fatherPhone: formData.fatherPhone,
+      motherFirstName: formData.motherFirstName,
+      motherMiddleName: formData.motherMiddleName,
+      motherLastName: formData.motherLastName,
+      motherEmail: formData.motherEmail,
+      motherPhone: formData.motherPhone,
+
+      country: formData.country,
+      country_code: formData.country_code,
+      address_line1: formData.address_line1,
+      address_line2: formData.address_line2,
+      state: formData.state,
+      city: formData.city,
+      pincode: formData.pincode,
+
+      mode: formData.mode,
+      coaching_city: formData.coaching_city,
+      preferredCentre: formData.preferredCentre,
+
+      heardFrom: formData.heardFrom,
+      refFirstName: formData.refFirstName,
+      refLastName: formData.refLastName,
+      otherSource: formData.otherSource,
+
+      Terms_and_condition_one: formData.Terms_and_condition_one,
+      Terms_and_condition_two: formData.Terms_and_condition_two,
+    };
 
     try {
-      // Uncomment and configure your emailjs service when ready
-      // await emailjs.send(
-      //   "service_7y7vvlf",
-      //   "template_n8brtah",
-      //   formData,
-      //   "74cW5H5JugUoTfj2P"
-      // );
+      emailjs
+        .send(
+          "service_p5st95p", // replace with your service ID
+          "template_exo2g59", // replace with your template ID
+          templateParams,
+          "TMT5AxQO_ZAQ5o_X5" // replace with your public key
+        )
+        .then(
+          () => {
+            message.success("Message sent successfully!");
+            formRef.current.resetFields();
+            setSuccesMessage("Form has been submitted Succesfully");
+            setIsSubmitting(false);
+          },
+          (error) => {
+            message.error("Failed to send message. Try again later.");
+            setErrorMessage("There is an error submitting the form", error);
+            setIsSubmitting(false);
+          }
+        );
+
       setSuccesMessage("Form submitted successfully!");
       // Reset form after successful submission
       setFormData({
@@ -346,7 +399,7 @@ const MultiStepFormTwo = () => {
           <>
             <h2 className="text-xl font-bold mb-4">Student Details</h2>
             {/* Classes For */}
-            <div className="flex gap-4 mb-4">
+            <div className="flex md:flex-row flex-col gap-4 mb-4">
               {["Child", "Adult", "Sr Citizen"].map((val) => (
                 <label key={val} className="flex items-center gap-1">
                   <input

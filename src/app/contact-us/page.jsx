@@ -6,8 +6,6 @@ import { Form, Input, Select, Row, Col, message } from "antd";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 
-const { TextArea } = Input;
-
 const ContactUs = () => {
   const formRef = useRef();
   const [succesMessage, setSuccesMessage] = useState("");
@@ -26,15 +24,12 @@ const ContactUs = () => {
       country: values.country,
     };
 
-    console.log("values", values);
-    console.log("templateParams", templateParams);
-
     emailjs
       .send(
-        "service_7y7vvlf", // replace with your service ID
-        "template_lfitz1q", // replace with your template ID
+        "service_p5st95p", // replace with your service ID
+        "template_ff7qzba", // replace with your template ID
         templateParams,
-        "74cW5H5JugUoTfj2P" // replace with your public key
+        "TMT5AxQO_ZAQ5o_X5" // replace with your public key
       )
       .then(
         () => {
@@ -105,9 +100,8 @@ const ContactUs = () => {
           <img src="/images/contact-img.png" className="w-full rounded-lg" />
         </div>
         <div className="md:w-[50%] w-full">
-          <p className="text-[#2B3AA0]">CONTACT US</p>
           <h2 className="md:mt-5 mt-2 md:text-5xl text-4xl leading-[52px] font-bold text-[#2B3AA0] md:leading-[60px]">
-            Contact with us today
+            Contact Us Today
           </h2>
           <div className="md:mt-10 mt-6">
             <Form

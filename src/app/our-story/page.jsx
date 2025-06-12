@@ -1,3 +1,5 @@
+"use client";
+
 import Banner from "@/components/ui/Banner";
 
 const OurStory = () => {
@@ -7,12 +9,21 @@ const OurStory = () => {
       name: "Krishna Thapa",
       content:
         "I began playing chess at 8 and went on to win gold at the 2019 Asian Amateur Championship. With a peak FIDE rating of 2180, I’ve played legends like Harikrishna, Wei Yi, and Dubov. I’ve also scored wins against several Grandmasters and IMs. Since 2008, I’ve coached players across Australia, Thailand, Nepal, and India.",
+      isScrollable: false,
     },
     {
       img: "/images/Chiranth.jpg",
       name: "Chiranth M",
       content:
         "With 18 years in chess, I’ve won 100+ trophies and represented Karnataka at SGFI Nationals. I was Category C Champion at the 2025 Bengaluru International GM Tournament. As a coach for 5 years, I’ve guided students to FIDE ratings and national titles.",
+      isScrollable: false,
+    },
+    {
+      img: "/images/third-trainer.png",
+      name: "Adarsh Sanklecha",
+      content:
+        "I started playing chess at the age of eight and began competing professionally by the time I was thirteen, improving mostly through self-study. I secured 2nd place in the U-19 state-level tournaments and have participated in four national events. As the co-founder of Chess City Raipur, I’ve been working to make chess more accessible by organising tournaments and promoting the game among underprivileged children. For me, chess is more than a sport; it’s a way of life that continues to shape how I think, plan, and grow.",
+      isScrollable: true,
     },
   ];
   return (
@@ -66,7 +77,7 @@ const OurStory = () => {
         <h2 className="text-5xl font-bold text-[#2B3AA0] text-center">
           Our Team
         </h2>
-        <div className="md:w-7/12 my-20 mt-10 md:mx-auto flex md:flex-row flex-col gap-6">
+        <div className="md:w-11/12 max-md:hidden my-20 mt-10 md:mx-auto flex md:flex-row flex-col gap-6">
           {ourTeam.map((item) => {
             return (
               <div
@@ -78,7 +89,34 @@ const OurStory = () => {
                   <h3 className="text-[32px] font-[600] text-white px-5 mt-3">
                     {item.name}
                   </h3>
-                  <p className="mt-3 text-[17px] text-white px-5 pr-3 mr-4 h-[300px]">
+                  <p
+                    className={`mt-3 text-[17px] text-white ${
+                      item.isScrollable
+                        ? "side-scroll overflow-y-scroll h-[280px]"
+                        : "h-[300px]"
+                    }  px-5 pr-3 mr-4`}
+                  >
+                    {item.content}
+                  </p>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+
+        <div className="md:w-11/12 md:hidden my-20 mt-10 md:mx-auto flex md:flex-row flex-col gap-6">
+          {ourTeam.map((item) => {
+            return (
+              <div key={item.name} className="w-full">
+                <img
+                  src={item.img}
+                  className="object-bottom rounded-tl-[50px] rounded-br-[50px]"
+                />
+                <div className="pb-[20px] w-full">
+                  <h3 className="text-[32px] font-[600] text-[#FFB31A] mt-3">
+                    {item.name}
+                  </h3>
+                  <p className={`mt-3 text-[17px] text-black`}>
                     {item.content}
                   </p>
                 </div>

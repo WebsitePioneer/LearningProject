@@ -116,7 +116,7 @@ export default function Home() {
             </h2>
             <div className="md:hidden mt-10 p-[4px] border-4 border-[#FFB31A] inline-block rounded-tr-[100px] rounded-bl-[100px]">
               <img
-                src="/images/indian-img-three.jpg"
+                src="/images/course-offered.jpg"
                 alt="Framed"
                 className="w-full rounded-tr-[95px] object-cover rounded-bl-[95px] "
               />
@@ -126,7 +126,7 @@ export default function Home() {
               {[
                 "Transparent tracking of student progress",
                 "Personalised attention through game-based coaching",
-                "Structured curriculum with measurable outcomes.",
+                "Structured curriculum with measurable outcomes",
                 "Tournaments to build confidence",
                 "Encouraging and inspiring mentors",
               ].map((item, index) => (
@@ -141,7 +141,7 @@ export default function Home() {
               ))}
             </ul>
           </div>
-          <div className="w-[50%] max-md:w-full relative max-md:hidden">
+          <div className="w-[50%] max-md:hidden relative">
             {/* images */}
             <motion.div
               animate={{
@@ -154,15 +154,17 @@ export default function Home() {
                 repeatDelay: 1, // delay between repeats
               }}
             >
-              <div className="p-[4px] border-4 border-[#FFB31A] inline-block absolute rounded-tr-[100px] rounded-bl-[100px] top-[-160px] left-[0px]">
+              <div className="p-[4px] border-4 border-[#FFB31A] inline-block absolute md:rounded-tr-[100px] rounded-tr-[60px] md:rounded-bl-[100px] rounded-bl-[60px] top-[-160px] left-[0px]">
                 <img
                   src="/images/head-coach.jpeg"
                   alt="Framed"
-                  className="h-[450px] w-[280px] rounded-tr-[95px] object-cover rounded-bl-[95px]"
+                  className="md:h-[450px] md:w-[280px] w-full h-[200px] md:rounded-tr-[95px] rounded-tr-[55px] object-cover md:rounded-bl-[95px] rounded-bl-[55px]"
                 />
               </div>
-              <div className="absolute bottom-[-375px] left-[8%] flex flex-col items-center">
-                <p className="text-[24px] font-bold ">Krishna Thapa</p>
+              <div className="absolute md:bottom-[-375px] md:left-[8%] bottom-[-120px] left-[4%] flex flex-col items-center">
+                <p className="text-[24px]  max-md:text-[20px] font-bold ">
+                  Krishna Thapa
+                </p>
                 <p className="text-[16px]">Candidate Master</p>
               </div>
             </motion.div>
@@ -177,15 +179,17 @@ export default function Home() {
                 repeatDelay: 1, // delay between repeats
               }}
             >
-              <div className="absolute top-[-45px] right-[17%] flex flex-col items-center">
-                <p className="text-[24px] font-bold ">Chiranth M</p>
+              <div className="absolute md:top-[-45px] md:right-[17%] top-[-20px] right-[10%] flex flex-col items-center">
+                <p className="text-[24px] max-md:text-[20px] font-bold ">
+                  Chiranth M
+                </p>
                 <p className="text-[16px]">FIDE rated player</p>
               </div>
-              <div className="p-[4px] border-4 border-[#FFB31A] inline-block absolute rounded-tr-[100px] rounded-bl-[100px] top-[50px] right-[20px]">
+              <div className="p-[4px] border-4 border-[#FFB31A] inline-block absolute  md:rounded-tr-[100px] rounded-tr-[60px] md:rounded-bl-[100px] rounded-bl-[60px] top-[50px] right-[20px]">
                 <img
                   src="/images/Chiranth .jpeg"
                   alt="Framed"
-                  className="h-[450px] w-[280px] rounded-tr-[95px] object-cover object-center rounded-bl-[95px]"
+                  className="md:h-[450px] md:w-[280px] w-full h-[200px] object-center md:rounded-tr-[95px] rounded-tr-[55px] object-cover md:rounded-bl-[95px] rounded-bl-[55px]"
                 />
               </div>
             </motion.div>
