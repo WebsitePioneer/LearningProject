@@ -214,7 +214,7 @@ const ContactUs = () => {
                   type="submit"
                   disabled={isSubmitting}
                 >
-                  Get in touch with us
+                  Submit now
                 </button>
               </Form.Item>
             </Form>
