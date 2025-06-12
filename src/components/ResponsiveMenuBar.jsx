@@ -42,21 +42,24 @@ function MenuContent({ mobile = false, onMenuClick }) {
       <header className="bg-[#2B3AA0] md:px-4 overflow-hidden sticky top-0 z-50">
         <div className="flex items-center w-11/12 max-md:w-full mx-auto gap-4 md:justify-end justify-center md:px-4 px-2 md:py-[2px] py-1">
           <div className="flex items-center gap-2">
-            {/* <a href="mailto:admin@thinqchess.com" className="max-md:hidden">
+            <a href="mailto:admin@thinqchess.com">
               <img src="/images/email.png" className="w-[16px]" />
-            </a> */}
+            </a>
             <a
-              className="text-[14px] mt-[-2px] text-[#FFB31A]"
+              className="text-[14px] max-md:text-[12px] mt-[-2px] text-[#FFB31A]"
               href="mailto:admin@thinqchess.com"
             >
               admin@thinqchess.com
             </a>
           </div>
           <div className="flex items-center gap-2">
-            {/* <a href="tel:+91 7975820187" className="max-md:hidden">
+            <a href="tel:+91 7975820187">
               <img src="/images/phone.png" className="w-[16px]" />
-            </a> */}
-            <a className="text-[14px] text-[#FFB31A]" href="tel:+91 7975820187">
+            </a>
+            <a
+              className="text-[14px] text-[#FFB31A] max-md:text-[12px]"
+              href="tel:+91 7975820187"
+            >
               +91 7975820187
             </a>
           </div>
