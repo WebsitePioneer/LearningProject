@@ -6,46 +6,6 @@ import { message } from "antd";
 import MultiStepFormTwo from "@/components/forms/MultiStepFormTwo";
 
 const RegistrationPage = () => {
-  const formRef = useRef();
-  const [succesMessage, setSuccesMessage] = useState("");
-  const [errorMessage, setErrorMessage] = useState("");
-  const [isSubmitting, setIsSubmitting] = useState(false);
-
-  const sendEmail = (values) => {
-    setIsSubmitting(true);
-    const templateParams = {
-      parent_name: values.parentName,
-      child_name: values.childName,
-      age: values.Age,
-      location: values.location,
-      contact_number: values.contactNumber,
-      email: values.email,
-      program_level: values.programLevel,
-      message: values.message || "",
-    };
-
-    emailjs
-      .send(
-        "service_7y7vvlf", // replace with your service ID
-        "template_lfitz1q", // replace with your template ID
-        templateParams,
-        "74cW5H5JugUoTfj2P" // replace with your public key
-      )
-      .then(
-        () => {
-          message.success("Message sent successfully!");
-          formRef.current.resetFields();
-          setSuccesMessage("Form has been submitted Succesfully");
-          setIsSubmitting(false);
-        },
-        (error) => {
-          message.error("Failed to send message. Try again later.");
-          setErrorMessage("There is an error submitting the form", error);
-          setIsSubmitting(false);
-        }
-      );
-  };
-
   return (
     <>
       <Banner

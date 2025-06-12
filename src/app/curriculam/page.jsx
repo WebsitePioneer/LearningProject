@@ -1,3 +1,4 @@
+"use client";
 import Banner from "@/components/ui/Banner";
 
 const Curriculam = () => {
@@ -56,7 +57,7 @@ const Curriculam = () => {
   ];
 
   const offlineProgram = [
-    "Weekly 3 Hours Training",
+    "Weekly Training",
     "Game-oriented Learning with Feedback",
     "Online Evaluations",
     "Completion Certificate for Every Level",
@@ -100,14 +101,14 @@ const Curriculam = () => {
       </section>
 
       {/* Course Levels */}
-      <section className="w-11/12 mx-auto my-20">
+      <section className="w-11/12 h-full mx-auto my-20">
         <h2 className="md:text-5xl text-2xl max-md:leading-[52px] mt-8 font-bold text-[#2B3AA0]">
           Course-Level Specific Highlights
         </h2>
         <div className="grid max-md:grid-cols-1 max-md:grid-rows-4 grid-cols-4 grid-rows-1 gap-5 mt-16">
           {levels.map((level) => {
             return (
-              <div className="group bg-white shadow-md rounded-xl h-[280px] overflow-hidden relative">
+              <div className="group bg-white shadow-md rounded-xl h-[280px] md:overflow-hidden relative max-md:mb-[100px]">
                 <div className="flex flex-col items-center pt-10 py-20">
                   <div className="bg-[#FFB31A] rounded-[50%] w-fit px-4 py-4 hover:scale-x-[-1] transition-all duration-300">
                     <img src={level.img} className="w-[60px] max-h-[50px]" />
@@ -116,7 +117,25 @@ const Curriculam = () => {
                     {level.level}
                   </h4>
                 </div>
-                <div className="absolute -bottom-[350px] h-[280px] pt-5 w-full px-2 pl-3 group-hover:bottom-0 bg-[#2B3AA0] transition-all duration-300">
+                <div className="max-md:hidden absolute -bottom-[350px] h-[280px] pt-5 w-full px-2 pl-3 group-hover:bottom-0 bg-[#2B3AA0] transition-all duration-300">
+                  {level.points.map((point) => {
+                    return (
+                      <div className="flex items-start gap-2">
+                        <div className="flex item-center mt-1 w-fit">
+                          <span
+                            className="material-symbols-outlined text-[#FFB31A]"
+                            style={{ fontSize: "24px" }}
+                          >
+                            check
+                          </span>
+                        </div>
+                        <p className="text-[18px] text-white">{point}</p>
+                      </div>
+                    );
+                  })}
+                </div>
+
+                <div className="md:hidden py-5 pt-5 w-full px-2 pl-3 bg-[#2B3AA0] mt-[-60px] rounded-b-xl">
                   {level.points.map((point) => {
                     return (
                       <div className="flex items-start gap-2">
@@ -137,17 +156,20 @@ const Curriculam = () => {
             );
           })}
         </div>
-        <p className="text-center mt-10 text-[24px] text-[#FFB31A] font-[500] bg-white shadow-md w-fit mx-auto px-5 py-1 rounded-lg">
+        {/* <p className="text-center mt-10 text-[24px] text-[#FFB31A] font-[500] bg-white shadow-md w-fit mx-auto px-5 py-1 rounded-lg">
           And More
-        </p>
+        </p> */}
       </section>
 
       {/* Offline Courses Container */}
-      <section className="w-11/12 flex flex-row-reverse max-md:flex-col gap-16 mx-auto mt-8 md:mb-28 mb-14">
+      <section className="w-11/12 flex flex-row-reverse max-md:flex-col gap-16 mx-auto mt-8 max-md:mt-[-80px] md:mb-28 mb-14">
         <div className="md:w-[50%] w-full !z-10">
+          <h4 className="text-black font-bold text-3xl md:hidden">
+            Offline Programs
+          </h4>
           <img
             src="/images/offline-students-playing.jpg"
-            className="w-full h-full max-md:mt-6 max-md:hidden object-cover rounded-tl-[60px] rounded-br-[60px] md:rounded-tl-[120px] md:rounded-br-[120px]"
+            className="w-full h-full max-md:mt-6 object-cover rounded-tl-[60px] rounded-br-[60px] md:rounded-tl-[120px] md:rounded-br-[120px]"
           />
         </div>
 
@@ -193,7 +215,7 @@ const Curriculam = () => {
           </h4>
           <img
             src="/images/online-program.jpg"
-            className="w-full h-full max-md:mt-6 max-md:hidden object-cover rounded-tl-[60px] rounded-br-[60px] md:rounded-tl-[120px] md:rounded-br-[120px]"
+            className="w-full h-full max-md:mt-6 object-cover rounded-tl-[60px] rounded-br-[60px] md:rounded-tl-[120px] md:rounded-br-[120px]"
           />
         </div>
 

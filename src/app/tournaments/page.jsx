@@ -68,26 +68,40 @@ const Tournaments = () => {
 
   const sendEmail = (values) => {
     setIsSubmitting(true);
-    // emailjs
-    //   .send(
-    //     "service_7y7vvlf", // replace with your service ID
-    //     "template_lfitz1q", // replace with your template ID
-    //     templateParams,
-    //     "74cW5H5JugUoTfj2P" // replace with your public key
-    //   )
-    //   .then(
-    //     () => {
-    //       message.success("Message sent successfully!");
-    //       formRef.current.resetFields();
-    //       setSuccesMessage("Form has been submitted Succesfully");
-    //       setIsSubmitting(false);
-    //     },
-    //     (error) => {
-    //       message.error("Failed to send message. Try again later.");
-    //       setErrorMessage("There is an error submitting the form", error);
-    //       setIsSubmitting(false);
-    //     }
-    //   );
+    const templateParams = {
+      particpantFirstName: formData.particpantFirstName,
+      particpantMiddleName: formData.particpantMiddleName,
+      particpantLastName: formData.particpantLastName,
+      dob: formData.dob,
+      gender: formData.gender,
+      fidaID: formData.fidaID,
+      country: formData.country,
+      country_code: formData.country_code,
+      state: formData.state,
+      city: formData.city,
+      location: formData.location,
+    };
+    emailjs
+      .send(
+        "service_hk9vt4i", // replace with your service ID
+        "template_ed3hqbp", // replace with your template ID
+        templateParams,
+        "RXCvCuvaDD6zohMef" // replace with your public key
+      )
+      .then(
+        () => {
+          message.success("Message sent successfully!");
+          formRef.current.resetFields();
+          setSuccesMessage("Form has been submitted Succesfully");
+          setIsSubmitting(false);
+        },
+        (error) => {
+          message.error("Failed to send message. Try again later.");
+          setErrorMessage("There is an error submitting the form", error);
+          setIsSubmitting(false);
+        }
+      );
+    setIsSubmitting(false);
   };
 
   useEffect(() => {
@@ -179,7 +193,7 @@ const Tournaments = () => {
           </h2>
           <p className="mt-4 text-[14px]">
             (A tournament registration fee of INR 300 will be applicable, open
-            for payment from June 15th.)
+            for payment from June 15th, 2025.)
           </p>
           <div className="md:mt-6 mt-6">
             <form onSubmit={sendEmail}>
@@ -212,7 +226,7 @@ const Tournaments = () => {
               </div>
 
               {/* Date of Birth */}
-              <div className="flex md:flex-row flex-col gap-4 items-center mt-5">
+              <div className="flex md:flex-row flex-col gap-4 md:items-center mt-5">
                 <h2 className="text-[18px]">Date of Birth:</h2>
                 <div>
                   <input
@@ -227,7 +241,7 @@ const Tournaments = () => {
               </div>
 
               {/* Gender */}
-              <div className="flex md:flex-row flex-col gap-4 items-center mt-5">
+              <div className="flex md:flex-row flex-col gap-4 md:items-center mt-5">
                 <h2 className="text-[18px]">Gender:</h2>
                 <div className="flex gap-4">
                   {["Male", "Female", "Other"].map((g) => (
@@ -247,7 +261,7 @@ const Tournaments = () => {
               </div>
 
               {/* FIDE ID */}
-              <div className="flex md:flex-row flex-col gap-4 items-center mt-5">
+              <div className="flex md:flex-row flex-col gap-4 md:items-center mt-5">
                 <h2 className="text-[18px]">FIDE ID (if any):</h2>
                 <input
                   name="fidaID"
@@ -259,9 +273,9 @@ const Tournaments = () => {
               </div>
 
               {/* Country and State */}
-              <div className="flex md:flex-row flex-col gap-6">
+              <div className="flex md:flex-row flex-col md:gap-6">
                 {/* Country */}
-                <div className="flex md:flex-row flex-col gap-4 items-center mt-5">
+                <div className="flex md:flex-row flex-col gap-4 md:items-center mt-5">
                   <h2 className="text-[18px]">Country:</h2>
                   <Select
                     options={Country.getAllCountries().map((c) => ({
@@ -287,7 +301,7 @@ const Tournaments = () => {
                 </div>
 
                 {/* State */}
-                <div className="flex md:flex-row flex-col gap-4 items-center mt-5">
+                <div className="flex md:flex-row flex-col gap-4 md:items-center mt-5">
                   <h2 className="text-[18px]">State:</h2>
                   <Select
                     options={states.map((s) => ({
@@ -316,9 +330,9 @@ const Tournaments = () => {
               </div>
 
               {/* City and Location */}
-              <div className="flex md:flex-row flex-col gap-6">
+              <div className="flex md:flex-row flex-col md:gap-6 ">
                 {/* City */}
-                <div className="flex md:flex-row flex-col gap-4 items-center mt-5">
+                <div className="flex md:flex-row flex-col gap-4 md:items-center mt-5">
                   <h2 className="text-[18px]">City:</h2>
                   <Select
                     options={cities.map((c) => ({
@@ -341,7 +355,7 @@ const Tournaments = () => {
                 </div>
 
                 {/* Location */}
-                <div className="flex md:flex-row flex-col gap-4 items-center mt-5">
+                <div className="flex md:flex-row flex-col gap-4 md:items-center mt-5">
                   <h2 className="text-[18px]">Location:</h2>
                   <input
                     name="location"

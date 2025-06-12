@@ -1,7 +1,6 @@
 "use client";
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
-
 import {
   AppBar,
   Toolbar,
@@ -167,12 +166,12 @@ export default function ResponsiveMenuBar() {
 
   const router = useRouter();
 
+  const toggleDrawer = (open) => () => setDrawerOpen(open);
+
   const handleLogin = () => {
     toggleDrawer(false);
     router.push("/training");
   };
-
-  const toggleDrawer = (open) => () => setDrawerOpen(open);
 
   const pathname = usePathname();
 

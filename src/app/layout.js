@@ -71,8 +71,8 @@ export default function RootLayout({ children }) {
             {/* <Gallery title={"Gallery"} GridItems={GalleryGrid} /> */}
 
             {/* Footer */}
-            <footer className="bg-gray-800 text-white py-4 mt-10">
-              <div className="container mx-auto flex items-center justify-between">
+            <footer className="bg-gray-800 text-white py-4">
+              <div className="container mx-auto flex md:flex-row flex-col md:gap-1 gap-4 items-center justify-between">
                 <Link href="/privacy-policy">Privacy Policy</Link>
                 <ClientOnly>
                   <p>&copy; Copyright ThinQ Chess {new Date().getFullYear()}</p>

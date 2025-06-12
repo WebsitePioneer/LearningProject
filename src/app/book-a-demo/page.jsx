@@ -22,7 +22,7 @@ const BookADemo = () => {
       contact_number: `+${values.phone}`,
       child_name: values.childName,
       age: values.Age,
-      program_level: values.programLevel,
+      any_past_training: values.programLevel,
       state: values.state,
       country: values.country,
       message: values.message || "",
@@ -30,10 +30,10 @@ const BookADemo = () => {
 
     emailjs
       .send(
-        "service_7y7vvlf", // replace with your service ID
-        "template_lfitz1q", // replace with your template ID
+        "service_hk9vt4i", // replace with your service ID
+        "template_tznhe4n", // replace with your template ID
         templateParams,
-        "74cW5H5JugUoTfj2P" // replace with your public key
+        "RXCvCuvaDD6zohMef" // replace with your public key
       )
       .then(
         () => {

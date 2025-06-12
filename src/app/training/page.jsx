@@ -6,7 +6,7 @@ export default function Training() {
 
   return (
     <>
-      <div className="w-full h-screen bg-white flex flex-col items-center justify-center mb-16">
+      <div className="w-full h-screen bg-white flex flex-col items-center justify-center">
         {isLoading && (
           <div className="text-center text-gray-500 animate-pulse">
             Loading Training Platform...
