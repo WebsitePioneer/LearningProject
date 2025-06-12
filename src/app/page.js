@@ -33,7 +33,7 @@ export default function Home() {
             <h1 className="md:text-5xl text-[40px] capitalize md:leading-[60px] leading-[52px] font-[900] md:mt-8 md:mb-16 mb-12 text-[#FFFFFF]">
               Where young minds
               <br className="max-md:hidden" />
-              <span className="ml-3">learn to think ahead,</span>
+              <span className="max-md:ml-3">learn to think ahead,</span>
               <br className="max-md:hidden" />
               one game at a time
             </h1>
