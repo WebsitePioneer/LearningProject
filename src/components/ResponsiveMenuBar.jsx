@@ -135,7 +135,7 @@ function MenuContent({ mobile = false, onMenuClick }) {
               >
                 <Link href="/book-a-demo">Book a Demo</Link>
               </Button>
-              {/* <Button
+              <Button
                 variant="contained"
                 onClick={handleLogin}
                 sx={{
@@ -146,7 +146,7 @@ function MenuContent({ mobile = false, onMenuClick }) {
                 }}
               >
                 Log in
-              </Button> */}
+              </Button>
             </>
           ) : (
             <IconButton onClick={onMenuClick}>
@@ -236,7 +236,7 @@ export default function ResponsiveMenuBar() {
           >
             <Link href="/book-a-demo">Book a Demo</Link>
           </Button>
-          {/* <Button
+          <Button
             fullWidth
             variant="contained"
             onClick={handleLogin}
@@ -248,7 +248,7 @@ export default function ResponsiveMenuBar() {
             }}
           >
             Log in
-          </Button> */}
+          </Button>
         </Box>
       </Drawer>
     </>
