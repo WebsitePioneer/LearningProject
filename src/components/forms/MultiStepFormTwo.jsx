@@ -530,7 +530,7 @@ const MultiStepFormTwo = () => {
             <h2 className="text-xl font-bold">
               Parent Details <br />
               <span className="text-[16px] text-[#2B3AA0]">
-                (You have to fill either the Mother or the Father details)
+                (Please provide either the mother’s or the father’s details.)
               </span>
             </h2>
 
