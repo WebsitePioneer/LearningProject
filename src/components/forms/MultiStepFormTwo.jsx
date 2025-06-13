@@ -473,7 +473,7 @@ const MultiStepFormTwo = () => {
                 value={formData.dob}
                 onChange={handleChange}
                 required
-                className="w-full p-2 border border-[#d3d1d1] rounded"
+                className="w-full max-md:w-[95%] p-2 border border-[#d3d1d1] rounded"
               />
             </div>
 
@@ -522,7 +522,7 @@ const MultiStepFormTwo = () => {
         {step === 2 && classesfor === "Child" && (
           <>
             <h2 className="text-xl font-bold">
-              Parent Details (Mother or Father info is must)
+              Parent Details (You have to fill either Mother or Father details)
             </h2>
 
             {/* Father Name */}
@@ -536,7 +536,7 @@ const MultiStepFormTwo = () => {
               />
               <input
                 name="fatherMiddleName"
-                placeholder="Father Middle Name"
+                placeholder="Middle Name (Optional)"
                 value={formData.fatherMiddleName}
                 onChange={handleChange}
                 className="p-2 border border-[#d3d1d1] rounded"
@@ -591,7 +591,7 @@ const MultiStepFormTwo = () => {
               />
               <input
                 name="motherMiddleName"
-                placeholder="Mother Middle Name"
+                placeholder="Middle Name (Optional)"
                 value={formData.motherMiddleName}
                 onChange={handleChange}
                 className="p-2 border border-[#d3d1d1] rounded"
@@ -993,7 +993,8 @@ const MultiStepFormTwo = () => {
             {/* I am not a Robot */}
             <div className="mt-6">
               <ReCAPTCHA
-                sitekey="6Lfe21grAAAAAN9HX4imtbnYctfXs24fKAjiEjsO"
+                // sitekey="6Lfe21grAAAAAN9HX4imtbnYctfXs24fKAjiEjsO"
+                sitekey="6LehpV8rAAAAABFbW0OBbIDomGf33mLs7YIoMyU1"
                 onChange={(value) => setIsHuman(!!value)} // ReCAPTCHA passes null on expiry
                 onExpired={() => setIsHuman(false)}
               />

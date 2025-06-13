@@ -3,6 +3,14 @@ import Banner from "@/components/ui/Banner";
 import blogs from "@/utils/blogs";
 import { notFound } from "next/navigation";
 
+// ✅ Static params for export
+export function generateStaticParams() {
+  return blogs.map((blog) => ({
+    slug: blog.slug,
+  }));
+}
+
+// ✅ Page component
 export default function BlogDetail({ params }) {
   const blog = blogs.find((b) => b.slug === params.slug);
 

@@ -66,12 +66,18 @@ const Curriculam = () => {
 
   return (
     <>
-      <Banner
-        heading={"Designed for young minds Structured for growth "}
-        image={"/images/about-banner.jpg"}
-        buttonText={"Get in touch with us"}
-        link={"/"}
-      />
+      <section
+        className="w-full relative bg-cover bg-center"
+        style={{ backgroundImage: `url('/images/about-banner.jpg')` }}
+      >
+        <div className="absolute inset-0 z-10 bg-black opacity-[0.5]"></div>
+        <div className="relative z-20 w-11/12 mx-auto py-10 md:py-20">
+          <h1 className="md:text-5xl text-[23px] leading-[52px] md:w-6/12 max-md:w-[320px] capitalize md:leading-[60px] font-[900] text-[#FFFFFF]">
+            Designed for young minds <br className="md:hidden " />
+            Structured for growth
+          </h1>
+        </div>
+      </section>
 
       {/* Intro section */}
       <section className="w-11/12 mx-auto flex max-md:flex-col-reverse gap-10 md:my-24 my-12">

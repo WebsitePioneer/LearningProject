@@ -25,6 +25,13 @@ const OurStory = () => {
         "I started playing chess at the age of eight and began competing professionally by the time I was thirteen, improving mostly through self-study. I secured 2nd place in the U-19 state-level tournaments and have participated in four national events. As the co-founder of Chess City Raipur, I’ve been working to make chess more accessible by organising tournaments and promoting the game among underprivileged children. For me, chess is more than a sport; it’s a way of life that continues to shape how I think, plan, and grow.",
       isScrollable: true,
     },
+    {
+      img: "/images/janhavi.jpeg",
+      name: "Janhavi Soneji",
+      content:
+        "I’m Janhavi Soneji, a Chartered Accountant who turned a childhood love for chess into a meaningful and successful journey. I started playing at seven and have earned multiple state and national accolades since. I’m a three-time DSO national champion, three-time state champion, and secured 5th place at the U-17 Nationals—proof that with passion and perseverance, dreams do turn into achievements.",
+      isScrollable: true,
+    },
   ];
   return (
     <>
@@ -73,18 +80,18 @@ const OurStory = () => {
         </div>
       </section>
 
-      <section className="md:w-11/12 w-full mx-auto max-md:px-4">
+      <section className="md:w-12/12 w-full mx-auto max-md:px-4">
         <h2 className="text-5xl font-bold text-[#2B3AA0] text-center">
           Our Team
         </h2>
-        <div className="md:w-11/12 max-md:hidden my-20 mt-10 md:mx-auto flex md:flex-row flex-col gap-6">
+        <div className="md:w-11/12 max-md:hidden my-20 mt-10 md:mx-auto flex md:flex-row flex-col gap-6 ">
           {ourTeam.map((item) => {
             return (
               <div
                 key={item.name}
                 className="w-full h-[400px] relative group overflow-hidden rounded-tl-[50px] rounded-br-[50px]"
               >
-                <img src={item.img} className="object-bottom" />
+                <img src={item.img} className="object-cover h-full w-full" />
                 <div className="bg-[#00000099] group-hover:top-[0px] transition-all duration-300 pb-[100px] absolute top-[330px] w-full">
                   <h3 className="text-[32px] font-[600] text-white px-5 mt-3">
                     {item.name}
