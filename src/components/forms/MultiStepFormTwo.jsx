@@ -467,6 +467,12 @@ const MultiStepFormTwo = () => {
 
             {/* Date of Birth */}
             <div className=" mt-4">
+              <label
+                htmlFor="dob"
+                className="text-sm text-gray-600 mb-3 block md:hidden"
+              >
+                Date of Birth (dd-mm-yyyy)*
+              </label>
               <input
                 name="dob"
                 type="date"
@@ -522,14 +528,17 @@ const MultiStepFormTwo = () => {
         {step === 2 && classesfor === "Child" && (
           <>
             <h2 className="text-xl font-bold">
-              Parent Details (You have to fill either Mother or Father details)
+              Parent Details <br />
+              <span className="text-[16px] text-[#2B3AA0]">
+                (Please provide either the mother’s or the father’s details.)
+              </span>
             </h2>
 
             {/* Father Name */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-3 mt-2">
               <input
                 name="fatherFirstName"
-                placeholder="Father First Name"
+                placeholder="Father First Name*"
                 value={formData.fatherFirstName}
                 onChange={handleChange}
                 className="p-2 border border-[#d3d1d1] rounded"
@@ -543,7 +552,7 @@ const MultiStepFormTwo = () => {
               />
               <input
                 name="fatherLastName"
-                placeholder="Father Last Name"
+                placeholder="Father Last Name*"
                 value={formData.fatherLastName}
                 onChange={handleChange}
                 className="p-2 border border-[#d3d1d1] rounded"
@@ -555,7 +564,7 @@ const MultiStepFormTwo = () => {
               <input
                 name="fatherEmail"
                 type="email"
-                placeholder="Father Email"
+                placeholder="Father Email*"
                 value={formData.fatherEmail}
                 onChange={handleChange}
                 className="p-2 border border-[#d3d1d1] rounded"
@@ -584,7 +593,7 @@ const MultiStepFormTwo = () => {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-3 mt-2">
               <input
                 name="motherFirstName"
-                placeholder="Mother First Name"
+                placeholder="Mother First Name*"
                 value={formData.motherFirstName}
                 onChange={handleChange}
                 className="p-2 border border-[#d3d1d1] rounded"
@@ -598,7 +607,7 @@ const MultiStepFormTwo = () => {
               />
               <input
                 name="motherLastName"
-                placeholder="Mother Last Name"
+                placeholder="Mother Last Name*"
                 value={formData.motherLastName}
                 onChange={handleChange}
                 className="p-2 border border-[#d3d1d1] rounded"
@@ -610,7 +619,7 @@ const MultiStepFormTwo = () => {
               <input
                 name="motherEmail"
                 type="email"
-                placeholder="Mother Email"
+                placeholder="Mother Email*"
                 value={formData.motherEmail}
                 onChange={handleChange}
                 className="p-2 border border-[#d3d1d1] rounded"

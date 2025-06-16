@@ -1,15 +1,17 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import emailjs from "@emailjs/browser";
+import PhoneInput from "react-phone-input-2";
 import Select from "react-select";
 import { Country, State, City } from "country-state-city";
 import "react-phone-input-2/lib/style.css";
 import Banner from "@/components/ui/Banner";
+import { loadRazorpayScript } from "@/utils/loadRazorpay";
 
 const Tournaments = () => {
   const [succesMessage, setSuccesMessage] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
-  const [isSubmitting, setIsSubmitting] = useState(true);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [states, setStates] = useState([]);
   const [cities, setCities] = useState([]);
 
@@ -23,6 +25,8 @@ const Tournaments = () => {
     particpantFirstName: "",
     particpantMiddleName: "",
     particpantLastName: "",
+    mail_id: "",
+    phone_no: "",
     dob: "",
     gender: "",
     fidaID: "",
@@ -66,42 +70,136 @@ const Tournaments = () => {
     }
   };
 
-  const sendEmail = (values) => {
+  const handlePayment = async (e) => {
+    e.preventDefault(); // Prevent default form submission
+
+    // Basic validation (you can expand this)
+    if (
+      !formData.particpantFirstName ||
+      !formData.particpantLastName ||
+      !formData.dob ||
+      !formData.gender ||
+      !formData.country ||
+      !formData.state ||
+      !formData.city
+    ) {
+      setErrorMessage("Please fill in all required fields.");
+      return;
+    }
+
     setIsSubmitting(true);
-    const templateParams = {
-      particpantFirstName: formData.particpantFirstName,
-      particpantMiddleName: formData.particpantMiddleName,
-      particpantLastName: formData.particpantLastName,
-      dob: formData.dob,
-      gender: formData.gender,
-      fidaID: formData.fidaID,
-      country: formData.country,
-      country_code: formData.country_code,
-      state: formData.state,
-      city: formData.city,
-      location: formData.location,
-    };
-    emailjs
-      .send(
-        "service_hk9vt4i", // replace with your service ID
-        "template_ed3hqbp", // replace with your template ID
-        templateParams,
-        "RXCvCuvaDD6zohMef" // replace with your public key
-      )
-      .then(
-        () => {
-          message.success("Message sent successfully!");
-          formRef.current.resetFields();
-          setSuccesMessage("Form has been submitted Succesfully");
-          setIsSubmitting(false);
-        },
-        (error) => {
-          message.error("Failed to send message. Try again later.");
-          setErrorMessage("There is an error submitting the form", error);
-          setIsSubmitting(false);
-        }
+    setErrorMessage("");
+    setSuccesMessage("");
+
+    const razorpayLoaded = await loadRazorpayScript();
+
+    if (!razorpayLoaded) {
+      setErrorMessage(
+        "Failed to load Razorpay SDK. Check your internet connection."
       );
-    setIsSubmitting(false);
+      setIsSubmitting(false);
+      return;
+    }
+
+    try {
+      const amount = 1; // Rs. 300 (your comment says Rs. 500, but code is 300)
+      const res = await fetch("/api/razorpay", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ amount }),
+      });
+      const data = await res.json();
+
+      if (data.error) {
+        setErrorMessage(data.error);
+        setIsSubmitting(false);
+        return;
+      }
+
+      const options = {
+        key: process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID,
+        name: "Thinq Chess",
+        description: "Tournament Payment",
+        order_id: data.order.id,
+        handler: async function (response) {
+          setSuccesMessage("Payment successful!");
+
+          // Now you can send the email after successful payment
+          const templateParams = {
+            particpantFirstName: formData.particpantFirstName,
+            particpantMiddleName: formData.particpantMiddleName,
+            particpantLastName: formData.particpantLastName,
+            mail_id: formData.mail_id,
+            phone_no: formData.phone_no,
+            dob: formData.dob,
+            gender: formData.gender,
+            fidaID: formData.fidaID,
+            country: formData.country,
+            country_code: formData.country_code,
+            state: formData.state,
+            city: formData.city,
+            location: formData.location,
+            payment_status: "Payment Successfull",
+            amount_paid: amount,
+          };
+
+          // Uncomment and use your emailjs code here
+          emailjs
+            .send(
+              "service_hk9vt4i", // replace with your service ID
+              "template_ed3hqbp", // replace with your template ID
+              templateParams,
+              "RXCvCuvaDD6zohMef" // replace with your public key
+            )
+            .then(
+              () => {
+                console.log("Email sent successfully!");
+              },
+              (error) => {
+                console.error("Failed to send email:", error);
+                setErrorMessage(
+                  "Registration successful, but failed to send confirmation email."
+                );
+              }
+            );
+
+          setFormData({
+            particpantFirstName: "",
+            particpantMiddleName: "",
+            particpantLastName: "",
+            mail_id: "",
+            phone_no: "",
+            dob: "",
+            gender: "",
+            fidaID: "",
+            country: "",
+            country_code: "",
+            state: "",
+            city: "",
+            location: "",
+          });
+        },
+        prefill: {
+          name:
+            formData.particpantFirstName +
+            formData.particpantMiddleName +
+            formData.particpantLastName, // Consider using formData.particpantFirstName etc. for prefill
+          email: formData.mail_id, // Consider using an email field from your form
+          contact: formData.phone_no.replace(/^\+91\s?/, ""), // Consider using a phone number field from your form
+        },
+        theme: {
+          color: "#3399cc",
+        },
+      };
+
+      const rzp = new window.Razorpay(options);
+      rzp.open();
+    } catch (error) {
+      console.error("Payment initiation failed:", error);
+      setErrorMessage("Failed to initiate payment. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   useEffect(() => {
@@ -184,7 +282,7 @@ const Tournaments = () => {
         <div className="md:w-[50%] w-full">
           <img
             src="/images/contact-img.png"
-            className="w-full rounded-lg h-[550px] object-cover"
+            className="w-full rounded-lg h-[650px] object-cover"
           />
         </div>
         <div className="md:w-[50%] w-full">
@@ -196,7 +294,8 @@ const Tournaments = () => {
             for payment from June 15th, 2025.)
           </p>
           <div className="md:mt-6 mt-6">
-            <form onSubmit={sendEmail}>
+            <script src="https://checkout.razorpay.com/v1/checkout.js" />
+            <form onSubmit={handlePayment}>
               {/* Participant Name */}
               <h2 className="text-[18px] mb-2">Participant Name:</h2>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
@@ -223,6 +322,41 @@ const Tournaments = () => {
                   required
                   className="p-1 border border-[#d3d1d1] rounded"
                 />
+              </div>
+
+              {/* MailId and Phone number */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mt-5">
+                <div className="w-full">
+                  <h2 className="text-[18px] mb-2">Mail ID:</h2>
+                  <input
+                    name="mail_id"
+                    type="email"
+                    placeholder="Mail ID *"
+                    value={formData.mail_id}
+                    onChange={handleChange}
+                    required
+                    className="p-1 w-full border border-[#d3d1d1] rounded"
+                  />
+                </div>
+                <div className="w-full">
+                  <h2 className="text-[18px] mb-2">Phone no:</h2>
+                  <PhoneInput
+                    country={"in"} // default country
+                    inputStyle={{ width: "100%", height: "34px" }}
+                    enableSearch={true}
+                    inputProps={{
+                      name: "phone_no",
+                      required: true,
+                    }}
+                    value={formData.phone_no} // Control value directly
+                    onChange={(value, countryData, e, formattedValue) =>
+                      setFormData((prev) => ({
+                        ...prev,
+                        phone_no: formattedValue,
+                      }))
+                    }
+                  />
+                </div>
               </div>
 
               {/* Date of Birth */}
