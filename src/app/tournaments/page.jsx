@@ -291,7 +291,7 @@ const Tournaments = () => {
           </h2>
           <p className="mt-4 text-[14px]">
             (A tournament registration fee of INR 300 will be applicable, open
-            for payment from June 15th, 2025.)
+            for payment from June 18th, 2025.)
           </p>
           <div className="md:mt-6 mt-6">
             <script src="https://checkout.razorpay.com/v1/checkout.js" />
