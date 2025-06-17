@@ -13,7 +13,7 @@ const OurStory = () => {
     },
     {
       img: "/images/Chiranth.jpg",
-      name: "Chiranth M",
+      name: "Chiranth M D",
       content:
         "With 18 years in chess, I’ve won 100+ trophies and represented Karnataka at SGFI Nationals. I was Category C Champion at the 2025 Bengaluru International GM Tournament. As a coach for 5 years, I’ve guided students to FIDE ratings and national titles.",
       isScrollable: false,
