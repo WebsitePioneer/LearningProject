@@ -102,7 +102,7 @@ const Tournaments = () => {
     }
 
     try {
-      const amount = 1; // Rs. 300 (your comment says Rs. 500, but code is 300)
+      const amount = 300; // Rs. 300 (your comment says Rs. 500, but code is 300)
       const res = await fetch("/api/razorpay", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
