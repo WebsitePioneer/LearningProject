@@ -25,6 +25,21 @@ export const metadata = {
   icons: {
     icon: "/favicon.svg",
   },
+  openGraph: {
+    title: "ThinQ Chess",
+    description:
+      "Join ThinQ Chess to sharpen your mind through engaging chess programs for all ages!",
+    url: "https://thinqchess.com",
+    siteName: "ThinQ Chess",
+    images: [
+      {
+        url: "https://thinqchess.com/images/favicon.png",
+        width: 1200,
+        height: 630,
+      },
+    ],
+    type: "website",
+  },
 };
 
 export default function RootLayout({ children }) {
@@ -51,11 +66,11 @@ export default function RootLayout({ children }) {
           property="og:description"
           content="Join ThinQ Chess to sharpen your mind through engaging chess programs for all ages!"
         />
-        <meta property="og:image" content="/favicon.svg" />
         <meta
-          property="og:url"
+          property="og:image"
           content="https://thinqchess.com/images/favicon.png"
         />
+        <meta property="og:url" content="https://thinqchess.com" />
         <meta property="og:type" content="website" />
 
         {/* Twitter Preview (optional) */}
