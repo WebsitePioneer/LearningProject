@@ -31,10 +31,47 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
+        {/* Fonts & Icons */}
         <link
           href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
           rel="stylesheet"
         />
+
+        {/* Basic Metadata */}
+        <meta charSet="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+          name="description"
+          content="Join ThinQ Chess to sharpen your mind through engaging chess programs for all ages!"
+        />
+
+        {/* Open Graph Metadata */}
+        <meta property="og:title" content="ThinQ Chess" />
+        <meta
+          property="og:description"
+          content="Join ThinQ Chess to sharpen your mind through engaging chess programs for all ages!"
+        />
+        <meta property="og:image" content="/favicon.svg" />
+        <meta
+          property="og:url"
+          content="https://thinqchess.com/images/favicon.png"
+        />
+        <meta property="og:type" content="website" />
+
+        {/* Twitter Preview (optional) */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="ThinQ Chess" />
+        <meta
+          name="twitter:description"
+          content="Join ThinQ Chess to sharpen your mind through engaging chess programs for all ages!"
+        />
+        <meta
+          name="twitter:image"
+          content="https://thinqchess.com/images/favicon.png"
+        />
+
+        {/* Favicon */}
+        <link rel="icon" href="/favicon.svg" />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
