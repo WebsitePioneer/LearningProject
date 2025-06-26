@@ -25,16 +25,68 @@ export const metadata = {
   icons: {
     icon: "/favicon.svg",
   },
+  openGraph: {
+    title: "ThinQ Chess",
+    description:
+      "Join ThinQ Chess to sharpen your mind through engaging chess programs for all ages!",
+    url: "https://thinqchess.com",
+    siteName: "ThinQ Chess",
+    images: [
+      {
+        url: "https://thinqchess.com/images/favicon.png",
+        width: 1200,
+        height: 630,
+      },
+    ],
+    type: "website",
+  },
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
+        {/* Fonts & Icons */}
         <link
           href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
           rel="stylesheet"
         />
+
+        {/* Basic Metadata */}
+        <meta charSet="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+          name="description"
+          content="Join ThinQ Chess to sharpen your mind through engaging chess programs for all ages!"
+        />
+
+        {/* Open Graph Metadata */}
+        <meta property="og:title" content="ThinQ Chess" />
+        <meta
+          property="og:description"
+          content="Join ThinQ Chess to sharpen your mind through engaging chess programs for all ages!"
+        />
+        <meta
+          property="og:image"
+          content="https://thinqchess.com/images/favicon.png"
+        />
+        <meta property="og:url" content="https://thinqchess.com" />
+        <meta property="og:type" content="website" />
+
+        {/* Twitter Preview (optional) */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="ThinQ Chess" />
+        <meta
+          name="twitter:description"
+          content="Join ThinQ Chess to sharpen your mind through engaging chess programs for all ages!"
+        />
+        <meta
+          name="twitter:image"
+          content="https://thinqchess.com/images/favicon.png"
+        />
+
+        {/* Favicon */}
+        <link rel="icon" href="/favicon.svg" />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}

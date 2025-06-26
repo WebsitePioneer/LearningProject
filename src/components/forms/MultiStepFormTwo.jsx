@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import emailjs from "@emailjs/browser";
 import Select from "react-select";
 import { Country, State, City } from "country-state-city";
@@ -8,6 +8,7 @@ import "react-phone-input-2/lib/style.css";
 import ReCAPTCHA from "react-google-recaptcha";
 
 const MultiStepFormTwo = () => {
+  const recaptchaRef = useRef(null);
   const [classesfor, setClassesFor] = useState("Child");
   const [states, setStates] = useState([]);
   const [cities, setCities] = useState([]);
@@ -210,15 +211,10 @@ const MultiStepFormTwo = () => {
   };
 
   const onSubmit = async (e) => {
+    debugger;
     setIsSubmitting(true);
     e.preventDefault(); // Prevent default form submission
     setErrorMessage(""); // Clear previous errors
-
-    if (enteredCaptcha.toUpperCase() !== captcha.toUpperCase()) {
-      setErrorMessage("Incorrect captcha. Please try again.");
-      setIsSubmitting(false);
-      return;
-    }
 
     if (!tc1 || !tc2) {
       setErrorMessage("Please accept both terms and conditions.");
@@ -226,136 +222,158 @@ const MultiStepFormTwo = () => {
       return;
     }
 
-    if (!isHuman) {
+    if (enteredCaptcha.toUpperCase() !== captcha.toUpperCase()) {
+      setErrorMessage("Incorrect captcha. Please try again.");
+      setIsSubmitting(false);
+      return;
+    }
+
+    const recaptchaValue = recaptchaRef.current.getValue();
+
+    if (!recaptchaValue) {
       setErrorMessage("Please complete the 'I am not a robot' verification.");
       setIsSubmitting(false);
       return;
     }
 
-    const templateParams = {
-      studentFirstName: formData.studentFirstName,
-      studentMiddleName: formData.studentMiddleName,
-      studentLastName: formData.studentLastName,
-      dob: formData.dob,
-      gender: formData.gender,
-      studentEmail: formData.studentEmail,
-      studentPhone: formData.studentPhone,
-
-      fatherFirstName: formData.fatherFirstName,
-      fatherMiddleName: formData.fatherMiddleName,
-      fatherLastName: formData.fatherLastName,
-      fatherEmail: formData.fatherEmail,
-      fatherPhone: formData.fatherPhone,
-      motherFirstName: formData.motherFirstName,
-      motherMiddleName: formData.motherMiddleName,
-      motherLastName: formData.motherLastName,
-      motherEmail: formData.motherEmail,
-      motherPhone: formData.motherPhone,
-
-      country: formData.country,
-      country_code: formData.country_code,
-      address_line1: formData.address_line1,
-      address_line2: formData.address_line2,
-      state: formData.state,
-      city: formData.city,
-      pincode: formData.pincode,
-
-      mode: formData.mode,
-      coaching_city: formData.coaching_city,
-      preferredCentre: formData.preferredCentre,
-
-      heardFrom: formData.heardFrom,
-      refFirstName: formData.refFirstName,
-      refLastName: formData.refLastName,
-      otherSource: formData.otherSource,
-
-      Terms_and_condition_one: formData.Terms_and_condition_one,
-      Terms_and_condition_two: formData.Terms_and_condition_two,
-    };
-
     try {
-      emailjs
-        .send(
-          "service_p5st95p", // replace with your service ID
-          "template_exo2g59", // replace with your template ID
-          templateParams,
-          "TMT5AxQO_ZAQ5o_X5" // replace with your public key
-        )
-        .then(
-          () => {
-            message.success("Message sent successfully!");
-            formRef.current.resetFields();
-            setSuccesMessage("Form has been submitted Succesfully");
-            setIsSubmitting(false);
-          },
-          (error) => {
-            message.error("Failed to send message. Try again later.");
-            setErrorMessage("There is an error submitting the form", error);
-            setIsSubmitting(false);
-          }
-        );
-
-      setSuccesMessage("Form submitted successfully!");
-      // Reset form after successful submission
-      setFormData({
-        studentFirstName: "",
-        studentMiddleName: "",
-        studentLastName: "",
-        dob: "",
-        gender: "",
-        studentEmail: "",
-        studentPhone: "",
-
-        fatherFirstName: "",
-        fatherMiddleName: "",
-        fatherLastName: "",
-        fatherEmail: "",
-        fatherPhone: "",
-        motherFirstName: "",
-        motherMiddleName: "",
-        motherLastName: "",
-        motherEmail: "",
-        motherPhone: "",
-
-        country: "",
-        country_code: "",
-        address_line1: "",
-        address_line2: "",
-        state: "",
-        city: "",
-        pincode: "",
-
-        mode: "",
-        coaching_city: "",
-        preferredCentre: "",
-
-        heardFrom: "",
-        refFirstName: "",
-        refLastName: "",
-        otherSource: "",
-
-        Terms_and_condition_one: "No",
-        Terms_and_condition_two: "No",
+      const res = await fetch("/api/verify-recaptcha", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ token: recaptchaValue }),
       });
-      setClassesFor("Child");
-      setTc1(false);
-      setTc2(false);
-      setIsHuman(false);
-      setEnteredCaptcha("");
-      // Generate new captcha
-      const newCaptcha = Math.random()
-        .toString(36)
-        .substring(2, 8)
-        .toUpperCase();
-      setCaptcha(newCaptcha);
-      setStep(1); // Go back to first step
-    } catch (error) {
-      setErrorMessage("Failed to send form: " + error.text);
-      console.error("EmailJS Error:", error);
+
+      const data = await res.json();
+
+      if (data.success) {
+        const templateParams = {
+          studentFirstName: formData.studentFirstName,
+          studentMiddleName: formData.studentMiddleName,
+          studentLastName: formData.studentLastName,
+          dob: formData.dob,
+          gender: formData.gender,
+          studentEmail: formData.studentEmail,
+          studentPhone: formData.studentPhone,
+
+          fatherFirstName: formData.fatherFirstName,
+          fatherMiddleName: formData.fatherMiddleName,
+          fatherLastName: formData.fatherLastName,
+          fatherEmail: formData.fatherEmail,
+          fatherPhone: formData.fatherPhone,
+          motherFirstName: formData.motherFirstName,
+          motherMiddleName: formData.motherMiddleName,
+          motherLastName: formData.motherLastName,
+          motherEmail: formData.motherEmail,
+          motherPhone: formData.motherPhone,
+
+          country: formData.country,
+          country_code: formData.country_code,
+          address_line1: formData.address_line1,
+          address_line2: formData.address_line2,
+          state: formData.state,
+          city: formData.city,
+          pincode: formData.pincode,
+
+          mode: formData.mode,
+          coaching_city: formData.coaching_city,
+          preferredCentre: formData.preferredCentre,
+
+          heardFrom: formData.heardFrom,
+          refFirstName: formData.refFirstName,
+          refLastName: formData.refLastName,
+          otherSource: formData.otherSource,
+
+          Terms_and_condition_one: formData.Terms_and_condition_one,
+          Terms_and_condition_two: formData.Terms_and_condition_two,
+        };
+
+        try {
+          emailjs
+            .send(
+              "service_p5st95p", // replace with your service ID
+              "template_exo2g59", // replace with your template ID
+              templateParams,
+              "TMT5AxQO_ZAQ5o_X5" // replace with your public key
+            )
+            .then(
+              () => {
+                message.success("Message sent successfully!");
+                formRef.current.resetFields();
+                setSuccesMessage("Form has been submitted Succesfully");
+                setIsSubmitting(false);
+              },
+              (error) => {
+                message.error("Failed to send message. Try again later.");
+                setErrorMessage("There is an error submitting the form", error);
+                setIsSubmitting(false);
+              }
+            );
+
+          setSuccesMessage("Form submitted successfully!");
+          // Reset form after successful submission
+          setFormData({
+            studentFirstName: "",
+            studentMiddleName: "",
+            studentLastName: "",
+            dob: "",
+            gender: "",
+            studentEmail: "",
+            studentPhone: "",
+
+            fatherFirstName: "",
+            fatherMiddleName: "",
+            fatherLastName: "",
+            fatherEmail: "",
+            fatherPhone: "",
+            motherFirstName: "",
+            motherMiddleName: "",
+            motherLastName: "",
+            motherEmail: "",
+            motherPhone: "",
+
+            country: "",
+            country_code: "",
+            address_line1: "",
+            address_line2: "",
+            state: "",
+            city: "",
+            pincode: "",
+
+            mode: "",
+            coaching_city: "",
+            preferredCentre: "",
+
+            heardFrom: "",
+            refFirstName: "",
+            refLastName: "",
+            otherSource: "",
+
+            Terms_and_condition_one: "No",
+            Terms_and_condition_two: "No",
+          });
+          setClassesFor("Child");
+          setTc1(false);
+          setTc2(false);
+          setIsHuman(false);
+          setEnteredCaptcha("");
+          // Generate new captcha
+          const newCaptcha = Math.random()
+            .toString(36)
+            .substring(2, 8)
+            .toUpperCase();
+          setCaptcha(newCaptcha);
+          setStep(1); // Go back to first step
+        } catch (error) {
+          setErrorMessage("Failed to send form: " + error.text);
+        }
+      }
+    } catch (err) {
+      setErrorMessage("ReCaptcha verification failed, Please try again");
+      return;
     } finally {
       setIsSubmitting(false);
+      recaptchaRef.current.reset();
     }
-    setIsSubmitting(false);
   };
 
   // Effects for country/state/city dropdowns
@@ -1004,9 +1022,9 @@ const MultiStepFormTwo = () => {
             {/* I am not a Robot */}
             <div className="mt-6">
               <ReCAPTCHA
-                // sitekey="6Lfe21grAAAAAN9HX4imtbnYctfXs24fKAjiEjsO"
+                ref={recaptchaRef}
                 sitekey="6LehpV8rAAAAABFbW0OBbIDomGf33mLs7YIoMyU1"
-                onChange={(value) => setIsHuman(!!value)} // ReCAPTCHA passes null on expiry
+                onChange={() => setIsHuman(true)} // ReCAPTCHA passes null on expiry
                 onExpired={() => setIsHuman(false)}
               />
             </div>
