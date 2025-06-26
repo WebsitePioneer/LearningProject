@@ -467,11 +467,13 @@ const MultiStepFormTwo = () => {
 
             {/* Date of Birth */}
             <div className=" mt-4">
-              <label
-                htmlFor="dob"
-                className="text-sm text-gray-600 mb-3 block md:hidden"
-              >
-                Date of Birth (dd-mm-yyyy)*
+              <label htmlFor="dob" className="mb-3 block">
+                <span className="max-md:hidden text-md text-gray-800 font-[500]">
+                  Date of Birth*
+                </span>
+                <span className="md:hidden text-sm text-gray-600">
+                  Date of Birth (dd-mm-yyyy)*
+                </span>
               </label>
               <input
                 name="dob"

@@ -46,7 +46,7 @@ function MenuContent({ mobile = false, onMenuClick }) {
               <img src="/images/email.png" className="w-[16px]" />
             </a>
             <a
-              className="text-[14px] max-md:text-[12px] mt-[-2px] text-[#FFB31A]"
+              className="text-[14px] max-md:text-[12px] mt-[-2px] font-[500] text-[#FFB31A]"
               href="mailto:admin@thinqchess.com"
             >
               admin@thinqchess.com
@@ -57,7 +57,7 @@ function MenuContent({ mobile = false, onMenuClick }) {
               <img src="/images/phone.png" className="w-[16px]" />
             </a>
             <a
-              className="text-[14px] text-[#FFB31A] max-md:text-[12px]"
+              className="text-[14px] font-[500] text-[#FFB31A] max-md:text-[12px]"
               href="tel:+91 7975820187"
             >
               +91 7975820187
