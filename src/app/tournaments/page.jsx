@@ -290,8 +290,7 @@ const Tournaments = () => {
             Tournament Registration
           </h2>
           <p className="mt-4 text-[14px]">
-            (A tournament registration fee of INR 300 will be applicable, open
-            for payment from June 18th, 2025.)
+            (A tournament registration fee of INR 300 will be applicable.)
           </p>
           <div className="md:mt-6 mt-6">
             <script src="https://checkout.razorpay.com/v1/checkout.js" />
@@ -490,10 +489,10 @@ const Tournaments = () => {
 
                 {/* Location */}
                 <div className="flex md:flex-row flex-col gap-4 md:items-center mt-5">
-                  <h2 className="text-[18px]">Location:</h2>
+                  <h2 className="text-[18px]">Address:</h2>
                   <input
                     name="location"
-                    placeholder="Location"
+                    placeholder="Address"
                     value={formData.location}
                     onChange={handleChange}
                     className="p-1 border border-[#d3d1d1] rounded"
