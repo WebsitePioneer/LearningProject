@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <>
       {/* Banner */}
-      <section className="section">
+      <section className="section mt-16">
         <div
           className="relative md:py-30 py-14 max-md:pb-20 md:px-20 px-4 bg-cover bg-center md:w-11/12 w-full mx-auto clip-diagonal"
           style={{ backgroundImage: "url('/images/home-banner-two.jpg')" }}

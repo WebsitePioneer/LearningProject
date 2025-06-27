@@ -193,8 +193,6 @@ export default function ResponsiveMenuBar() {
 
   return (
     <>
-      <MenuContent mobile={isMobile} onMenuClick={toggleDrawer(true)} />
-
       {/* Fixed Navbar on scroll */}
       <FixedNavbar isMobile={isMobile} onMenuClick={toggleDrawer(true)} />
 
