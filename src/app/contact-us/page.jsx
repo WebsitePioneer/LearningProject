@@ -14,6 +14,7 @@ const ContactUs = () => {
 
   const sendEmail = (values) => {
     setIsSubmitting(true);
+
     const templateParams = {
       parent_name: values.parentName,
       child_name: values.childName,
@@ -24,18 +25,41 @@ const ContactUs = () => {
       country: values.country,
     };
 
+    const FORM_WEB_APP_URL =
+      "https://script.google.com/macros/s/AKfycbwcOOzBj8Dwl-7ps5_BjLNUjaJ_fOSF8toMLGGqnwFqmMuNiIDJxEJeUAwkxqFG5vMf/exec";
+
+    fetch("/api/submit", {
+      method: "POST",
+      body: JSON.stringify({
+        webAppUrl: FORM_WEB_APP_URL,
+        templateParams,
+      }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((res) => res.json())
+      .then((response) => {
+        console.log("Google Sheets response:", response);
+        setSuccesMessage("Form has been submitted successfully");
+      })
+      .catch((err) => {
+        console.error("Error writing to Google Sheets:", err);
+        setErrorMessage("There is an error submitting the form", err);
+      });
+
     emailjs
       .send(
-        "service_p5st95p", // replace with your service ID
-        "template_ff7qzba", // replace with your template ID
+        "service_p5st95p",
+        "template_ff7qzba",
         templateParams,
-        "TMT5AxQO_ZAQ5o_X5" // replace with your public key
+        "TMT5AxQO_ZAQ5o_X5"
       )
       .then(
         () => {
           message.success("Message sent successfully!");
           formRef.current.resetFields();
-          setSuccesMessage("Form has been submitted Succesfully");
+          setSuccesMessage("Form has been submitted successfully");
           setIsSubmitting(false);
         },
         (error) => {
