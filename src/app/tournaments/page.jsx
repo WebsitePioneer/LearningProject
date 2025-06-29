@@ -11,7 +11,7 @@ import { loadRazorpayScript } from "@/utils/loadRazorpay";
 const Tournaments = () => {
   const [succesMessage, setSuccesMessage] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
-  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(true);
   const [states, setStates] = useState([]);
   const [cities, setCities] = useState([]);
 
@@ -290,7 +290,8 @@ const Tournaments = () => {
             Tournament Registration
           </h2>
           <p className="mt-4 text-[14px]">
-            (A tournament registration fee of INR 300 will be applicable.)
+            (Tournament registration is closed, thank you for your
+            understanding.)
           </p>
           <div className="md:mt-6 mt-6">
             <script src="https://checkout.razorpay.com/v1/checkout.js" />
@@ -505,7 +506,7 @@ const Tournaments = () => {
                 <button
                   type="submit"
                   className={`bg-[#FFB31A] text-[18px] text-white py-2 px-6 rounded ${
-                    isSubmitting ? "cursor-default" : "cursor-pointer"
+                    isSubmitting ? "cursor-not-allowed" : "cursor-pointer"
                   }`}
                   disabled={isSubmitting} // Disable during submission
                 >
