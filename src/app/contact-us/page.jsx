@@ -26,7 +26,7 @@ const ContactUs = () => {
     };
 
     const FORM_WEB_APP_URL =
-      "https://script.google.com/macros/s/AKfycbwcOOzBj8Dwl-7ps5_BjLNUjaJ_fOSF8toMLGGqnwFqmMuNiIDJxEJeUAwkxqFG5vMf/exec";
+      "https://script.google.com/macros/s/AKfycbzSEM6rZjJHPuINGIErfg1CIvRys1Cb6i7kgNaYW-Y75J3IW4fwwRFxJkVwBJht2vB0Ag/exec";
 
     fetch("/api/submit", {
       method: "POST",
@@ -41,11 +41,9 @@ const ContactUs = () => {
       .then((res) => res.json())
       .then((response) => {
         console.log("Google Sheets response:", response);
-        setSuccesMessage("Form has been submitted successfully");
       })
       .catch((err) => {
         console.error("Error writing to Google Sheets:", err);
-        setErrorMessage("There is an error submitting the form", err);
       });
 
     emailjs

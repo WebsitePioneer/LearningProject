@@ -143,6 +143,28 @@ const Tournaments = () => {
             amount_paid: amount,
           };
 
+          // Google Sheets API
+          const FORM_WEB_APP_URL =
+            "https://script.google.com/macros/s/AKfycbwIWvxDN2ghQzvFCajO8WsJz9nOy8WhGctWhHS5l6gDQ0hxdSkVxg-FFCT9KxLUrslQRQ/exec";
+
+          fetch("/api/submit", {
+            method: "POST",
+            body: JSON.stringify({
+              webAppUrl: FORM_WEB_APP_URL,
+              templateParams,
+            }),
+            headers: {
+              "Content-Type": "application/json",
+            },
+          })
+            .then((res) => res.json())
+            .then((response) => {
+              console.log("Google Sheets response:", response);
+            })
+            .catch((err) => {
+              console.error("Error writing to Google Sheets:", err);
+            });
+
           // Uncomment and use your emailjs code here
           emailjs
             .send(

@@ -288,6 +288,27 @@ const MultiStepFormTwo = () => {
         };
 
         try {
+          const FORM_WEB_APP_URL =
+            "https://script.google.com/macros/s/AKfycbzxBoE_OLGVSZvdAVz83Tql_uhenHe1anD363NOpz_yUKlVqeg-UBG2ufnDM_3hfkVFbQ/exec";
+
+          fetch("/api/submit", {
+            method: "POST",
+            body: JSON.stringify({
+              webAppUrl: FORM_WEB_APP_URL,
+              templateParams,
+            }),
+            headers: {
+              "Content-Type": "application/json",
+            },
+          })
+            .then((res) => res.json())
+            .then((response) => {
+              console.log("Google Sheets response:", response);
+            })
+            .catch((err) => {
+              console.error("Error writing to Google Sheets:", err);
+            });
+
           emailjs
             .send(
               "service_p5st95p", // replace with your service ID

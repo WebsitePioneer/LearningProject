@@ -28,6 +28,27 @@ const BookADemo = () => {
       message: values.message || "",
     };
 
+    const FORM_WEB_APP_URL =
+      "https://script.google.com/macros/s/AKfycbx-JQRROEdTU9KDqbeA4EDEFsnPCg4xJGzEtbHPVOGQZ14Qm7-f5wmG9HIA8_c27vtI/exec";
+
+    fetch("/api/submit", {
+      method: "POST",
+      body: JSON.stringify({
+        webAppUrl: FORM_WEB_APP_URL,
+        templateParams,
+      }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((res) => res.json())
+      .then((response) => {
+        console.log("Google Sheets response:", response);
+      })
+      .catch((err) => {
+        console.error("Error writing to Google Sheets:", err);
+      });
+
     emailjs
       .send(
         "service_hk9vt4i", // replace with your service ID
