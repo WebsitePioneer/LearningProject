@@ -3,7 +3,7 @@ const Banner = (props) => {
   return (
     <>
       <section
-        className="w-full relative bg-cover bg-center"
+        className="w-full relative bg-cover bg-center md:mt-22 mt-20"
         style={{ backgroundImage: `url('${props.image}')` }}
       >
         <div className="absolute inset-0 z-10 bg-black opacity-[0.5]"></div>

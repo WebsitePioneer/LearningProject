@@ -8,7 +8,7 @@
           "value": "lms.thinqchess.com"
         }
       ],
-      "destination": "https://thinqchess.com/tournaments",
+      "destination": "https://thinqchess.com/training",
       "permanent": true
     }
   ]

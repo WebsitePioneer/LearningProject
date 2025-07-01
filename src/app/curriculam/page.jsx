@@ -67,7 +67,7 @@ const Curriculam = () => {
   return (
     <>
       <section
-        className="w-full relative bg-cover bg-center"
+        className="w-full relative bg-cover bg-center md:mt-20 mt-20"
         style={{ backgroundImage: `url('/images/about-banner.jpg')` }}
       >
         <div className="absolute inset-0 z-10 bg-black opacity-[0.5]"></div>
