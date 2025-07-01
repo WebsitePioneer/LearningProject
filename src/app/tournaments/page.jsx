@@ -303,7 +303,7 @@ const Tournaments = () => {
       <section className="w-11/12 flex md:flex-row flex-col md:gap-16 gap-10 mx-auto my-10 md:my-28">
         <div className="md:w-[50%] w-full">
           <img
-            src="/images/contact-img.png"
+            src="/images/tournament_img.jpg"
             className="w-full rounded-lg h-[650px] object-cover"
           />
         </div>
