@@ -11,7 +11,7 @@ import { loadRazorpayScript } from "@/utils/loadRazorpay";
 const Tournaments = () => {
   const [succesMessage, setSuccesMessage] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
-  const [isSubmitting, setIsSubmitting] = useState(true);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [states, setStates] = useState([]);
   const [cities, setCities] = useState([]);
 
@@ -312,8 +312,7 @@ const Tournaments = () => {
             Tournament Registration
           </h2>
           <p className="mt-4 text-[14px]">
-            (Tournament registration is closed, thank you for your
-            understanding.)
+            (Registration open at a fee of INR 300)
           </p>
           <div className="md:mt-6 mt-6">
             <script src="https://checkout.razorpay.com/v1/checkout.js" />
