@@ -304,7 +304,7 @@ const Tournaments = () => {
         <div className="md:w-[50%] w-full">
           <img
             src="/images/tournament_img.jpg"
-            className="w-full rounded-lg h-[650px] object-cover"
+            className="w-full rounded-lg md:h-[650px] h-fullobject-cover"
           />
         </div>
         <div className="md:w-[50%] w-full">
