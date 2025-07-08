@@ -188,7 +188,7 @@ export default function ResponsiveMenuBar() {
 
   const handleLogin = () => {
     toggleDrawer(false);
-    router.push("/training");
+    window.location.href = "https://lms.thinqchess.com";
   };
 
   const pathname = usePathname();
@@ -236,19 +236,21 @@ export default function ResponsiveMenuBar() {
           >
             <Link href="/book-a-demo">Book a Demo</Link>
           </Button>
-          <Button
-            fullWidth
-            variant="contained"
-            onClick={handleLogin}
-            sx={{
-              backgroundColor: "#2B3AA0",
-              "&:hover": {
-                background: "linear-gradient(to right, #7a86d8, #2B3AA0)",
-              },
-            }}
-          >
-            Log in
-          </Button>
+          <a href="https://lms.thinqchess.com">
+            <Button
+              fullWidth
+              variant="contained"
+              onClick={handleLogin}
+              sx={{
+                backgroundColor: "#2B3AA0",
+                "&:hover": {
+                  background: "linear-gradient(to right, #7a86d8, #2B3AA0)",
+                },
+              }}
+            >
+              Log in
+            </Button>
+          </a>
         </Box>
       </Drawer>
     </>
