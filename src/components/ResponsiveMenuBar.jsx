@@ -34,7 +34,7 @@ function MenuContent({ mobile = false, onMenuClick }) {
   const router = useRouter();
 
   const handleLogin = () => {
-    router.push("/training");
+    window.location.href = "https://lms.thinqchess.com";
   };
   return (
     <>
@@ -135,18 +135,20 @@ function MenuContent({ mobile = false, onMenuClick }) {
               >
                 <Link href="/book-a-demo">Book a Demo</Link>
               </Button>
-              <Button
-                variant="contained"
-                onClick={handleLogin}
-                sx={{
-                  backgroundColor: "#2B3AA0",
-                  "&:hover": {
-                    background: "linear-gradient(to right, #7a86d8, #2B3AA0)",
-                  },
-                }}
-              >
-                Log in
-              </Button>
+              <a href="https://lms.thinqchess.com">
+                <Button
+                  variant="contained"
+                  onClick={handleLogin}
+                  sx={{
+                    backgroundColor: "#2B3AA0",
+                    "&:hover": {
+                      background: "linear-gradient(to right, #7a86d8, #2B3AA0)",
+                    },
+                  }}
+                >
+                  Log in
+                </Button>
+              </a>
             </>
           ) : (
             <IconButton onClick={onMenuClick}>
