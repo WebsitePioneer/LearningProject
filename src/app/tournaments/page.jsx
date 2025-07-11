@@ -12,6 +12,7 @@ const Tournaments = () => {
   const [succesMessage, setSuccesMessage] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isAgeValid, setIsAgeValid] = useState(true);
   const [states, setStates] = useState([]);
   const [cities, setCities] = useState([]);
 
@@ -37,10 +38,21 @@ const Tournaments = () => {
     location: "",
   });
 
+  // Check if the user is not older than 16 years
+  const isValidAge = (dob) => {
+    if (!dob) return false;
+    const cutoffDate = new Date("2009-01-01");
+    const userDOB = new Date(dob);
+    return userDOB >= cutoffDate;
+  };
+
   // Handles changes for standard input fields
   const handleChange = (e) => {
     setErrorMessage("");
     const { name, value } = e.target;
+    if (name === "dob") {
+      setIsAgeValid(isValidAge(value));
+    }
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
@@ -74,6 +86,13 @@ const Tournaments = () => {
     e.preventDefault(); // Prevent default form submission
 
     // Basic validation (you can expand this)
+    if (!isValidAge(formData.dob)) {
+      setErrorMessage(
+        "Only students aged 16 or below (born on or after 01-Jan-2009) are eligible to register."
+      );
+      return;
+    }
+
     if (
       !formData.particpantFirstName ||
       !formData.particpantLastName ||
@@ -303,7 +322,7 @@ const Tournaments = () => {
       <section className="w-11/12 flex md:flex-row flex-col md:gap-16 gap-10 mx-auto my-10 md:my-28">
         <div className="md:w-[50%] w-full">
           <img
-            src="/images/tournament_img.jpg"
+            src="/images/tournament.jpg"
             className="w-full rounded-lg md:h-[650px] h-fullobject-cover"
           />
         </div>
@@ -394,6 +413,13 @@ const Tournaments = () => {
                   />
                 </div>
               </div>
+
+              {!isAgeValid && (
+                <p className="text-red-600 mt-2 text-sm">
+                  Only students aged 16 or below (born on or after 01-Jan-2009)
+                  are eligible.
+                </p>
+              )}
 
               {/* Gender */}
               <div className="flex md:flex-row flex-col gap-4 md:items-center mt-5">
@@ -527,9 +553,11 @@ const Tournaments = () => {
                 <button
                   type="submit"
                   className={`bg-[#FFB31A] text-[18px] text-white py-2 px-6 rounded ${
-                    isSubmitting ? "cursor-not-allowed" : "cursor-pointer"
+                    isSubmitting || !isAgeValid
+                      ? "cursor-not-allowed opacity-70"
+                      : "cursor-pointer"
                   }`}
-                  disabled={isSubmitting} // Disable during submission
+                  disabled={isSubmitting || !isAgeValid} // Disable during submission
                 >
                   {/* {isSubmitting ? "Paying..." : "Pay Now"} */}
                   Pay Now
